@@ -1,6 +1,9 @@
+<!doctype html>
 <html ng-app="materializeApp">
 <head>
     <title>The Portfolio of Eric Barber</title>
+    <meta charset="utf-8">
+    <!--<base href="/angular/">-->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,6 +18,9 @@
     <script>window.angular || document.write('<script src="assets/js/angular.min.js"><\/script>');</script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
     <script>try{window.angular.module('ngRoute'); }catch(err){ document.write('<script src="assets/js/angular-route.js"><\/script>');}</script>   
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+    <script>try{window.angular.module('ngAnimate'); }catch(err){ document.write('<script src="assets/js/angular-animate.js"><\/script>');}</script> 
+    <script src="assets/js/angular-recaptcha.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script>window.Materialize || document.write('<script src="assets/js/materialize.min.js"><\/script>');</script>
     <script type="text/javascript">
@@ -24,6 +30,8 @@
     </script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>
     <script>try{ window.angular.module('ui.materialize');}catch(err){ document.write('<script src="assets/js/angular-materialize.min.js"><\/script>');}</script>
+    <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+
 
     <script type="text/javascript" src="app.js"></script>
 </head>
@@ -33,18 +41,20 @@
 <header>
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#/" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse" data-sidenav="left" data-menuwidth="500" data-closeonclick="false"><i class="material-icons">view_headline</i></a>
      
           <ul class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about"> About</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
           </ul>
-          <ul class="side-nav" id="mobile-demo">
 
-                    <li><a href="#"> Home</a></li>
+          <ul class="side-nav" id="mobile-demo">
+                    <li><a href="#home"> Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact"> Contact</a></li>
           </ul>
       </div>
@@ -53,7 +63,7 @@
 
 
 <div id="main">
-            <div ng-view></div>
+    <div ng-view class="page {{ pageClass }}"></div>
 </div>
 </body>
 
