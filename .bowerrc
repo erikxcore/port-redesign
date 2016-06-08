@@ -1,0 +1,5 @@
+  {
+      "directory": "build/components",
+      "json": "bower.json", 
+      "strict-ssl": false
+  }

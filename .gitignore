@@ -9,8 +9,6 @@
 
 # Packages #
 ############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
 *.7z
 *.dmg
 *.gz
@@ -36,8 +34,17 @@
 ehthumbs.db
 Thumbs.db
 
-# Needed to hide private key #
+# Needed to hide private key - though this won't work unless we do git rm -r --cached to remove this file from the repo completely.#
 assets/php/mailer.php
 
 .sass-cache
 .sass-cache/*
+
+# NPM / Bower / Grunt
+node_modules
+node_modules/*
+build/components
+build/components/*
+dist
+dist/*
+dist/css/*
