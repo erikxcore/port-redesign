@@ -38,3 +38,6 @@ Thumbs.db
 
 # Needed to hide private key #
 assets/php/mailer.php
+
+.sass-cache
+.sass-cache/*
