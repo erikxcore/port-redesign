@@ -4,11 +4,11 @@
     "dependencies": {
         "jquery":              "2.2.3",
         "angular":             "1.5.5",
-        "angular-route":       "1.2.25",
-        "angular-animate":     "1.2.13",
+        "angular-route":       "1.5.5",
+        "angular-animate":     "1.5.5",
         "angular-recaptcha":   "3.0.1",
         "materialize":         "0.97.6",
-        "angular-materialize": "2.2.3",
+        "angular-materialize": "0.1.8",
         "animate.css":         "3.5.2"
     },
     "analytics": false

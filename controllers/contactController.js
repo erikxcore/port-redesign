@@ -1,7 +1,7 @@
-     angular.module('contactController', []).controller('contactController', function($scope, vcRecaptchaService){
+     angular.module('contactController', []).controller('contactController', function($scope){
+          $scope.pageClass = 'page-contact';
                 $scope.response = null;
                 $scope.widgetId = null;
-
                 $scope.model = {
                    key:'6LfFCCITAAAAAKZFsUmUCKBXv5tzqjnBdZ_-1NDL'
                 };
@@ -21,34 +21,30 @@
                     vcRecaptchaService.reload($scope.widgetId);
                     $scope.response = null;
                  };
-
-
-
+                 
       });
 
-    angular.module('contactForm', []).controller("contactForm", ['$scope', '$http', 'vcRecaptchaService', function($scope, $http, vcRecaptchaService) {
+    angular.module('contactForm', []).controller("contactForm", ['$scope','ContactService','vcRecaptchaService', function($scope, ContactService, vcRecaptchaService) {
     $scope.success = false;
     $scope.error = false;
 
     $scope.sendMessage = function( input ) {
       input.submit = true;
       input.google_response = $scope.response;
-      $http({
-          method: 'POST',
-          url: 'assets/php/mailer.php',
-          data: input,
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-      })
-      .success( function(data) {
-        if ( data.success ) {
+
+      ContactService.sendEmail(input).then(function (response){
+        if ( response.data.success ) {
           $scope.success = true;
         } else {
           $scope.error = true;
           vcRecaptchaService.reload($scope.widgetId);
         }
-      }).error(function(data){
-        $scope.error = true;
-        vcRecaptchaService.reload($scope.widgetId);
+      }, function (error){
+          //console.log("Error occured - " + error);
+          $scope.error = true;
+          vcRecaptchaService.reload($scope.widgetId);
       });
+
     }
+
   }]);

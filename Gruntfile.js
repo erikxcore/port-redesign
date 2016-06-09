@@ -64,6 +64,8 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['assets/css/animate.min.css'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['controllers/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['services/*'], dest: 'dist/', filter: 'isFile'},
+		      {expand: true, src: ['directives/*'], dest: 'dist/', filter: 'isFile'},
+		      {expand: true, src: ['filters/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['pages/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['app.js'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['routes.js'], dest: 'dist/', filter: 'isFile'},

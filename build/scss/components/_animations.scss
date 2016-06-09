@@ -1,0 +1,12 @@
+//These are for ngAnimate from Angular
+
+    .ng-enter{ 
+    	@include animation('scaleUp 0.5s both ease-in');
+    	z-index: 8888; 
+    }
+
+    .ng-leave{ 
+    	@include animation('slideOutLeft 0.5s both ease-in');
+    	z-index: 9999; 
+    }
+    

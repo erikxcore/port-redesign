@@ -17,11 +17,25 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-2.2.3.min.js"><\/script>');</script>
+    <!-- Required to pull in data from Ghost **CURRENTLY BETA PUBLIC API*** -->
+    <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
+    <script type="text/javascript">
+      ghost.init({
+        clientId: "ghost-frontend",
+        clientSecret: "95b1e5440cab"
+      });
+    </script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script>window.angular || document.write('<script src="assets/js/angular.min.js"><\/script>');</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <!--
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
     <script>try{window.angular.module('ngRoute'); }catch(err){ document.write('<script src="assets/js/angular-route.min.js"><\/script>');}</script>   
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
+    -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script>try{window.angular.module('ui.router'); }catch(err){ document.write('<script src="assets/js/angular-ui-router.min.js"><\/script>');}</script>   
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script>try{window.angular.module('ngAnimate'); }catch(err){ document.write('<script src="assets/js/angular-animate.min.js"><\/script>');}</script> 
     <script src="assets/js/angular-recaptcha.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
@@ -39,9 +53,16 @@
           <link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
      <![endif]-->
 
+     <!--Angular files-->
     <script src="controllers/mainController.js"></script>
+    <script src="controllers/aboutController.js"></script>
+    <script src="controllers/resumeController.js"></script>
+    <script src="controllers/workController.js"></script>
+    <script src="controllers/homeController.js"></script>
+    <script src="controllers/blogController.js"></script>
     <script src="controllers/contactController.js"></script>
-    <script src="services/BlogService.js"></script>
+    <script src="services/contactService.js"></script>
+    <script src="services/blogService.js"></script>
     <script src="routes.js"></script>
     <script type="text/javascript" src="app.js"></script>
 </head>
@@ -57,6 +78,7 @@
           <ul class="right hide-on-med-and-down">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#resume">CV</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -65,6 +87,7 @@
           <ul class="side-nav" id="mobile-demo">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#resume">CV</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#contact"> Contact</a></li>
@@ -75,8 +98,9 @@
 
 
 <div id="main">
-    <div ng-view class="page {{ pageClass }}"></div>
+    <div ui-view class="page {{ pageClass }}"></div>
 </div>
+
 </body>
 
 

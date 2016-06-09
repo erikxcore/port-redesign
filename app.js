@@ -3,17 +3,24 @@
 
 angular.module('materializeApp', 
   ['ui.materialize',
-  'ngRoute',
+  //'ngRoute',
+  'ui.router',
+  'ngAnimate',
   'routes',
   'mainController',
+  'blogController',
   'contactController',
+  'homeController',
+  'aboutController',
+  'resumeController',
+  'workController',
   'contactForm',
-  'BlogService',
+  'blogService',
+  'contactService',
   'vcRecaptcha'
   ]);
 
  
-
 
 
 

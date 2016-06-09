@@ -2250,6 +2250,24 @@ a {
   }
 }
 */
+.ng-enter {
+  -webkit-animation: scaleUp 0.5s both ease-in;
+  -moz-animation: scaleUp 0.5s both ease-in;
+  -ms-animation: scaleUp 0.5s both ease-in;
+  -o-animation: scaleUp 0.5s both ease-in;
+  animation: scaleUp 0.5s both ease-in;
+  z-index: 8888;
+}
+
+.ng-leave {
+  -webkit-animation: slideOutLeft 0.5s both ease-in;
+  -moz-animation: slideOutLeft 0.5s both ease-in;
+  -ms-animation: slideOutLeft 0.5s both ease-in;
+  -o-animation: slideOutLeft 0.5s both ease-in;
+  animation: slideOutLeft 0.5s both ease-in;
+  z-index: 9999;
+}
+
 .icons-sprite, .icons-facebook, .icons-flickr, .icons-github, .icons-instagram, .icons-linked_in, .icons-soundcloud, .icons-stack_exchange, .icons-twitter {
   background-image: url('../img/icons-s81096cb5ab.png');
   background-repeat: no-repeat;
@@ -2333,6 +2351,11 @@ p {
 */
 #main {
   margin-top: 20px;
+}
+
+.page {
+  width: 100%;
+  color: black;
 }
 
 /* Example:
