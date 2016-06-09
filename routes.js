@@ -1,7 +1,5 @@
 angular.module('routes', []).config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.otherwise('/home');
-    
+        
     $stateProvider
 
             .state('about', {
@@ -16,12 +14,14 @@ angular.module('routes', []).config(function($stateProvider, $urlRouterProvider)
                 controller: 'blogController'
             })
 
+//No longer needed due to being a modal
+/*
             .state('contact', {
                 url: '/contact',
                 templateUrl: 'pages/contact.html',
                 controller: 'contactController'
             })
-
+*/
             .state('home', {
                 url: '/home',
                 templateUrl: 'pages/home.html',
@@ -40,6 +40,7 @@ angular.module('routes', []).config(function($stateProvider, $urlRouterProvider)
                 controller: 'workController'
             });
 
+    $urlRouterProvider.otherwise('/home');
 
 });
 

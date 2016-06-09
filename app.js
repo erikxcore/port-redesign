@@ -5,7 +5,9 @@ angular.module('materializeApp',
   ['ui.materialize',
   //'ngRoute',
   'ui.router',
+  'ngDialog',
   'ngAnimate',
+  'angular-timeline',
   'routes',
   'mainController',
   'blogController',
@@ -18,7 +20,7 @@ angular.module('materializeApp',
   'blogService',
   'contactService',
   'vcRecaptcha'
-  ]);
+    ]);
 
  
 

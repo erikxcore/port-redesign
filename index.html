@@ -3,13 +3,26 @@
 <head>
     <title>The Portfolio of Eric Barber</title>
     <meta charset="utf-8">
-    <!--<base href="/angular/">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Eric Barber, erikxcore,f0xxx,f0xx, portfolio, designer, web designer, graphic designer, web developer, front-end developer, new jersey, new york, pennslyvania, angular, node, javascript, jquery, html, css, java, php">
+    <meta name="description" content="I am a front-end engineer with experience with full stack environments. My languages of choice are JavaScript, PHP, and Java.">
+    <meta name="author" content="Eric Barber">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <!--<base href="/angular/">-->
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
     <!--<link rel="stylesheet" href="assets/css/style.css">-->
+    <link rel="stylesheet" href="assets/css/ngDialog.min.css">
+    <!-- only here for now -->
+    <link rel="stylesheet" href="assets/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="assets/css/angular-timeline.css">
+    <link rel="stylesheet" href="assets/css/angular-timeline-animations.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
     <link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="assets/css/print.css" media="print" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+
     <link href='https://fonts.googleapis.com/css?family=Open+Sans|Podkova|Raleway:400,200italic|Ubuntu:400,400italic,500,700|Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -25,6 +38,11 @@
         clientSecret: "95b1e5440cab"
       });
     </script>
+
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+   <script> $('#main').mixItUp('isLoaded') || document.write('<script src="assets/js/jquery.mixitup.min.js"><\/script>');</script>
+
+
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script>window.angular || document.write('<script src="assets/js/angular.min.js"><\/script>');</script>
     <!--
@@ -33,7 +51,9 @@
     -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script>try{window.angular.module('ui.router'); }catch(err){ document.write('<script src="assets/js/angular-ui-router.min.js"><\/script>');}</script>   
-
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js"></script>
+    <script>try{window.angular.module('ngDialog'); }catch(err){ document.write('<script src="assets/js/ngDialog.min.js"><\/script>');}</script>   
+    <script src="assets/js/angular-timeline.js"></script>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script>try{window.angular.module('ngAnimate'); }catch(err){ document.write('<script src="assets/js/angular-animate.min.js"><\/script>');}</script> 
@@ -54,6 +74,9 @@
      <![endif]-->
 
      <!--Angular files-->
+    <script type="text/javascript" src="app.js"></script>
+    <script src="directives/mixItUpDirective.js"></script>
+    <script src="directives/galleryDirective.js"></script>
     <script src="controllers/mainController.js"></script>
     <script src="controllers/aboutController.js"></script>
     <script src="controllers/resumeController.js"></script>
@@ -64,7 +87,6 @@
     <script src="services/contactService.js"></script>
     <script src="services/blogService.js"></script>
     <script src="routes.js"></script>
-    <script type="text/javascript" src="app.js"></script>
 </head>
 
 <body ng-controller="mainController">
@@ -81,7 +103,7 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#resume">CV</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="" onclick="return false;" ng-click="open()">Contact</a></li>
           </ul>
 
           <ul class="side-nav" id="mobile-demo">

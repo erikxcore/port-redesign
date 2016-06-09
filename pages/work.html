@@ -1,1 +1,42 @@
- This is the work page.
+<div ng-controller="workController">
+<div id="top"></div>
+
+    <div class="mixitupcontainer" ng-if='drawings'>
+	    <div class="controls">
+	        <label>Filter:</label>
+	        <button class="filter" data-filter="all">All</button>
+	        <button class="filter" 
+	                data-filter=".category-{{category}}" 
+	                ng-repeat="category in categories">{{category}}</button>
+	    </div>
+	    
+	    <div mix-it-up class="mix-container gallery" entities='drawings'>
+	    	<div gallery class="gallery-container">
+		    	<div class="gallery-row">
+				        <div class="mix category-{{drawing.category}}" 
+				                data-myorder="{{drawing.value}}" 
+				                ng-repeat="drawing in drawings">
+				                <a class="image" href="" onclick="return false;" id="#image_{{drawing.id}}">
+				   Value : {{drawing.name}}
+								</a>
+				        </div>
+			    </div>
+
+			    <div class="zoom-row">
+			    	<a href="#" class="gallery-close"></a>
+			    	<div ng-repeat="drawing in drawings" id="image_{{drawing.id}}" class="port">
+			    		<div class="gallery-row">
+							<div class="description">
+								<p>{{drawing.category}}</p>
+							</div>
+							<div class="image">
+								<p>{{drawing.value}}</p>
+							</div>
+						</div>
+			    	</div>
+			    </div>
+	    	</div>
+		</div>
+	</div>
+</div>
+
