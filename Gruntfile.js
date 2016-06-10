@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['assets/css/animate.min.css'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['assets/css/angular-timeline.css'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['assets/css/ngDialog.min.css'], dest: 'dist/', filter: 'isFile'},
-		      {expand: true, src: ['assets/css/angular-timeline.css'], dest: 'dist/', filter: 'isFile'},
+		      {expand: true, src: ['assets/css/angular-timeline-animations.css'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['assets/css/ngDialog-theme-default.min.css'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['controllers/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['services/*'], dest: 'dist/', filter: 'isFile'},

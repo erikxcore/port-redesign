@@ -7,6 +7,55 @@
   color:black;
 }
 
+
+/*Paralax stuff*/
+.horizon
+{
+    line-height: 0;
+    z-index: -2;
+    width: 3000px;
+}
+
+.middle
+{
+    z-index: -1;
+    line-height: 0;
+    width: 4500px;
+}
+
+.front
+{
+    z-index: 500;
+    top: 150px;
+    width: 2000px;
+}
+
+
+
+.hpage{
+    top: 0px;
+    width: 500px;
+    background: white;
+    padding: 10px 30px;
+    border: 1px #eee solid;
+    position: absolute;
+}
+
+.content1{
+    left:500px;
+}
+.content2{
+    left:1500px;
+}
+
+.scroll
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
 /* Example:
 .weather {
   @extend %module; 

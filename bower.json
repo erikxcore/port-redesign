@@ -9,7 +9,7 @@
         "angular-animate":     "1.5.5",
         "ng-dialog":           "0.6.1",
         "angular-recaptcha":   "3.0.1",
-        "angular-recaptcha":   "3.0.1",
+        "ngInfiniteScroll":    "1.2.2",
         "mixitup":             "2.1.11",
         "materialize":         "0.97.6",
         "angular-materialize": "0.1.8",

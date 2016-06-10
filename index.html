@@ -28,46 +28,37 @@
 
     <!-- Above simply for testing, final will most likely consist of only Podkova and possibly Ubuntu/Arial/Helvetica/Futura. Probably imports in the scss files. -->
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script>window.jQuery || document.write('<script src="assets/js/jquery-2.2.3.min.js"><\/script>');</script>
-    <!-- Required to pull in data from Ghost **CURRENTLY BETA PUBLIC API*** -->
-    <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
-    <script type="text/javascript">
-      ghost.init({
-        clientId: "ghost-frontend",
-        clientSecret: "95b1e5440cab"
-      });
-    </script>
-
-   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
-   <script> $('#main').mixItUp('isLoaded') || document.write('<script src="assets/js/jquery.mixitup.min.js"><\/script>');</script>
-
-
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script>window.angular || document.write('<script src="assets/js/angular.min.js"><\/script>');</script>
-    <!--
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
-    <script>try{window.angular.module('ngRoute'); }catch(err){ document.write('<script src="assets/js/angular-route.min.js"><\/script>');}</script>   
-    -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
-    <script>try{window.angular.module('ui.router'); }catch(err){ document.write('<script src="assets/js/angular-ui-router.min.js"><\/script>');}</script>   
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js"></script>
-    <script>try{window.angular.module('ngDialog'); }catch(err){ document.write('<script src="assets/js/ngDialog.min.js"><\/script>');}</script>   
-    <script src="assets/js/angular-timeline.js"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script>try{window.angular.module('ngAnimate'); }catch(err){ document.write('<script src="assets/js/angular-animate.min.js"><\/script>');}</script> 
-    <script src="assets/js/angular-recaptcha.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script>window.Materialize || document.write('<script src="assets/js/materialize.min.js"><\/script>');</script>
     <script type="text/javascript">
         //Due to 0.1.8 Angular-Materialize using console.log and IE support
         if (!window.console) {window.console = {};}
         if (!console.log) {console.log = function() {};}
     </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery-2.2.3.min.js"><\/script>');</script>
+    <!-- Required to pull in data from Ghost **CURRENTLY BETA PUBLIC API*** -->
+    <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
+    <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+    <script> $('#main').mixItUp('isLoaded') || document.write('<script src="assets/js/jquery.mixitup.min.js"><\/script>');</script>
+    <script src="assets/js/jquery.jInvertScroll.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script>window.angular || document.write('<script src="assets/js/angular.min.js"><\/script>');</script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
+    <script>try{window.angular.module('ui.router'); }catch(err){ document.write('<script src="assets/js/angular-ui-router.min.js"><\/script>');}</script>   
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js"></script>
+    <script>try{window.angular.module('ngDialog'); }catch(err){ document.write('<script src="assets/js/ngDialog.min.js"><\/script>');}</script>   
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script>try{window.angular.module('ngAnimate'); }catch(err){ document.write('<script src="assets/js/angular-animate.min.js"><\/script>');}</script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.min.js"></script>
+    <script>try{window.angular.module('ngInfiniteScroll');}catch(err){document.write('<script src="assets/js/ng-infinite-scroll.min.js"><\/script>');}</script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script>window.Materialize || document.write('<script src="assets/js/materialize.min.js"><\/script>');</script>
+    <!--No CDN Available-->
+    <script src="assets/js/angular-timeline.js"></script>
+    <script src="assets/js/angular-recaptcha.min.js"></script>
+    <!--End No CDN Available-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>
     <script>try{ window.angular.module('ui.materialize');}catch(err){ document.write('<script src="assets/js/angular-materialize.min.js"><\/script>');}</script>
-    <!--Sort of pointless to fallback here...this absolutely relies on Google's availablity. Can try adding &fallback=true-->
     <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
      <!--[if IE]>
           <link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -76,6 +67,7 @@
      <!--Angular files-->
     <script type="text/javascript" src="app.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
+    <script src="directives/jInvertScrollDirective.js"></script>
     <script src="directives/galleryDirective.js"></script>
     <script src="controllers/mainController.js"></script>
     <script src="controllers/aboutController.js"></script>
@@ -90,11 +82,11 @@
 </head>
 
 <body ng-controller="mainController">
-
 <header>
+    <div class="navbar-fixed">
   <nav>
     <div class="nav-wrapper">
-      <a href="#/" class="brand-logo">Logo</a>
+      <a href="#home" class="brand-logo">Logo</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse" data-sidenav="left" data-menuwidth="500" data-closeonclick="false"><i class="material-icons">view_headline</i></a>
      
           <ul class="right hide-on-med-and-down">
@@ -116,12 +108,23 @@
           </ul>
       </div>
   </nav>
+</div>
 </header>
+
+<!--Reference-->
 
 
 <div id="main">
     <div ui-view class="page {{ pageClass }}"></div>
 </div>
+
+        <div class="horizon scroll">
+            <img src="http://www.pixxelfactory.net/jInvertScroll/images/horizon.png" alt="" />
+        </div>
+        
+        <div class="middle scroll">
+            <img src="http://www.pixxelfactory.net/jInvertScroll/images/middle.png" alt="" />
+        </div>
 
 </body>
 

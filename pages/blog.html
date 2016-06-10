@@ -1,6 +1,10 @@
-This is Ghost Node blog.
-
-<div ng-repeat="post in posts">
-<h1>{{post.title}}</h1>
-<div ng-bind-html="post.html"></div>
+<div id="blogHolder">
+  <div infinite-scroll='nextPage()' infinite-scroll-disabled='busy'>
+    <div ng-repeat='post in posts'>
+		<h1>{{post.title}}</h1>
+		<div ng-bind-html="post.html"></div>
+		<div style="clear:both;"></div>
+	</div>
+	    <div ng-show='busy' ng-hide='done'>Loading data...</div>
+  </div>
 </div>

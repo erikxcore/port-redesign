@@ -1,6 +1,4 @@
 <div ng-controller="workController">
-<div id="top"></div>
-
     <div class="mixitupcontainer" ng-if='drawings'>
 	    <div class="controls">
 	        <label>Filter:</label>
@@ -16,7 +14,7 @@
 				        <div class="mix category-{{drawing.category}}" 
 				                data-myorder="{{drawing.value}}" 
 				                ng-repeat="drawing in drawings">
-				                <a class="image" href="" onclick="return false;" id="#image_{{drawing.id}}">
+				                <a class="image" href="" onclick="return false;" id="image_{{drawing.id}}">
 				   Value : {{drawing.name}}
 								</a>
 				        </div>

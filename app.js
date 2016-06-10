@@ -1,9 +1,6 @@
-
-//Config
-
 angular.module('materializeApp', 
   ['ui.materialize',
-  //'ngRoute',
+  'infinite-scroll',
   'ui.router',
   'ngDialog',
   'ngAnimate',
@@ -20,7 +17,7 @@ angular.module('materializeApp',
   'blogService',
   'contactService',
   'vcRecaptcha'
-    ]);
+]);
 
  
 
