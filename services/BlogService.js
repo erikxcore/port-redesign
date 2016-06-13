@@ -4,8 +4,9 @@ angular.module('blogService', []).service('BlogService', ['$http', function($htt
       return $http.get(url);
     };
     this.getPostsViaPagination = function(pg) {
+      var cors = "http://66.150.214.52:8001/";
       var url = ghost.url.api('posts', {page:pg, limit: 2});
-      return $http.get(url);
+      return $http.get(cors+url);
     };
     this.getPost = function(id) {
       var url = ghost.url.api('posts/'+id);
