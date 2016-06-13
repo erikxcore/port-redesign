@@ -109,6 +109,8 @@
     <div ui-view class="page {{ pageClass }}"></div>
 </div>
 
+
+<!--
         <div class="horizon scroll">
             <img src="http://www.pixxelfactory.net/jInvertScroll/images/horizon.png" alt="" />
         </div>
@@ -116,6 +118,52 @@
         <div class="middle scroll">
             <img src="http://www.pixxelfactory.net/jInvertScroll/images/middle.png" alt="" />
         </div>
+-->
+
+<div ng-show="pageClass != 'page-about'" class="scroll middle" style="left: 0px;">
+    <img src="assets/img/sky.png">
+</div>
+
+
+<div parralax="" class="mountains" style="
+    position: fixed;
+    overflow: hidden;
+    right: 0;
+    bottom: 0;
+    /* width: 100%; */
+">
+    <img src="assets/img/horizon.png">
+</div>
+
+<div parralax="" class="first_tier scroll" style="z-index: 4; left: 0px; bottom: -45px;">
+    <img src="assets/img/first_tier.png">
+</div>
+
+<div parralax="" class="second_tier" style="
+    position: fixed;
+    bottom: 9%;
+    left: 10%;
+    z-index: 3;
+">
+    <img src="assets/img/second_tier.png">
+</div>
+
+<div parralax="" class="third_tier" style="
+    position: fixed;
+    right: 0;
+    bottom: 65px;
+">
+    <img src="assets/img/third_tier.png">
+</div>
+
+<div parralax="" class="boat_tier" style="
+    position: fixed;
+    bottom: 0;
+    left: 70%;
+">
+    <img src="assets/img/boat.png">
+</div>
+
 
 </body>
 
