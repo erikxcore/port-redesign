@@ -55,6 +55,10 @@
     left: 0;
 }
 
+.blogHolder{
+  @extend %clearfix;
+}
+
 
 /* Example:
 .weather {

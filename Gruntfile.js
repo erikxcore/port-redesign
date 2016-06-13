@@ -49,7 +49,6 @@ module.exports = function(grunt) {
 					'assets/css/ngdialog.min.css',
 					'assets/css/angular-timeline.css',
 					'assets/css/angular-timeline-animations.css',
-					'assets/css/ngDialog-theme-default.min.css',
 				],
 				dest: 'dist/assets/css/production-extra.css',	
 			}			

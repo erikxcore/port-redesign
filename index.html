@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/ngDialog.min.css">
-    <link rel="stylesheet" href="assets/css/ngDialog-theme-default.min.css">
     <link rel="stylesheet" href="assets/css/angular-timeline.css">
     <link rel="stylesheet" href="assets/css/angular-timeline-animations.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
@@ -37,12 +36,10 @@
     <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
-    <script src="assets/js/jquery.jInvertScroll.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/js/ngDialog.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ngInfiniteScroll/1.2.2/ng-infinite-scroll.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
     <script src="assets/js/angular-timeline.js"></script>
@@ -58,7 +55,6 @@
 
     <script type="text/javascript" src="app.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
-    <script src="directives/jInvertScrollDirective.js"></script>
     <script src="directives/galleryDirective.js"></script>
     <script src="controllers/mainController.js"></script>
     <script src="controllers/aboutController.js"></script>
@@ -86,7 +82,7 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#resume">CV</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="" onclick="return false;" ng-click="open()">Contact</a></li>
+                    <li><a href="" onclick="return false;" ng-click="openContact()">Contact</a></li>
           </ul>
 
           <ul class="side-nav" id="mobile-demo">
@@ -95,7 +91,7 @@
                     <li><a href="#work">Work</a></li>
                     <li><a href="#resume">CV</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#contact"> Contact</a></li>
+                    <li><a href="" onclick="return false;" ng-click="openContact()"> Contact</a></li>
           </ul>
       </div>
   </nav>

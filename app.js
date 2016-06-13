@@ -1,6 +1,5 @@
 angular.module('materializeApp', 
   ['ui.materialize',
-  'infinite-scroll',
   'ui.router',
   'ngDialog',
   'ngAnimate',
@@ -18,10 +17,5 @@ angular.module('materializeApp',
   'contactService',
   'vcRecaptcha'
 ]);
-
- 
-
-
-
 
     

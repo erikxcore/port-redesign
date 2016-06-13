@@ -1,9 +1,76 @@
-/*
-a {
-  color: gray;
-  @include transition(color .3s ease);
-  &:hover {
-    color: black;
+@import "ceaser-easing";
+
+//CSS Loader on Blog Page while content is retrieved.
+
+$loader-color: #FE665C;
+$loader-size: em(32);
+$loader-size2: $loader-size;
+$loader-animation-duration: 1.15s;
+
+.loaderHolder{
+    width: 150px; //testing...
+    height: 75px;
+    margin: 0 auto;
+    position:relative;
+}
+
+.loader,
+.loader_figure{
+  width:100%;
+}
+
+.loader{
+  margin:0 auto;
+  overflow: visible;
+  //padding-top: $loader-size;
+}
+
+.loader_figure{
+  @include size(0);
+  box-sizing: border-box;
+  border: 0 solid $loader-color;
+  border-radius: 50%;
+  @include animation(loader_figure ceaser($easeOutCubic) $loader-animation-duration infinite);
+  margin:0 auto;
+}
+
+.loader_label{
+  position:absolute;
+  bottom:0;
+  left: 14%;
+  text-align:center;
+  font-size: em(14);
+  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  color: $loader-color;
+  white-space: nowrap;
+  @include animation(loader_label ceaser($easeOutCubic) $loader-animation-duration infinite);
+}
+
+@include keyframes(loader_figure){
+  0%{
+    @include size(0);
+  }
+  30%{
+    @include size($loader-size);
+    border-width: ($loader-size / 2);
+    opacity: 1;
+  }
+  100%{
+    @include size($loader-size);
+    border-width: 0;
+    opacity: 0;
   }
 }
-*/
+
+@include keyframes(loader_label){
+  0%{
+    opacity: 0.35;
+  }
+  30%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.35;
+  }
+}

@@ -1,3 +1,4 @@
+require 'ceaser-easing'
 http_path="/"
 css_dir = "assets/css"
 sass_dir = "build/scss/"

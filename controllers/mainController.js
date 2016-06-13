@@ -1,8 +1,9 @@
 		angular.module('mainController', []).controller("mainController", ['$scope', 'ngDialog', function($scope, ngDialog){
-			$scope.open = function () {
+			$scope.openContact = function () {
               ngDialog.open({ template: 'pages/contact.html',
-               className: 'ngdialog-theme-default',
-                controller: 'contactController' });
+               className: 'port-theme',
+               	cache: false,
+                  controller: 'contactController' });
           };
 		}]);	
 
