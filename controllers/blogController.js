@@ -2,6 +2,7 @@
       $scope.pageClass = 'page-blog';
       $scope.posts = [];
       $scope.busy = true;
+      $scope.error = false;
       /*$scope.currentpage = 1;
       $scope.done = false;
       $scope.nextPage = function(){

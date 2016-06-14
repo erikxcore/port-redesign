@@ -141,6 +141,9 @@ module.exports = function(grunt) {
           pattern: '<script src="directives/galleryDirective.js"></script>',
           replacement: ''
         },{
+          pattern: '<script src="directives/closeDialogDirective.js"></script>',
+          replacement: ''
+        },{
           pattern: '<script src="controllers/mainController.js"></script>',
           replacement: ''
         },{

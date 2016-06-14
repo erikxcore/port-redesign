@@ -1,58 +1,38 @@
+//body{
+//  background-color: #403748;
+//}
+
+@include parallax-init;
+
 #main{
-	margin-top:20px;
+	//padding-top:20px;
+    background-color: #403748;
+    position: relative;
 }
 
-.page{
-  width:100%;
-  color:black;
+.r3{
+  background:#DEDEDE;
+  height: 50vh;
+  margin-botom:0px;
 }
 
-
-/*Paralax stuff*/
-.horizon
-{
-    line-height: 0;
-    z-index: -2;
-    width: 3000px;
+.r2{
+  background:#FEFEFE;
+  height: 50vh;
 }
 
-.middle
-{
-    z-index: -1;
-    line-height: 0;
-    width: 4500px;
+.r1{
+  background:transparent;
+  height:70vh;
 }
 
-.front
-{
-    z-index: 500;
-    top: 150px;
-    width: 2000px;
+.page .row{
+  margin-bottom:0px;
 }
 
-
-
-.hpage{
-    top: 0px;
-    width: 500px;
-    background: white;
-    padding: 10px 30px;
-    border: 1px #eee solid;
+.background{
     position: absolute;
-}
-
-.content1{
-    left:500px;
-}
-.content2{
-    left:1500px;
-}
-
-.scroll
-{
-    position: fixed;
-    bottom: 0;
-    left: 0;
+    height: 70vh;
 }
 
 .blogHolder{
@@ -60,21 +40,49 @@
 }
 
 
-/* Example:
-.weather {
-  @extend %module; 
-  @include transition(all 0.3s ease);
-  background: LightCyan;
-  &:hover {
-    background: DarkCyan;
-  }
-  &::before {
-    content: "";
-    display: block;
-  }
-  > h3 {
-    @include transform(rotate(90deg));
-    border-bottom: 1px solid white;
-  }
-}
+
+
+/*
+<div ng-show="pageClass != 'page-about'" class="scroll middle" style="left: 0px;">
+    <img src="assets/img/sky.png">
+</div>
+
+
+<div parralax="" class="mountains" style="
+    position: fixed;
+    overflow: hidden;
+    right: 0;
+    bottom: 0;
+">
+    <img src="assets/img/horizon.png">
+</div>
+
+<div parralax="" class="first_tier scroll" style="z-index: 4; left: 0px; bottom: -45px;">
+    <img src="assets/img/first_tier.png">
+</div>
+
+<div parralax="" class="second_tier" style="
+    position: fixed;
+    bottom: 9%;
+    left: 10%;
+    z-index: 3;
+">
+    <img src="assets/img/second_tier.png">
+</div>
+
+<div parralax="" class="third_tier" style="
+    position: fixed;
+    right: 0;
+    bottom: 65px;
+">
+    <img src="assets/img/third_tier.png">
+</div>
+
+<div parralax="" class="boat_tier" style="
+    position: fixed;
+    bottom: 0;
+    left: 70%;
+">
+    <img src="assets/img/boat.png">
+</div>
 */

@@ -9,7 +9,6 @@
     <meta name="description" content="I am a front-end engineer with experience with full stack environments. My languages of choice are JavaScript, PHP, and Java.">
     <meta name="author" content="Eric Barber">
     <link rel="shortcut icon" href="favicon.ico">
-<script src="https://use.fontawesome.com/7f8128c84e.js"></script>
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/ngDialog.min.css">
     <link rel="stylesheet" href="assets/css/angular-timeline.css">
@@ -45,7 +44,7 @@
     <script src="assets/js/angular-timeline.js"></script>
     <script src="assets/js/angular-recaptcha.min.js"></script>
 
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.js"></script>
     <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
      
      <!--[if IE]>
@@ -56,6 +55,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
     <script src="directives/galleryDirective.js"></script>
+    <script src="directives/closeDialogDirective.js"></script>
     <script src="controllers/mainController.js"></script>
     <script src="controllers/aboutController.js"></script>
     <script src="controllers/resumeController.js"></script>
@@ -70,95 +70,54 @@
 
 <body ng-controller="mainController">
 <header>
-    <div class="navbar-fixed">
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#home" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse" data-sidenav="left" data-menuwidth="500" data-closeonclick="false"><i class="material-icons">view_headline</i></a>
-     
-          <ul class="right hide-on-med-and-down">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#resume">CV</a></li>
-                    <li><a href="#blog">Blog</a></li>
+  <div class="menu-toggle" ng-class="{'on': toggleMenu}" ng-click="toggleMenu = !toggleMenu">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+  </div>
+  <div class="menu-section" ng-class="{'on': toggleMenu}" >
+    <nav>
+        <ul role="navigation" ng-class="{'hidden': !toggleMenu}">
+                    <li><a href="#home" ng-click="toggleMenu = !toggleMenu">Home</a></li>
+                    <li><a href="#about" ng-click="toggleMenu = !toggleMenu">About</a></li>
+                    <li><a href="#work" ng-click="toggleMenu = !toggleMenu">Work</a></li>
+                    <li><a href="#resume" ng-click="toggleMenu = !toggleMenu">Resume</a></li>
+                    <li><a href="#blog" ng-click="toggleMenu = !toggleMenu" >Blog</a></li>
                     <li><a href="" onclick="return false;" ng-click="openContact()">Contact</a></li>
-          </ul>
-
-          <ul class="side-nav" id="mobile-demo">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#resume">CV</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="" onclick="return false;" ng-click="openContact()"> Contact</a></li>
-          </ul>
-      </div>
-  </nav>
-</div>
+        </ul>
+      </nav>
+  </div>
 </header>
 
-<!--Reference-->
+<div class="scroll-trigger" scroll-fire="toggleMouse()" offset="1000">
+<!--style="position: absolute;
+    top: 500px;
+    height: 10px;
+    width: 10px;
+    z-index: 1000;
+    background: black;"--></div>
+
+<div class="mouse-scroll-container" ng-show="pageClass != 'page-home'">
+      <span class="mouse">
+        <span class="mouse-movement"> 
+        </span>
+      </span>
+</div>
 
 
-<div id="main">
+
+<div id="main" >
+    <div class="background" style="border-top:10px solid white;border-left:10px solid white;border-right:10px solid white;">
+          <img src="assets/img/sky.png" alt=" " />
+          <img src="assets/img/third_tier.png" alt=" " />
+          <img src="assets/img/second_tier.png" alt=" " />
+          <img src="assets/img/first_tier.png" alt=" " />
+          <img src="assets/img/horizon.png" alt=" " />
+          <img class="boat" src="assets/img/boat.png" alt=" " />
+    </div>
     <div ui-view class="page {{ pageClass }}"></div>
 </div>
 
-
-<!--
-        <div class="horizon scroll">
-            <img src="http://www.pixxelfactory.net/jInvertScroll/images/horizon.png" alt="" />
-        </div>
-        
-        <div class="middle scroll">
-            <img src="http://www.pixxelfactory.net/jInvertScroll/images/middle.png" alt="" />
-        </div>
--->
-
-<div ng-show="pageClass != 'page-about'" class="scroll middle" style="left: 0px;">
-    <img src="assets/img/sky.png">
-</div>
-
-
-<div parralax="" class="mountains" style="
-    position: fixed;
-    overflow: hidden;
-    right: 0;
-    bottom: 0;
-    /* width: 100%; */
-">
-    <img src="assets/img/horizon.png">
-</div>
-
-<div parralax="" class="first_tier scroll" style="z-index: 4; left: 0px; bottom: -45px;">
-    <img src="assets/img/first_tier.png">
-</div>
-
-<div parralax="" class="second_tier" style="
-    position: fixed;
-    bottom: 9%;
-    left: 10%;
-    z-index: 3;
-">
-    <img src="assets/img/second_tier.png">
-</div>
-
-<div parralax="" class="third_tier" style="
-    position: fixed;
-    right: 0;
-    bottom: 65px;
-">
-    <img src="assets/img/third_tier.png">
-</div>
-
-<div parralax="" class="boat_tier" style="
-    position: fixed;
-    bottom: 0;
-    left: 70%;
-">
-    <img src="assets/img/boat.png">
-</div>
 
 
 </body>
