@@ -138,9 +138,6 @@ module.exports = function(grunt) {
           pattern: '<script src="directives/mixItUpDirective.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="directives/jInvertScrollDirective.js"></script>',
-          replacement: ''
-        },{
           pattern: '<script src="directives/galleryDirective.js"></script>',
           replacement: ''
         },{
