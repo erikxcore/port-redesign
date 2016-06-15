@@ -1,28 +1,32 @@
 angular.module('materializeApp').directive('gallery', ['$timeout' ,function(timer){
     var linker = function(scope,element,attrs) {
             var attachToLinks = function() {
-                gallery_row = angular.element(element[0].querySelector('.gallery-row'));
-                zoom_row = angular.element(element[0].querySelector('.zoom-row'));
-                images =  angular.element(element[0].querySelectorAll('.gallery-row .mix .image'));
-                cancel = angular.element(element[0].querySelector('.gallery-close'));
+                var gallery_row = angular.element(element[0].querySelector('.gallery-row'));
+                var zoom_row = angular.element(element[0].querySelector('.zoom-row'));
+                var images =  angular.element(element[0].querySelectorAll('.gallery-row .mix figure .image'));
+                var cancel = angular.element(element[0].querySelector('.gallery-close'));
+                var menu = angular.element(document).find('.menu-toggle');
+
 
                 for(var i = 0; i < images.length ; i++){
                     images[i].addEventListener('click', function(){
-                        itemID = this.id
+                        var itemID = this.id
                         gallery_row.addClass('item_open');
-                        ngimage = angular.element(this);
+                        var ngimage = angular.element(this);
                         ngimage.addClass('item_open')
                         zoom_row.find('#'+this.id).addClass('item_open');
                         cancel[0].style.display = 'block';
+                        menu[0].style.display = 'none';
                     return false;
                     });
                 };
 
                 cancel.bind('click',function(){
                         gallery_row.removeClass('item_open');
-                        ports = angular.element(element[0].querySelectorAll('.port'));
+                        var ports = angular.element(element[0].querySelectorAll('.port'));
                         ports.removeClass('item_open');
                         cancel[0].style.display = 'none';
+                        menu[0].style.display = 'block';
                     return false;
                 });
 

@@ -8,7 +8,7 @@
           	$scope.toggleMenu = false;
 
           	$scope.toggleMouse = function(){
-          		alert('toggle');
+          		//alert('toggle');
           		var scroller = angular.element(document.querySelector('.mouse-scroll-container'));
           		if(scroller.hasClass('hidden')){
           			scroller.removeClass('hidden');
@@ -17,5 +17,4 @@
           		}
           	};
 		}]);	
-
 

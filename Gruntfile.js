@@ -32,6 +32,7 @@ module.exports = function(grunt) {
 					'assets/js/angular-materialize.min.js',
 					'assets/js/angular-route.min.js',
 					'assets/js/angular-ui-router.min.js',
+					'assets/js/angular-parallax.js',
 					'assets/js/ng-infinite-scroll.min.js',
 					'assets/js/angular-materialize.min.js',
 					'assets/js/angular-animate.min.js',
@@ -111,7 +112,8 @@ module.exports = function(grunt) {
 		      {expand: true, src: ['assets/fonts/**'], dest: 'dist/', filter: 'isFile'},
 			  {expand: true, src: ['pages/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['favicon.ico'], dest: 'dist/', filter: 'isFile'},
-		      {expand: true, src: ['index.html'], dest: 'dist/', filter: 'isFile'}
+		      {expand: true, src: ['index.html'], dest: 'dist/', filter: 'isFile'},
+		      {expand: true, src: ['404.html'], dest: 'dist/', filter: 'isFile'}
 		    ],
 		  },
 		},
@@ -215,7 +217,7 @@ module.exports = function(grunt) {
           pattern: '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="assets/js/jquery.jInvertScroll.min.js"></script>',
+          pattern: '<script src="assets/js/angular-parallax.js"></script>',
           replacement: ''
         },{
           pattern: '<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>',
@@ -250,7 +252,18 @@ module.exports = function(grunt) {
         }
       ]
     }	
-  }
+  },
+  errorpg:  {
+      files: {
+      'dist/404.html': 'dist/404.html',
+    },
+    options: {
+      replacements: [
+		{
+          pattern: '<link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />',
+          replacement: '<link href="assets/css/production.min.css" rel="stylesheet" type="text/css" />'
+        }
+	}
 },
 
   htmlmin: { 
@@ -260,7 +273,8 @@ module.exports = function(grunt) {
         collapseWhitespace: true
       },
       files: {
-        'dist/index.html': 'dist/index.html'
+        'dist/index.html': 'dist/index.html',
+        'dist/404.html': 'dist/404.html'
       }
     }
   },

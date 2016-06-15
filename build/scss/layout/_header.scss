@@ -1,20 +1,6 @@
-
-
-/* Example:
-.weather {
-  @extend %module; 
-  @include transition(all 0.3s ease);
-  background: LightCyan;
-  &:hover {
-    background: DarkCyan;
-  }
-  &::before {
-    content: "";
-    display: block;
-  }
-  > h3 {
-    @include transform(rotate(90deg));
-    border-bottom: 1px solid white;
-  }
+header{
+    z-index: 12;
+    position: fixed;
+    //height: 100%;
+    //width: 100%;
 }
-*/

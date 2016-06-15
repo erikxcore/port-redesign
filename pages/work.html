@@ -1,11 +1,24 @@
 <div ng-controller="workController">
+
+<div class="row r1">
+	<div class="container">
+		<div class="col s12">
+			<p>First Row.</p>
+		</div>
+	</div>
+</div>
+
+<div class="row r2">
+	<div class="container">
+		<div class="col s12">
+
     <div class="mixitupcontainer" ng-if='drawings'>
 	    <div class="controls">
 	        <label>Filter:</label>
-	        <button class="filter" data-filter="all">All</button>
-	        <button class="filter" 
+	        <div class="filter" data-filter="all">All</div>
+	        <div class="filter" 
 	                data-filter=".category-{{category}}" 
-	                ng-repeat="category in categories">{{category}}</button>
+	                ng-repeat="category in categories">{{category}}</div>
 	    </div>
 	    
 	    <div mix-it-up class="mix-container gallery" entities='drawings'>
@@ -14,14 +27,21 @@
 				        <div class="mix category-{{drawing.category}}" 
 				                data-myorder="{{drawing.value}}" 
 				                ng-repeat="drawing in drawings">
-				                <a class="image" href="" onclick="return false;" id="image_{{drawing.id}}">
-				   Value : {{drawing.name}}
-								</a>
+				                <figure class="effect">
+				                <img src="assets/img/mountains.jpeg" style="height:320px;width:320px;" />
+					                <figcaption>
+					                	<h2>Some Text</h2>
+					                	<p>Some other text.</p>
+						                <a class="image" href="#" onclick="return false;" id="image_{{drawing.id}}">
+						   					View {{drawing.name}}
+										</a>
+									</figcaption>
+								</figure>
 				        </div>
 			    </div>
 
 			    <div class="zoom-row">
-			    	<a href="#" class="gallery-close"></a>
+			    	<a href="#" onclick="return false;" class="gallery-close"></a>
 			    	<div ng-repeat="drawing in drawings" id="image_{{drawing.id}}" class="port">
 			    		<div class="gallery-row">
 							<div class="description">
@@ -34,6 +54,16 @@
 			    	</div>
 			    </div>
 	    	</div>
+		</div>
+	</div>
+		</div>
+	</div>
+</div>
+
+<div class="row r3">
+	<div class="container">
+		<div class="col s12">
+			<p>Third Row.</p>
 		</div>
 	</div>
 </div>

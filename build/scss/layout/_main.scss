@@ -2,23 +2,34 @@
 //  background-color: #403748;
 //}
 
-@include parallax-init;
+::selection {
+  background: #CDD4DE;
+}
+
+a, button{
+  outline: none;
+}
 
 #main{
+    z-index:1;
 	//padding-top:20px;
     background-color: #403748;
     position: relative;
 }
 
 .r3{
-  background:#DEDEDE;
-  height: 50vh;
-  margin-botom:0px;
+  background:#753D55;
+  height: auto;
+  margin-bottom:0px;
 }
 
 .r2{
-  background:#FEFEFE;
-  height: 50vh;
+    //background-image:url('../img/paint_drop.png'); //will have to change this...
+    background-repeat: no-repeat;
+    background-position: center -31px;
+    background-color: white;
+    height: auto;
+    min-height:70vh;
 }
 
 .r1{
@@ -33,6 +44,14 @@
 .background{
     position: absolute;
     height: 70vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    border-top: 10px solid;
+    border-left: 10px solid;
+    border-right: 10px solid;
+    //border-color:#5A2F41;
+    border-color:white;
 }
 
 .blogHolder{
@@ -40,49 +59,38 @@
 }
 
 
-
-
-/*
-<div ng-show="pageClass != 'page-about'" class="scroll middle" style="left: 0px;">
-    <img src="assets/img/sky.png">
-</div>
-
-
-<div parralax="" class="mountains" style="
-    position: fixed;
-    overflow: hidden;
-    right: 0;
-    bottom: 0;
-">
-    <img src="assets/img/horizon.png">
-</div>
-
-<div parralax="" class="first_tier scroll" style="z-index: 4; left: 0px; bottom: -45px;">
-    <img src="assets/img/first_tier.png">
-</div>
-
-<div parralax="" class="second_tier" style="
-    position: fixed;
-    bottom: 9%;
-    left: 10%;
-    z-index: 3;
-">
-    <img src="assets/img/second_tier.png">
-</div>
-
-<div parralax="" class="third_tier" style="
-    position: fixed;
-    right: 0;
-    bottom: 65px;
-">
-    <img src="assets/img/third_tier.png">
-</div>
-
-<div parralax="" class="boat_tier" style="
-    position: fixed;
-    bottom: 0;
-    left: 70%;
-">
-    <img src="assets/img/boat.png">
-</div>
-*/
+.background {
+  :nth-child(1) {
+    z-index:-6;
+    top: 0px;
+    left: 0px;
+  }
+  :nth-child(2) {
+    z-index: -5;
+    top: 28vh;
+    right: 0px;
+  }
+  :nth-child(3) {
+    z-index: -4;
+    top: 23vh;
+    left: 520px;
+  }
+  :nth-child(4) {
+    z-index: -3;
+    top: 157px;
+    left: -160px;
+  }
+  :nth-child(5) {
+    z-index: -2;
+    top: -224px;
+    left: -340px;
+  }
+  :nth-child(6) {
+    z-index:-1;
+    top: 57vh;
+    left: 45%;
+  }
+  > * {
+    position: absolute;
+  }
+}

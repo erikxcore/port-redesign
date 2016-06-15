@@ -23,11 +23,6 @@
 				        category: 'Soft',
 				        value: '3',
 				        id: '4'
-				    }, {
-				        name: 'Whool',
-				        category: 'Soft',
-				        value: '5',
-				        id: '5'
 				    }];
 				    
 		});
