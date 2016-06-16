@@ -241,7 +241,16 @@ module.exports = function(grunt) {
           pattern: '<script src="assets/js/angular-timeline.js"></script>',
           replacement: ''
         },{
+          pattern: '<script src="assets/js/lodash.js"></script>',
+          replacement: ''
+        },{
           pattern: '<script src="assets/js/angular-recaptcha.min.js"></script>',
+          replacement: ''
+        },{
+          pattern: '<script src="assets/js/angular-simple-logger.min.js"></script>',
+          replacement: ''
+        },{
+          pattern: '<script src="assets/js/angular-google-maps.min.js"></script>',
           replacement: ''
         },{
           pattern: '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>',

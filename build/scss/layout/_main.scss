@@ -2,6 +2,7 @@
 //  background-color: #403748;
 //}
 
+
 ::selection {
   background: #CDD4DE;
 }
@@ -47,15 +48,31 @@ a, button{
     width: 100%;
     overflow: hidden;
     z-index: -1;
-    border-top: 10px solid;
-    border-left: 10px solid;
-    border-right: 10px solid;
+    //border-top: 10px solid;
+    //border-left: 10px solid;
+    //border-right: 10px solid;
     //border-color:#5A2F41;
-    border-color:white;
+    //border-color:white;
 }
 
 .blogHolder{
   @extend %clearfix;
+}
+
+.loading-page{
+  transition:0.5s all;
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width:100%;
+  height:100%;
+  z-index: 9999999;
+  color:#AFA6A6;
+  background-color:#24182B;
+  z-index:999;
+  overflow:auto;
 }
 
 
@@ -93,4 +110,12 @@ a, button{
   > * {
     position: absolute;
   }
+}
+
+.color_border{
+ width:100%;
+ border-radius: 2px;
+  @include gradient-border($green2, $blue2, 3px, 'to right');
+  background-color: transparent;
+  color: black; 
 }

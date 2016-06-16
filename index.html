@@ -30,6 +30,7 @@
     </script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src='assets/js/lodash.js'></script>
 
     <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
     <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
@@ -47,7 +48,11 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.js"></script>
     <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
-     
+
+<script src='assets/js/angular-simple-logger.min.js'></script>
+<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+<script src='assets/js/angular-google-maps.min.js'></script>
+
      <!--[if IE]>
           <link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
      <![endif]-->
@@ -57,6 +62,7 @@
     <script src="directives/mixItUpDirective.js"></script>
     <script src="directives/galleryDirective.js"></script>
     <script src="directives/closeDialogDirective.js"></script>
+    <script src="directives/preloaderFactory.js"></script>
     <script src="controllers/mainController.js"></script>
     <script src="controllers/aboutController.js"></script>
     <script src="controllers/resumeController.js"></script>
@@ -100,7 +106,17 @@
     </div>
 </div>
 
+<div class="row loading-page fade" ng-show="isLoading">
+    <div class="container">
+        <div class="col s12">
+            <p>Loading images...</p><br/>
+            <p>{{ percentLoaded }}</p>
+        </div>
+    </div>
+</div>
 
+
+<div class="loadHide fade" ng-show="!isLoading">
 
 <header>
   <div class="menu-toggle" ng-class="{'on': toggleMenu}" ng-click="toggleMenu = !toggleMenu">
@@ -122,7 +138,7 @@
   </div>
 </header>
 
-<div class="scroll-trigger" scroll-fire="toggleMouse()" offset="1000"></div>
+<div class="scroll-trigger" scroll-fire="toggleMouse()" offset="500"></div>
 
 <div class="mouse-scroll-container" ng-show="pageClass != 'page-home'">
       <span class="mouse">
@@ -146,7 +162,7 @@
     <div ui-view class="page {{ pageClass }}"></div>
 </div>
 
-
+</div>
 
 </body>
 
