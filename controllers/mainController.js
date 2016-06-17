@@ -12,7 +12,6 @@
       };
 
       $scope.toggleMouse = function(){
-          		//alert('toggle');
           		var scroller = angular.element(document.querySelector('.mouse-scroll-container'));
           		if(scroller.hasClass('hidden')){
           			scroller.removeClass('hidden');
@@ -46,7 +45,20 @@
                         console.error( "Image Failed to load : ", imageLocation );
                     },
                     function handleNotify( event ) {
-                        $scope.percentLoaded = event.percent;
+                        if(event.percent == 0){
+                           $scope.percentLoaded = 'Initiating hyper-drive.'
+                        }else if(event.percent == 20){
+                          $scope.percentLoaded = 'Putting away clothes.'
+                        }else if(event.percent == 40){
+                          $scope.percentLoaded = 'Asking mom for permission.'
+                        }else if(event.percent == 60){
+                          $scope.percentLoaded = 'She said to ask your father...'
+                        }else if(event.percent == 80){
+                          $scope.percentLoaded = 'Signs point to yes!'
+                        }else if(event.percent == 100){
+                          $scope.percentLoaded = 'We\'ve landed on the moon!.'
+                        }
+
                     }
               );
 		}]);	

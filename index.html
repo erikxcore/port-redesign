@@ -11,8 +11,6 @@
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/ngDialog.min.css">
-    <link rel="stylesheet" href="assets/css/angular-timeline.css">
-    <link rel="stylesheet" href="assets/css/angular-timeline-animations.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="assets/css/print.css" media="print" rel="stylesheet" type="text/css" />
@@ -42,15 +40,13 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script src="assets/js/angular-parallax.js"></script>
-
-    <script src="assets/js/angular-timeline.js"></script>
     <script src="assets/js/angular-recaptcha.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.js"></script>
     <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
 
 <script src='assets/js/angular-simple-logger.min.js'></script>
-<script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+<script src='//maps.googleapis.com/maps/api/js?key=AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4'></script>
 <script src='assets/js/angular-google-maps.min.js'></script>
 
      <!--[if IE]>
@@ -109,7 +105,7 @@
 <div class="row loading-page fade" ng-show="isLoading">
     <div class="container">
         <div class="col s12">
-            <p>Loading images...</p><br/>
+            <div class="loader"></div>            
             <p>{{ percentLoaded }}</p>
         </div>
     </div>

@@ -36,9 +36,8 @@ module.exports = function(grunt) {
 					'assets/js/ng-infinite-scroll.min.js',
 					'assets/js/angular-materialize.min.js',
 					'assets/js/angular-animate.min.js',
-					'assets/js/angular-recaptcha.min.js',
-					'assets/js/angular-timeline.js',
-					'assets/js/ngDialog.min.js',
+					'assets/js/angular-recaptcha.min.js'
+          'assets/js/ngDialog.min.js',
 					'assets/js/ng-infinite-scroll.min.js',
 				],
 				dest: 'dist/assets/js/production-extra2.min.js',	
@@ -48,8 +47,6 @@ module.exports = function(grunt) {
 					'assets/css/materialize.min.css',
 					'assets/css/animate.min.css',
 					'assets/css/ngdialog.min.css',
-					'assets/css/angular-timeline.css',
-					'assets/css/angular-timeline-animations.css',
 				],
 				dest: 'dist/assets/css/production-extra.css',	
 			}			

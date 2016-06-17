@@ -5,7 +5,6 @@ angular.module('materializeApp',
   'ngAnimate',
   'uiGmapgoogle-maps',
   'angular-parallax',
-  'angular-timeline',
   'routes',
   'mainController',
   'blogController',
@@ -22,8 +21,8 @@ angular.module('materializeApp',
 
 angular.module('materializeApp').config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-        key: 'your api key',
-        v: '3.20', //defaults to latest 3.X anyhow
+        key: 'AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4',
+        v: '3.20',
         libraries: 'weather,geometry,visualization'
     });
 })

@@ -78,36 +78,33 @@ $loader-animation-duration: 1.15s;
 
 
 .angular-google-map-container { 
-  height: 200px; 
+  height: 250px; 
   width:100%;
+  background:#FFFFFF;
 }
 
-
-
-#google-container {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    background-color: #000000;
-
-}
-
-#cd-google-map {
-  position: relative;
+.mapControls{
+  position:relative;
 }
 
 #cd-zoom-in, #cd-zoom-out {
+  position: absolute;
+  z-index:99;
   height: 32px;
   width: 32px;
   cursor: pointer;
   margin-left: 10px;
-  background-color: rgba(blue, .9);
+  background-color: rgba(100, 100, 156, 0.9);
   background-repeat: no-repeat;
   background-size: 32px 64px;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-controller.svg');
 
   .no-touch &:hover {
-    background-color: rgba(blue, 1);
+    background-color: rgba(234, 108, 34, 0.9);
+  }
+
+  &:hover{
+    background-color:rgba(234, 108, 34, 0.9);
   }
 
 }
@@ -116,9 +113,291 @@ $loader-animation-duration: 1.15s;
   background-position: 50% 0;
   margin-top: 10px;
   margin-bottom: 1px;
-
+  top: 75px;
 }
 
 #cd-zoom-out {
   background-position: 50% -32px;
+  top: 125px;
+}
+
+
+$background_icon: hsl(210, 45, 10);
+
+
+.soc{
+  display: block;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 10px; // IE8
+  padding: 10px;
+  text-align: center;
+
+  li{
+    display: inline-block;
+    margin: 12px; // IE8
+    margin: 1.2rem;
+  }
+  
+  a, svg{
+    display: block;
+  }
+  a{
+    position: relative; // IE8
+    height: 50pxpx; // IE8
+    height: 50pxrem;
+    width: 50pxpx; // IE8
+    width: 50pxrem;
+  }
+  svg{
+    height: 50px;
+    width: 50px;
+    margin:10px;
+  }
+  // IE8:
+  em{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: -.75em;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+%social-icon-hover{
+  border-radius: 100%;
+  color: $background_icon; // IE8
+  fill: $background_icon;
+  transform: scale(1.25);
+  transition: background-color .5s, transform .5s ease-out;
+}
+
+// Neat color trick, <3 Sass
+@for $i from 1 through 30{
+  .icon-#{$i}{
+    color: hsl($i * 12, 70, 50); // IE8
+    fill: hsl($i * 12, 70, 50);
+
+    &:hover{
+      background: hsl($i * 12, 70, 50);
+      @extend %social-icon-hover
+    }
+  }
+}
+
+
+
+section#timeline {
+  width: 80%;
+  margin: 20px auto;
+  position: relative;
+}
+section#timeline:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin: 0 0 0 -1px;
+  width: 2px;
+  height: 100%;
+  background: rgba(49, 54, 109, 0.8);
+}
+section#timeline article {
+  width: 100%;
+  margin: 0 0 20px 0;
+  position: relative;
+}
+section#timeline article:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+section#timeline article div.inner {
+  width: 40%;
+  float: left;
+  margin: 5px 0 0 0;
+  border-radius: 6px;
+}
+section#timeline article div.inner span.date {
+  display: block;
+  width: 60px;
+  height: 50px;
+  padding: 5px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin: 0 0 0 -32px;
+  border-radius: 100%;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #25303B;
+  color: rgba(255,255,255,0.5);
+  border: 2px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 0 2px #25303B;
+}
+section#timeline article div.inner span.date span {
+  display: block;
+  text-align: center;
+}
+section#timeline article div.inner span.date span.day {
+  font-size: 10px;
+}
+section#timeline article div.inner span.date span.month {
+  font-size: 18px;
+}
+section#timeline article div.inner span.date span.year {
+  font-size: 10px;
+}
+section#timeline article div.inner h2 {
+  padding: 15px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  border-radius: 6px 6px 0 0;
+  position: relative;
+}
+section#timeline article div.inner h2:after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -5px;
+    width: 10px; 
+    height: 10px;
+  -webkit-transform: rotate(-45deg);
+}
+section#timeline article div.inner p {
+  padding: 15px;
+  margin: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #656565;
+  border-radius: 0 0 6px 6px;
+}
+section#timeline article:nth-child(2n+2) div.inner {
+  float: right;
+}
+section#timeline article:nth-child(2n+2) div.inner h2:after {
+  left: -5px;
+}
+section#timeline article:nth-child(1) div.inner h2 {
+  background: #e74c3c;
+}
+section#timeline article:nth-child(1) div.inner h2:after {
+  background: #e74c3c;
+}
+section#timeline article:nth-child(2) div.inner h2 {
+  background: #2ecc71;
+}
+section#timeline article:nth-child(2) div.inner h2:after {
+  background: #2ecc71;
+}
+section#timeline article:nth-child(3) div.inner h2 {
+  background: #e67e22;
+}
+section#timeline article:nth-child(3) div.inner h2:after {
+  background: #e67e22;
+}
+section#timeline article:nth-child(4) div.inner h2 {
+  background: #1abc9c;
+}
+section#timeline article:nth-child(4) div.inner h2:after {
+  background: #1abc9c;
+}
+section#timeline article:nth-child(5) div.inner h2 {
+  background: #9b59b6;
+}
+section#timeline article:nth-child(5) div.inner h2:after {
+  background: #9b59b6;
+}
+
+@media only all and (max-width:43.75em) { 
+section#timeline{
+  width:100%;
+}
+section#timeline:before{
+  left:8%;
+}
+section#timeline article{
+  margin:0px 0px 20px 20px;
+  width:90%;
+}
+section#timeline article div.inner {
+  width: 85%;
+  float: right;
+}
+section#timeline article div.inner span.date{
+  top: 1%;
+  left:5%;
+}
+section#timeline article div.inner h2:after{
+  left:-5px;
+  right:0px;
+}
+}
+
+
+// COLORS
+
+$color-1: #ECD078;
+$color-2: #C02942;
+$color-3: #542437;
+$color-4: #53777A;
+
+body { background: #ececec; }
+
+ .loading-page p{
+    text-align:center;
+  }
+
+.loader {
+    display: block;
+    margin: 0 auto;
+    height: 100px;
+    width: 100%;
+    text-align: center;
+    margin-top: 15%;
+  
+
+  &:before,
+  &:after {
+    position: absolute;
+    transition: all 0.3s;
+
+    border-radius: 50%;
+    border-style: solid;
+    border-top-color: $color-1;
+    border-right-color: $color-2;
+    border-bottom-color: $color-3;
+    border-left-color: $color-4;
+    
+    content: '';
+
+    transform: translate(-50%, -50%);
+    animation: rotate 1.5s  infinite ease-in-out;
+  }
+  
+  &:before { border-width: 0vh; }
+
+  &:after {
+    width: 100px;
+    height: 100px;
+    border-width: 0.5vh;
+    animation-direction: reverse;
+  }
+}
+
+
+@keyframes rotate {
+   0% { transform: translate(-50%, -50%) rotate(0); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }

@@ -12,16 +12,8 @@ angular.module('routes', []).config(function($stateProvider, $urlRouterProvider)
                 url: '/blog',
                 templateUrl: 'pages/blog.html',
                 controller: 'blogController'
-            })
-
-//No longer needed due to being a modal
-/*
-            .state('contact', {
-                url: '/contact',
-                templateUrl: 'pages/contact.html',
-                controller: 'contactController'
-            })
-*/
+            }) 
+            
             .state('home', {
                 url: '/home',
                 templateUrl: 'pages/home.html',
