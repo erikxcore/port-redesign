@@ -20,8 +20,8 @@ module.exports = function(grunt) {
 			extras_js1: {			
 				src: [
 					'assets/js/jquery-2.2.3.min.js',
-					'assets/js/jquery.jInvertScroll.min.js',
 					'assets/js/jquery.mixitup.min.js',
+          'assets/js/lodash.js'
 				],
 				dest: 'dist/assets/js/production-extra1.min.js',	
 			},
@@ -33,12 +33,12 @@ module.exports = function(grunt) {
 					'assets/js/angular-route.min.js',
 					'assets/js/angular-ui-router.min.js',
 					'assets/js/angular-parallax.js',
-					'assets/js/ng-infinite-scroll.min.js',
 					'assets/js/angular-materialize.min.js',
+          'assets/js/angular-simle-logger.min.js',
+          'assets/js/angular-google-maps.min.js',
 					'assets/js/angular-animate.min.js',
-					'assets/js/angular-recaptcha.min.js'
+					'assets/js/angular-recaptcha.min.js',
           'assets/js/ngDialog.min.js',
-					'assets/js/ng-infinite-scroll.min.js',
 				],
 				dest: 'dist/assets/js/production-extra2.min.js',	
 			},
@@ -107,20 +107,17 @@ module.exports = function(grunt) {
 		    files: [
 		      {expand: true, src: ['assets/php/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['assets/fonts/**'], dest: 'dist/', filter: 'isFile'},
-			  {expand: true, src: ['pages/*'], dest: 'dist/', filter: 'isFile'},
+			    {expand: true, src: ['pages/*'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['favicon.ico'], dest: 'dist/', filter: 'isFile'},
 		      {expand: true, src: ['index.html'], dest: 'dist/', filter: 'isFile'},
-		      {expand: true, src: ['404.html'], dest: 'dist/', filter: 'isFile'}
+		      {expand: true, src: ['404.html'], dest: 'dist/', filter: 'isFile'},
 		    ],
 		  },
-		},
-
-		copyimagemac: {
-		  main: {
-		    files: [
-		      {expand: true, src: ['assets/img/**'], dest: 'dist/', filter: 'isFile'},
-		    ],
-		  },
+      mac: {
+          files: [
+          {expand: true, src: ['assets/img/**'], dest: 'dist/', filter: 'isFile'},
+        ],
+      }
 		},
 
 'string-replace': {
@@ -130,7 +127,7 @@ module.exports = function(grunt) {
     },
     options: {
       replacements: [
-		{
+		    {
           pattern: '<script type="text/javascript" src="app.js"></script>',
           replacement: ''
         },{
@@ -141,6 +138,9 @@ module.exports = function(grunt) {
           replacement: ''
         },{
           pattern: '<script src="directives/closeDialogDirective.js"></script>',
+          replacement: ''
+        },{
+          pattern: '<script src="directives/preloaderFactory.js"></script>',
           replacement: ''
         },{
           pattern: '<script src="controllers/mainController.js"></script>',
@@ -175,7 +175,9 @@ module.exports = function(grunt) {
         }
       ]
     }
-  },
+  }
+  ,
+
   css: {
     files: {
       'dist/index.html': 'dist/index.html',
@@ -192,18 +194,13 @@ module.exports = function(grunt) {
           pattern: '<link rel="stylesheet" href="assets/css/ngDialog-theme-default.min.css">',
           replacement: ''
         },{
-          pattern: '<link rel="stylesheet" href="assets/css/angular-timeline.css">',
-          replacement: ''
-        },{
           pattern: '<link rel="stylesheet" href="assets/css/animate.min.css">',
           replacement: ''
-        },{
-          pattern: '<link rel="stylesheet" href="assets/css/angular-timeline-animations.css">',
-          replacement: '<link rel="stylesheet" href="assets/css/production-extra.css">'
         }
       ]
     }
   },
+
   js:  {
       files: {
       'dist/index.html': 'dist/index.html',
@@ -250,7 +247,7 @@ module.exports = function(grunt) {
           pattern: '<script src="assets/js/angular-google-maps.min.js"></script>',
           replacement: ''
         },{
-          pattern: '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.min.js"></script>',
+          pattern: '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.js"></script>',
           replacement: ''
         },{
           pattern: '<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>',
@@ -258,17 +255,20 @@ module.exports = function(grunt) {
         }
       ]
     }	
-  },
+  }
+},
+
   errorpg:  {
       files: {
       'dist/404.html': 'dist/404.html',
     },
     options: {
       replacements: [
-		{
+		  {
           pattern: '<link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />',
           replacement: '<link href="assets/css/production.min.css" rel="stylesheet" type="text/css" />'
-        }
+      }
+      ]
 	}
 },
 
@@ -332,9 +332,10 @@ clean: ['dist/'],
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 
-	grunt.registerTask('windows', ['clean','concat','uglify', 'compass','copy','imagemin','string-replace','htmlmin','cssmin']);
-	grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copyimagemac','string-replace','htmlmin','cssmin']);
-	
+	grunt.registerTask('windows', ['clean','concat','uglify', 'compass','copy:main','imagemin','string-replace','htmlmin','cssmin']);
+	//grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','htmlmin','cssmin']);
+	 grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','cssmin']);
+//issue with prod js 2
 	grunt.registerTask('test', ['clean','concat', 'compass','copy','string-replace']);
 
 	grunt.registerTask('image' , ['imagemin']);
