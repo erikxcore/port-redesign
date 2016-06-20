@@ -25,6 +25,14 @@
         //Due to 0.1.8 Angular-Materialize using console.log and IE support
         if (!window.console) {window.console = {};}
         if (!console.log) {console.log = function() {};}
+        //Catch any JS global errors
+        window.onerror = function(error, url, line) {
+                document.getElementById("main").style.display = "none";
+                document.getElementsByClassName('mouse-scroll-container')[0].style.display="none";
+                document.getElementsByClassName('error-page')[0].style.display="block";
+                document.getElementsByClassName('loading-page')[0].style.display="none";
+
+        };
     </script>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
@@ -52,7 +60,14 @@
      <!--[if IE]>
           <link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
      <![endif]-->
+    <!--[if lte IE 9]>
+    <style>
+        #main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}
+        .error-page{display:block;}
+    </style>
+              <link href="assets/css/ie-8-and-down.css" media="screen, projection" rel="stylesheet" type="text/css" />
 
+    <![endif]-->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
@@ -75,7 +90,7 @@
 
 <!--[if gt IE 7)]><!--> <noscript> <!--<![endif]-->
     <style>
-        #main,header,.mouse-scroll-container,.scroll-trigger {display:none;}
+        #main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}
         .error-page{display:block;}
     </style>
 <!--[if gt IE 7)]><!--> </noscript> <!--<![endif]-->
