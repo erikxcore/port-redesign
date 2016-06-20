@@ -453,4 +453,18 @@ $colors: (
   @return null;
 }
 
+//Blog CSS Loader
+$loader-color: #FE665C;
+$loader-size: em(32);
+$loader-size2: $loader-size;
+$loader-animation-duration: 1.15s;
+
+//Google Map icons
+$background_icon: hsl(210, 45, 10);
+
+//Homepage loader
+$color-1: #ECD078;
+$color-2: #C02942;
+$color-3: #542437;
+$color-4: #53777A;
 

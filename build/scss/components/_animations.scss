@@ -1,14 +1,14 @@
 //These are for ngAnimate from Angular
 
-    .ng-enter{ 
-    	@include animation('scaleUp 0.5s both ease-in');
-    	z-index: 8888; 
-    }
+.ng-enter{ 
+  @include animation('scaleUp 0.5s both ease-in');
+  z-index: 8888; 
+}
 
-    .ng-leave{ 
-    	@include animation('slideOutLeft 0.5s both ease-in');
-    	z-index: 9999; 
-    }
+.ng-leave{ 
+  @include animation('slideOutLeft 0.5s both ease-in');
+  z-index: 9999; 
+}
     
 
 
@@ -68,10 +68,8 @@
   }
 }
 
-/* ANIMATIONS
-============================================================================= */
+/* animations for page transitions
 //other animations: https://raw.githubusercontent.com/codrops/PageTransitions/master/css/animations.css
-
 
 /* leaving animations ----------------------------------------- */
 /* rotate and fall */
@@ -109,4 +107,98 @@
 @keyframes slideInUp {
     from    { transform:translateY(100%); }
     to      { transform: translateY(0); }
+}
+
+
+//Loading animations on blog page
+@include keyframes(loader_figure){
+  0%{
+    @include size(0);
+  }
+  30%{
+    @include size($loader-size);
+    border-width: ($loader-size / 2);
+    opacity: 1;
+  }
+  100%{
+    @include size($loader-size);
+    border-width: 0;
+    opacity: 0;
+  }
+}
+
+@include keyframes(loader_label){
+  0%{
+    opacity: 0.35;
+  }
+  30%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0.35;
+  }
+}
+
+//Home page loader
+@keyframes rotate {
+   0% { transform: translate(-50%, -50%) rotate(0); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+//Dialog animations
+@-webkit-keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes ngdialog-flyin {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes ngdialog-flyout {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
 }

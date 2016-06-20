@@ -9,12 +9,12 @@
     <meta name="description" content="I am a front-end engineer with experience with full stack environments. My languages of choice are JavaScript, PHP, and Java.">
     <meta name="author" content="Eric Barber">
     <link rel="shortcut icon" href="favicon.ico">
+
     <link rel="stylesheet" href="assets/css/materialize.min.css">
     <link rel="stylesheet" href="assets/css/ngDialog.min.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link href="assets/css/print.css" media="print" rel="stylesheet" type="text/css" />
-
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans|Podkova|Raleway:400,200italic|Ubuntu:400,400italic,500,700|Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,13 +25,12 @@
         //Due to 0.1.8 Angular-Materialize using console.log and IE support
         if (!window.console) {window.console = {};}
         if (!console.log) {console.log = function() {};}
-        //Catch any JS global errors
+        //Catch any JS global errors and display error page due to unsupported browser
         window.onerror = function(error, url, line) {
                 document.getElementById("main").style.display = "none";
                 document.getElementsByClassName('mouse-scroll-container')[0].style.display="none";
                 document.getElementsByClassName('error-page')[0].style.display="block";
                 document.getElementsByClassName('loading-page')[0].style.display="none";
-
         };
     </script>
 
@@ -53,20 +52,15 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.js"></script>
     <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
 
-<script src="assets/js/angular-simple-logger.min.js"></script>
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4"></script>
-<script src="assets/js/angular-google-maps.min.js"></script>
+    <script src="assets/js/angular-simple-logger.min.js"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4"></script>
+    <script src="assets/js/angular-google-maps.min.js"></script>
 
      <!--[if IE]>
           <link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
      <![endif]-->
     <!--[if lte IE 9]>
-    <style>
-        #main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}
-        .error-page{display:block;}
-    </style>
-              <link href="assets/css/ie-8-and-down.css" media="screen, projection" rel="stylesheet" type="text/css" />
-
+          <link href="assets/css/ie-8-and-down.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
 
     <script type="text/javascript" src="app.js"></script>
@@ -95,6 +89,15 @@
     </style>
 <!--[if gt IE 7)]><!--> </noscript> <!--<![endif]-->
 
+<div class="row loading-page fade" ng-show="isLoading">
+    <div class="container">
+        <div class="col s12">
+            <div class="loader"></div>            
+            <p>{{ percentLoaded }}</p>
+        </div>
+    </div>
+</div>
+
 <div class="row error-page">
     <div class="container">
         <div class="col s12">
@@ -116,16 +119,6 @@
         </div>
     </div>
 </div>
-
-<div class="row loading-page fade" ng-show="isLoading">
-    <div class="container">
-        <div class="col s12">
-            <div class="loader"></div>            
-            <p>{{ percentLoaded }}</p>
-        </div>
-    </div>
-</div>
-
 
 <div class="loadHide fade" ng-show="!isLoading">
 
@@ -151,7 +144,7 @@
 
 <div class="scroll-trigger" scroll-fire="toggleMouse()" offset="500"></div>
 
-<div class="mouse-scroll-container" ng-show="pageClass != 'page-home'">
+<div class="mouse-scroll-container fade" ng-show="pageClass != 'page-home'">
       <span class="mouse">
         <span class="mouse-movement"> 
         </span>
@@ -163,14 +156,62 @@
 
 <div id="main" >
     <div class="background">
+          <img src="assets/img/new/sky.png" alt="" />
+          <img src="assets/img/new/clouds_stars.png" alt="" />
+
+          <img parallax parallax-ratio="0.3" src="assets/img/new/sun.png" alt=" " />
+
+          <img src="assets/img/new/lake.png" alt="" />
+          <img src="assets/img/new/beach.png" alt="" />
+
+          <img parallax parallax-ratio="0.1" src="assets/img/new/sun_reflection.png" alt=" " />
+
+          <img parallax parallax-ratio="0.1" src="assets/img/new/sun.png" alt=" " />
+          <img parallax parallax-ratio="0.9" src="assets/img/new/birds.png" alt=" " />
+
+              <img parallax parallax-ratio="0.2" src="assets/img/new/furthest_mountain_last.png" alt=" " />
+              <img parallax parallax-ratio="0.2" src="assets/img/new/furthest_mountain.png" alt=" " />
+              <img parallax parallax-ratio="0.3" src="assets/img/new/2nd_closest_mountain.png" alt=" " />
+              <img parallax parallax-ratio="0.7" src="assets/img/new/right_closest.png" alt=" " />
+              <img parallax parallax-ratio="0.5" src="assets/img/new/third_closest.png" alt=" " />
+              <img parallax parallax-ratio="0.5" src="assets/img/new/closest_mountain.png" alt=" " />
+
+          <img parallax parallax-ratio="0.5" src="assets/img/new/woods.png" alt=" " />
+          <img parallax parallax-ratio="0.6" src="assets/img/new/boat.png" alt=" " />
+
+<!--
+sky.png -1
+clouds_stars.png -2
+sun.png - 3
+birds.png - 4
+lake.png - 5
+beach.png - 6
+sun_reflection.png - 7
+
+furthest_mountain_last.png - 8
+furthest_mountain.png - 9
+2nd_closest_mountain.png - 10
+right_closest.png - 11
+third_closest.png - 12
+closest_mountain.png -13
+
+woods.png - 14
+boat.png - 15
+
+-->
+        <!--
           <img src="assets/img/sky.png" alt="" />
           <img parallax parallax-ratio="0.3" src="assets/img/horizon.png" alt=" " />
           <img parallax parallax-ratio="0.3" src="assets/img/third_tier.png" alt=" " />
           <img parallax parallax-ratio="0.5" src="assets/img/second_tier.png" alt=" " />
           <img parallax parallax-ratio="0.4" src="assets/img/first_tier.png" alt=" " />
           <img parallax parallax-ratio="0.6" class="boat" src="assets/img/boat.png" alt=" " />
+        -->
+
     </div>
+
     <div ui-view class="page {{ pageClass }}"></div>
+
 </div>
 
 </div>

@@ -1,8 +1,12 @@
-		angular.module('mainController', []).controller("mainController", ['$scope', 'ngDialog', 'preloader', function($scope, ngDialog, preloader){
+		angular.module('mainController', []).controller("mainController", ['$scope', 'ngDialog', 'preloader','$location', function($scope, ngDialog, preloader,$location){
       $scope.toggleMenu = false;
       $scope.isLoading = true;
       $scope.isSuccessful = false;
       $scope.percentLoaded = 0;
+
+      $scope.$on("mouseEvent", function (event, args) {
+         $scope.pageClass = args.pageClass;
+      });
 
 			$scope.openContact = function () {
               ngDialog.open({ template: 'pages/contact.html',
@@ -21,16 +25,16 @@
       };
 
             $scope.imageLocations = [
-            "assets/img/background.png",
-             "assets/img/boat.png",
-              "assets/img/first_tier.png",
-               "assets/img/horizon.png",
+           // "assets/img/background.png",
+           //  "assets/img/boat.png",
+           //   "assets/img/first_tier.png",
+           //    "assets/img/horizon.png",
                 "assets/img/me_large.JPG",
                  "assets/img/mountains.jpeg",
-                  "assets/img/paint_drop.png",
-                   "assets/img/second_tier.png",
-                    "assets/img/sky.png",
-                     "assets/img/third_tier.png"
+            //      "assets/img/paint_drop.png",
+            //       "assets/img/second_tier.png",
+            //        "assets/img/sky.png",
+            //         "assets/img/third_tier.png"
             ];
 
             preloader.preloadImages( $scope.imageLocations )

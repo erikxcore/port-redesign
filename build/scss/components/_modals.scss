@@ -5,59 +5,101 @@
   background-color:#1f1e27;
   background-color:rgba(#1f1e27,0.8);
   padding-top: 150px;
+
+  &.ngdialog-closing{
+
+    .ngdialog-content{
+        -webkit-animation: ngdialog-flyout .5s;
+        animation: ngdialog-flyout .5s;
+    }
+  }
+
+  .ngdialog-content{
+      -webkit-animation: ngdialog-flyin .5s;
+      animation: ngdialog-flyin .5s;
+      background: #323740;
+      border-radius: 5px;
+      color: #444;
+      font-family: 'Helvetica',sans-serif;
+      font-size: 1.1em;
+      line-height: 1.5em;
+      margin: 0 auto;
+      padding: 1em;
+      position: relative;
+      max-width: 100%;
+      width: 90%;
+      border-bottom: 2px solid #3f51b5;
+  }
+
+  .ngdialog-close{
+      border-radius: 5px;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      top: 0;
+
+      &:before{
+          background: transparent;
+          border-radius: 3px;
+          color: #bbb;
+          content: '\00D7';
+          font-size: 26px;
+          font-weight: 400;
+          height: 30px;
+          line-height: 26px;
+          position: absolute;
+          right: 3px;
+          text-align: center;
+          top: 3px;
+          width: 30px;
+      }
+
+      &:hover:before,&:active:before{
+        color: #777;
+      }
+  }
+
+  .ngdialog-buttons{
+    *zoom: 1;
+
+    &:after,&:before{
+        content: '';
+        display: table;
+        clear: both;
+    }
+  }
+
+  .ngdialog-button{
+      border: 0;
+      border-radius: 3px;
+      cursor: pointer;
+      float: right;
+      font-family: inherit;
+      font-size: .8em;
+      letter-spacing: .1em;
+      line-height: 1em;
+      margin: 0 0 0 .5em;
+      padding: .75em 2em;
+      text-transform: uppercase;
+
+      &:focus{
+          -webkit-animation: ngdialog-pulse 1.1s infinite;
+          animation: ngdialog-pulse 1.1s infinite;
+          outline: none;
+      }
+  }
+
+
 }
 
-.ngdialog.port-theme.ngdialog-closing .ngdialog-content {
-  -webkit-animation: ngdialog-flyout .5s;
-  animation: ngdialog-flyout .5s;
+
+@media (max-width: 568px) {
+  .ngdialog.port-theme .ngdialog-button:focus {
+    -webkit-animation: none;
+    animation: none;
+  }
 }
 
-.ngdialog.port-theme .ngdialog-content {
-  -webkit-animation: ngdialog-flyin .5s;
-  animation: ngdialog-flyin .5s;
-  background: #323740;
-  border-radius: 5px;
-  color: #444;
-  font-family: 'Helvetica',sans-serif;
-  font-size: 1.1em;
-  line-height: 1.5em;
-  margin: 0 auto;
-  padding: 1em;
-  position: relative;
-  max-width: 100%;
-  width: 90%;
-  border-bottom: 2px solid #3f51b5;
-}
-
-
-.ngdialog.port-theme .ngdialog-close {
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.ngdialog.port-theme .ngdialog-close:before {
-  background: transparent;
-  border-radius: 3px;
-  color: #bbb;
-  content: '\00D7';
-  font-size: 26px;
-  font-weight: 400;
-  height: 30px;
-  line-height: 26px;
-  position: absolute;
-  right: 3px;
-  text-align: center;
-  top: 3px;
-  width: 30px;
-}
-
-.ngdialog.port-theme .ngdialog-close:hover:before,
-.ngdialog.port-theme .ngdialog-close:active:before {
-  color: #777;
-}
 
 /*
 .ngdialog.port-theme .ngdialog-message {
@@ -99,42 +141,6 @@
 }
 */
 
-.ngdialog.port-theme .ngdialog-buttons {
-  *zoom: 1;
-}
-
-.ngdialog.port-theme .ngdialog-buttons:after,.ngdialog.port-theme .ngdialog-buttons:before {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.ngdialog.port-theme .ngdialog-button {
-  border: 0;
-  border-radius: 3px;
-  cursor: pointer;
-  float: right;
-  font-family: inherit;
-  font-size: .8em;
-  letter-spacing: .1em;
-  line-height: 1em;
-  margin: 0 0 0 .5em;
-  padding: .75em 2em;
-  text-transform: uppercase;
-}
-
-.ngdialog.port-theme .ngdialog-button:focus {
-  -webkit-animation: ngdialog-pulse 1.1s infinite;
-  animation: ngdialog-pulse 1.1s infinite;
-  outline: none;
-}
-
-@media (max-width: 568px) {
-  .ngdialog.port-theme .ngdialog-button:focus {
-    -webkit-animation: none;
-    animation: none;
-  }
-}
 
 /*
 .ngdialog.port-theme .ngdialog-button.ngdialog-button-primary {
@@ -157,59 +163,3 @@
 
 
 
-
-@-webkit-keyframes ngdialog-flyin {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    transform: translateY(-40px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes ngdialog-flyin {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    transform: translateY(-40px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes ngdialog-flyout {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    transform: translateY(-40px);
-  }
-}
-
-@keyframes ngdialog-flyout {
-  0% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    transform: translateY(-40px);
-  }
-}

@@ -12,8 +12,8 @@
   background-color:#24182B;
   z-index:999;
   overflow:auto;
-}
 
+  
 .no-js-info{
     border: 1px solid #3E3E3E;
     padding: 35px;
@@ -21,27 +21,30 @@
     position: relative;
     margin-top: 10%;
     font-family: Roboto;
+
+    p{
+      font-size:35px;
+      &.smaller{
+        font-size:12px;
+      }
+    }
+
+    .fa{
+        font-size:35px;
+        color:#DEDEDE;
+        transition:0.3s color;
+        margin:15px;
+
+        &:hover{
+          color:#E07523;
+        }
+    }
+
+      h2{
+        color:#3D2F50;
+      }
+    
 }
 
-.no-js-info p{
-  font-size:35px;
 }
 
-.no-js-info p.smaller{
-      font-size: 12px;
-}
-
-.no-js-info .fa{
-  font-size:35px;
-  color:#DEDEDE;
-  transition:0.3s color;
-  margin:15px;
-}
-
-.no-js-info .fa:hover{
-  color:#E07523;
-}
-
-.no-js-info h2{
-  color:#3D2F50;
-}

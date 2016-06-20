@@ -12,28 +12,27 @@
 	<div class="container">
 		<div class="col s12">
 
-    <div class="mixitupcontainer" ng-if='drawings'>
+    <div class="mixitupcontainer">
+
 	    <div class="controls">
 	        <label>Filter:</label>
 	        <div class="filter" data-filter="all">All</div>
-	        <div class="filter" 
-	                data-filter=".category-{{category}}" 
-	                ng-repeat="category in categories">{{category}}</div>
+	        <div class="filter" data-filter=".category-{{category}}" ng-repeat="category in categories">{{category}}</div>
 	    </div>
 	    
-	    <div mix-it-up class="mix-container gallery" entities='drawings'>
+	    <div mix-it-up class="mix-container gallery fade" entities='work'>
 	    	<div gallery class="gallery-container">
 		    	<div class="gallery-row">
-				        <div class="mix category-{{drawing.category}}" 
-				                data-myorder="{{drawing.value}}" 
-				                ng-repeat="drawing in drawings">
+				        <div class="mix category-{{item.category}}" 
+				                data-myorder="{{item.value}}" 
+				                ng-repeat="item in work">
 				                <figure class="effect">
 				                <img src="assets/img/mountains.jpeg" style="height:320px;width:320px;" />
 					                <figcaption>
 					                	<h2>Some Text</h2>
 					                	<p>Some other text.</p>
-						                <a class="image" href="#" onclick="return false;" id="image_{{drawing.id}}">
-						   					View {{drawing.name}}
+						                <a class="image" href="#" onclick="return false;" id="image_{{item.id}}">
+						   					View <!--{{item.name}}-->
 										</a>
 									</figcaption>
 								</figure>
@@ -42,21 +41,23 @@
 
 			    <div class="zoom-row">
 			    	<a href="#" onclick="return false;" class="gallery-close"></a>
-			    	<div ng-repeat="drawing in drawings" id="image_{{drawing.id}}" class="port">
+			    	<div ng-repeat="item in work" id="image_{{item.id}}" class="port">
 			    		<div class="gallery-row">
 							<div class="description">
 								<h2>Some title.</h2>
-								<p>{{drawing.category}}</p>
+								<p>{{item.category}}</p>
 							</div>
 							<div class="image">
-								<p>{{drawing.value}}</p>
+								<p>{{item.value}}</p>
 							</div>
 						</div>
 			    	</div>
 			    </div>
 	    	</div>
 		</div>
+
 	</div>
+
 		</div>
 	</div>
 </div>

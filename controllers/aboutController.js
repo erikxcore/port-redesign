@@ -1,6 +1,8 @@
 		angular.module('aboutController', []).controller('aboutController', ['$scope', 'uiGmapIsReady' , function($scope, isReady){
 			    $scope.pageClass = 'page-about';
 				$scope.mapIsLoaded = false;
+			    $scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
+
 
 				var styleArray = [
 			          {
@@ -49,9 +51,9 @@
 
 			    isReady.promise().then(function (maps) {
 			        $scope.mapIsLoaded = true;
-			       	$scope.$applyAsync( function(){
+			       	$scope.$applyAsync(function(){
 			       	 	google.maps.event.trigger(maps[0].map, 'resize');
-			       	 }) 
+			       	 });
 			    });
 
 

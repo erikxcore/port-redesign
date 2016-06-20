@@ -1,17 +1,17 @@
+::selection {
+  background: #CDD4DE;
+}
+
 body{
  background-color: #403748;
  margin:0px;
-}
-
-
-::selection {
-  background: #CDD4DE;
 }
 
 a, button{
   outline: none;
 }
 
+//Main content holder
 #main{
     z-index:1;
 	//padding-top:20px;
@@ -19,15 +19,16 @@ a, button{
     position: relative;
 }
 
-.r3{
-  background:#753D55;
-  height: auto;
-  margin-bottom:0px;
-}
+//Content Row Style
 
-.r3 p, .r1 p{
-  margin:0px auto;
-  padding:0px;
+.r1{
+  background:transparent;
+  height:70vh;
+
+  p{
+    margin:0px auto;
+    padding:0px;
+  }
 }
 
 .r2{
@@ -39,34 +40,24 @@ a, button{
     min-height:70vh;
 }
 
-.r1{
-  background:transparent;
-  height:70vh;
+.r3{
+  background:#753D55;
+  height: auto;
+  margin-bottom:0px;
+
+  p{
+   margin:0px auto;
+   padding:0px;   
+  }
 }
 
+//Main content container styling / Page Specific styling
 .page .row{
   margin-bottom:0px;
 }
 
-.padme{
+.padme{ //had to include a Star Wars reference somewhere...
    padding:10px 0px;
-}
-
-.background{
-    position: absolute;
-    height: 70vh;
-    width: 100%;
-    overflow: hidden;
-    z-index: -1;
-    //border-top: 10px solid;
-    //border-left: 10px solid;
-    //border-right: 10px solid;
-    //border-color:#5A2F41;
-    //border-color:white;
-}
-
-.blogHolder{
-  @extend %clearfix;
 }
 
 .loading-page{
@@ -85,8 +76,19 @@ a, button{
   overflow:auto;
 }
 
+//Fix issues with blog content breaking out of box
+.blogHolder{
+  @extend %clearfix;
+}
 
+//Parallax Background
 .background {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+
   :nth-child(1) {
     z-index:-6;
     top: 0px;
@@ -117,7 +119,55 @@ a, button{
     top: 57vh;
     left: 45%;
   }
+  :nth-child(7) {
+    z-index:-6;
+    top: 0px;
+    left: 0px;
+  }
+  :nth-child(8) {
+    z-index: -5;
+    top: 28vh;
+    right: 0px;
+  }
+  :nth-child(9) {
+    z-index: -4;
+    top: 23vh;
+    left: 520px;
+  }
+  :nth-child(10) {
+    z-index: -3;
+    top: 157px;
+    left: -160px;
+  }
+  :nth-child(11) {
+    z-index: -2;
+    top: -224px;
+    left: -340px;
+  }
+  :nth-child(12) {
+    z-index:-1;
+    top: 57vh;
+    left: 45%;
+  }
+  :nth-child(13) {
+    z-index: -3;
+    top: 157px;
+    left: -160px;
+  }
+  :nth-child(14) {
+    z-index: -2;
+    top: -224px;
+    left: -340px;
+  }
+  :nth-child(15) {
+    z-index:-1;
+    top: 57vh;
+    left: 45%;
+  }
+
   > * {
+    width:100%;
+    max-width:100%;
     position: absolute;
   }
 }
@@ -129,3 +179,8 @@ a, button{
   background-color: transparent;
   color: black; 
 }
+
+    .hidden{
+      opacity:0;
+      visibility:hidden;
+    }

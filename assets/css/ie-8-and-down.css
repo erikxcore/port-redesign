@@ -3,6 +3,10 @@
  * <!--[if IE]>
  *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
  * <![endif]--> */
+#main, header, .mouse-scroll-container, .scroll-trigger, .loading-page {
+  display: none;
+}
 
-        #main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}
-        .error-page{display:block;}
+.error-page {
+  display: block;
+}

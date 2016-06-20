@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				src: [
 					'assets/js/jquery-2.2.3.min.js',
 					'assets/js/jquery.mixitup.min.js',
-        			'assets/js/lodash.js'
+        	'assets/js/lodash.js'
 				],
 				dest: 'dist/assets/js/production-extra1.min.js',	
 			},
@@ -34,11 +34,11 @@ module.exports = function(grunt) {
 					'assets/js/angular-ui-router.min.js',
 					'assets/js/angular-parallax.js',
 					'assets/js/angular-materialize.min.js',
-        			'assets/js/angular-simple-logger.min.js',
-	 		        'assets/js/angular-google-maps.min.js',
+        	'assets/js/angular-simple-logger.min.js',
+	 		    'assets/js/angular-google-maps.min.js',
 					'assets/js/angular-animate.min.js',
 					'assets/js/angular-recaptcha.min.js',
-          			'assets/js/ngDialog.min.js',
+          'assets/js/ngDialog.min.js',
 				],
 				dest: 'dist/assets/js/production-extra2.min.js',	
 			},
@@ -333,9 +333,10 @@ clean: ['dist/'],
 
 
 	grunt.registerTask('windows', ['clean','concat','uglify', 'compass','copy:main','imagemin','string-replace','htmlmin','cssmin']);
-	//grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','htmlmin','cssmin']);
-	 grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','cssmin']);
-//issue with prod js 2
+	
+  //grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','htmlmin','cssmin']);
+	grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','cssmin']);
+
 	grunt.registerTask('test', ['clean','concat', 'compass','copy','string-replace']);
 
 	grunt.registerTask('image' , ['imagemin']);
