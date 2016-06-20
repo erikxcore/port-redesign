@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				src: [
 					'assets/js/jquery-2.2.3.min.js',
 					'assets/js/jquery.mixitup.min.js',
-          'assets/js/lodash.js'
+        			'assets/js/lodash.js'
 				],
 				dest: 'dist/assets/js/production-extra1.min.js',	
 			},
@@ -34,11 +34,11 @@ module.exports = function(grunt) {
 					'assets/js/angular-ui-router.min.js',
 					'assets/js/angular-parallax.js',
 					'assets/js/angular-materialize.min.js',
-          'assets/js/angular-simle-logger.min.js',
-          'assets/js/angular-google-maps.min.js',
+        			'assets/js/angular-simple-logger.min.js',
+	 		        'assets/js/angular-google-maps.min.js',
 					'assets/js/angular-animate.min.js',
 					'assets/js/angular-recaptcha.min.js',
-          'assets/js/ngDialog.min.js',
+          			'assets/js/ngDialog.min.js',
 				],
 				dest: 'dist/assets/js/production-extra2.min.js',	
 			},
@@ -54,15 +54,15 @@ module.exports = function(grunt) {
 
 		uglify: {
 			build: {
-				src: 'dist/assets/js/production.js',
+				src:  'dist/assets/js/production.js',
 				dest: 'dist/assets/js/production.min.js'
 			},
 			more1: {
-				src: 'dist/assets/js/production-extra1.js',
+				src:  'dist/assets/js/production-extra1.js',
 				dest: 'dist/assets/js/production-extra1.min.js'
 			},
 			more2: {
-				src: 'dist/assets/js/production-extra2.js',
+				src:  'dist/assets/js/production-extra2.js',
 				dest: 'dist/assets/js/production-extra2.min.js'
 			}
 		},
@@ -195,7 +195,7 @@ module.exports = function(grunt) {
           replacement: ''
         },{
           pattern: '<link rel="stylesheet" href="assets/css/animate.min.css">',
-          replacement: ''
+          replacement: '<link rel="stylesheet" href="assets/css/production-extra.min.css">'
         }
       ]
     }

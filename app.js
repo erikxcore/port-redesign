@@ -19,7 +19,7 @@ angular.module('materializeApp',
   'vcRecaptcha'
 ]);
 
-angular.module('materializeApp').config(function(uiGmapGoogleMapApiProvider) {
+angular.module('materializeAppp', ['uiGmapgoogle-maps']).config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4',
         v: '3.20',

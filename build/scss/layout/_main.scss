@@ -1,6 +1,7 @@
-//body{
-//  background-color: #403748;
-//}
+body{
+ background-color: #403748;
+ margin:0px;
+}
 
 
 ::selection {
@@ -22,6 +23,11 @@ a, button{
   background:#753D55;
   height: auto;
   margin-bottom:0px;
+}
+
+.r3 p, .r1 p{
+  margin:0px auto;
+  padding:0px;
 }
 
 .r2{
