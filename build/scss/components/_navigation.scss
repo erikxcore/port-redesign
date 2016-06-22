@@ -158,7 +158,7 @@ nav {
 .three{
   width: 100%;
   height: 5px;
-  background: #D2D0D0;
+  background: #ffffff;
   margin: 6px auto;
   backface-visibility: hidden;
   @include transition-duration(0.3s);
@@ -189,7 +189,7 @@ nav {
     visibility: visible;
     transition: all 0.3s;
     z-index: 5;
-    top: 57vh;
+    top: 89vh;
     float: left;
     margin: 0 auto;
     width: 100%;
@@ -231,8 +231,14 @@ nav {
   }
 
     .scroll-trigger{
-      position: absolute;
-      top: 500px;
+    height: 50px;
+    width: 100%;
+    background: transparent;
+    z-index: -20;
+    position: absolute;
+    margin: 0 auto;
+    top: 55vh;
+    overflow: hidden;
     }
 
   

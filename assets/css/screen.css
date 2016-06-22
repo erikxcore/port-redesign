@@ -6420,6 +6420,7 @@ input:not([type]), input[type=text], input[type=password], input[type=email], in
   -webkit-appearance: none;
   /* for box shadows to show on iOS */
 }
+
 .input__field:focus {
   outline: none;
 }
@@ -6617,6 +6618,7 @@ textarea.materialize-textarea + label {
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 50px white inset;
+  /* Change the color to your own background color */
   -webkit-text-fill-color: #333;
 }
 
@@ -7086,7 +7088,7 @@ nav ul li:hover {
 .three {
   width: 100%;
   height: 5px;
-  background: #D2D0D0;
+  background: #ffffff;
   margin: 6px auto;
   backface-visibility: hidden;
   -moz-transition-duration: 0.3s;
@@ -7117,7 +7119,7 @@ nav ul li:hover {
   visibility: visible;
   transition: all 0.3s;
   z-index: 5;
-  top: 57vh;
+  top: 89vh;
   float: left;
   margin: 0 auto;
   width: 100%;
@@ -7156,8 +7158,14 @@ nav ul li:hover {
 }
 
 .scroll-trigger {
+  height: 50px;
+  width: 100%;
+  background: transparent;
+  z-index: -20;
   position: absolute;
-  top: 500px;
+  margin: 0 auto;
+  top: 55vh;
+  overflow: hidden;
 }
 
 p {
@@ -7250,7 +7258,7 @@ a, button {
 
 .r1 {
   background: transparent;
-  height: 70vh;
+  height: 100vh;
 }
 .r1 p {
   margin: 0px auto;
@@ -7258,9 +7266,7 @@ a, button {
 }
 
 .r2 {
-  background-repeat: no-repeat;
-  background-position: center -31px;
-  background-color: white;
+  background-color: #3f296a;
   height: auto;
   min-height: 70vh;
 }
@@ -7307,83 +7313,119 @@ a, button {
   z-index: -1;
 }
 .background :nth-child(1) {
-  z-index: -6;
+  z-index: -15;
   top: 0px;
   left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00044b;
+  background-image: url("../img/new2/stars.png");
+  background-repeat: repeat;
 }
 .background :nth-child(2) {
-  z-index: -5;
-  top: 28vh;
-  right: 0px;
+  z-index: -14;
+  top: 17vh;
+  left: 0vw;
+  width: 63vw;
+  height: 33vh;
 }
 .background :nth-child(3) {
-  z-index: -4;
+  z-index: -13;
   top: 23vh;
-  left: 520px;
+  left: 15vw;
+  width: 10vw;
+  height: 20vh;
 }
 .background :nth-child(4) {
-  z-index: -3;
-  top: 157px;
-  left: -160px;
+  z-index: -12;
+  top: 55vh;
+  left: 0;
+  height: 50vh;
+  width: 100vw;
+  background: #b3608f;
+  background: -moz-linear-gradient(top, #b3608f 0%, #bb32b4 100%);
+  background: -webkit-linear-gradient(top, #b3608f 0%, #bb32b4 100%);
+  background: linear-gradient(to bottom, #b3608f 0%, #bb32b4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3608f', endColorstr='#bb32b4',GradientType=0 );
 }
 .background :nth-child(5) {
-  z-index: -2;
-  top: -224px;
-  left: -340px;
+  z-index: -11;
+  top: 20vh;
+  left: 0px;
+  width: 100vw;
+  height: 45vh;
 }
 .background :nth-child(6) {
-  z-index: -1;
-  top: 57vh;
-  left: 45%;
+  z-index: -10;
+  top: 29vh;
+  left: 39vw;
+  width: 62vw;
+  height: 42vh;
 }
 .background :nth-child(7) {
-  z-index: -6;
-  top: 0px;
+  z-index: -9;
+  top: 35vh;
   left: 0px;
+  width: 27vw;
+  height: 30vh;
 }
 .background :nth-child(8) {
-  z-index: -5;
-  top: 28vh;
-  right: 0px;
+  z-index: -8;
+  top: 39vh;
+  left: -10vw;
+  width: 30vw;
+  height: 50vh;
 }
 .background :nth-child(9) {
-  z-index: -4;
-  top: 23vh;
-  left: 520px;
+  z-index: -9;
+  top: 63vh;
+  left: -5vw;
+  width: 20vw;
+  height: 20vh;
 }
 .background :nth-child(10) {
-  z-index: -3;
-  top: 157px;
-  left: -160px;
+  z-index: -6;
+  top: 21vh;
+  left: 61vw;
+  width: 39vw;
+  height: 69vh;
 }
 .background :nth-child(11) {
-  z-index: -2;
-  top: -224px;
-  left: -340px;
+  z-index: -5;
+  top: 60vh;
+  left: 75vw;
+  width: 25vw;
+  height: 40vh;
 }
 .background :nth-child(12) {
   z-index: -1;
-  top: 57vh;
-  left: 45%;
+  top: 43vh;
+  left: 58vw;
+  width: 20vw;
+  height: 20vh;
 }
 .background :nth-child(13) {
   z-index: -3;
-  top: 157px;
-  left: -160px;
+  top: 67vh;
+  left: 45vw;
+  height: 7vh;
+  width: 2vw;
 }
 .background :nth-child(14) {
   z-index: -2;
-  top: -224px;
-  left: -340px;
+  top: 65vh;
+  left: 20vw;
+  width: 15vw;
+  height: 17vh;
 }
 .background :nth-child(15) {
   z-index: -1;
-  top: 57vh;
-  left: 45%;
+  bottom: 0vh;
+  left: 0;
+  width: 100vw;
+  height: 29vh;
 }
 .background > * {
-  width: 100%;
-  max-width: 100%;
   position: absolute;
 }
 

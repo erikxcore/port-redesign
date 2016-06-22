@@ -6,6 +6,12 @@
 
       $scope.$on("mouseEvent", function (event, args) {
          $scope.pageClass = args.pageClass;
+         var scroller = angular.element(document.querySelector('.mouse-scroll-container'));
+
+         if(args.pageClass != "page-home" && scroller.hasClass('hidden')){
+          $scope.toggleMouse();
+          //alert('mouse event toggle bc it was hidden');
+         }
       });
 
 			$scope.openContact = function () {
@@ -16,10 +22,13 @@
       };
 
       $scope.toggleMouse = function(){
+       // alert('test');
           		var scroller = angular.element(document.querySelector('.mouse-scroll-container'));
           		if(scroller.hasClass('hidden')){
+                //alert('was hidden');
           			scroller.removeClass('hidden');
           		}else{
+                //alert("set hidden");
           			scroller.addClass('hidden');
           		}
       };
