@@ -48,7 +48,7 @@ module.exports = function(grunt) {
 					'assets/css/animate.min.css',
 					'assets/css/ngdialog.min.css',
 				],
-				dest: 'dist/assets/css/production-extra.css',	
+				dest: 'dist/assets/css/production-extra.min.css',	
 			}			
 		},
 
@@ -288,7 +288,7 @@ module.exports = function(grunt) {
   cssmin: {
    dist: {
       files: {
-         'dist/assets/css/production-extra.min.css': ['dist/assets/css/production-extra.css']
+         'dist/assets/css/production-extra.min.css': ['dist/assets/css/production-extra.min.css']
       }
   }
 },
@@ -334,8 +334,8 @@ clean: ['dist/'],
 
 	grunt.registerTask('windows', ['clean','concat','uglify', 'compass','copy:main','imagemin','string-replace','htmlmin','cssmin']);
 	
-  //grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','htmlmin','cssmin']);
-	grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','cssmin']);
+  grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','htmlmin','cssmin']);
+	//grunt.registerTask('mac', ['clean','concat','uglify', 'compass','copy','copy:mac','string-replace','cssmin']);
 
 	grunt.registerTask('test', ['clean','concat', 'compass','copy','string-replace']);
 

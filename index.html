@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/ngDialog.min.css">
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="assets/css/print.css" media="print" rel="stylesheet" type="text/css" />
+   <!-- <link href="assets/css/print.css" media="print" rel="stylesheet" type="text/css" /> -->
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans|Podkova|Raleway:400,200italic|Ubuntu:400,400italic,500,700|Droid+Sans' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -56,12 +56,8 @@
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4" defer></script>
     <script src="assets/js/angular-google-maps.min.js"></script>
 
-     <!--[if IE]>
-          <link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-     <![endif]-->
-    <!--[if lte IE 9]>
-          <link href="assets/css/ie-8-and-down.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
+     <!--[if IE]><link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
+    <!--[if lte IE 9]><link href="assets/css/ie-8-and-down.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
 
     <script type="text/javascript" src="app.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
@@ -82,12 +78,7 @@
 
 <body ng-controller="mainController">
 
-<!--[if gt IE 7)]><!--> <noscript> <!--<![endif]-->
-    <style>
-        #main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}
-        .error-page{display:block;}
-    </style>
-<!--[if gt IE 7)]><!--> </noscript> <!--<![endif]-->
+<!--[if gt IE 7)]><!--> <noscript> <!--<![endif]--><style>#main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}.error-page{display:block;}</style><!--[if gt IE 7)]><!--> </noscript> <!--<![endif]-->
 
 <div class="row loading-page fade" ng-show="isLoading">
     <div class="container">
@@ -131,13 +122,12 @@
   <div class="menu-section" ng-class="{'on': toggleMenu}" >
     <nav>
         <ul role="navigation" ng-class="{'hidden': !toggleMenu}">
-            <!--
+            
                     <li><a href="#home" ng-click="toggleMenu = !toggleMenu">Home</a></li>
                     <li><a href="#about" ng-click="toggleMenu = !toggleMenu">About</a></li>
                     <li><a href="#work" ng-click="toggleMenu = !toggleMenu">Work</a></li>
                     <li><a href="#resume" ng-click="toggleMenu = !toggleMenu">Resume</a></li>
                     <li><a href="#blog" ng-click="toggleMenu = !toggleMenu" >Blog</a></li>
-            -->
                     <li><a href="" onclick="return false;" ng-click="openContact()">Contact</a></li>
         </ul>
       </nav>

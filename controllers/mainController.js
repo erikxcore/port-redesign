@@ -2,7 +2,8 @@
       $scope.toggleMenu = false;
       $scope.isLoading = true;
       $scope.isSuccessful = false;
-      $scope.percentLoaded = 0;
+      //$scope.percentLoaded = 0;
+
 /*
       $scope.$on("mouseEvent", function (event, args) {
         console.log("Main controller has captured an alert from mouse event from " + args.pageClass);
