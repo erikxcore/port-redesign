@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Eric Barber, erikxcore, f0xxxxx, f0xx, portfolio, designer, web designer, graphic designer, web developer, front-end developer, new jersey, new york, pennslyvania, angular, node, javascript, jquery, html, css, java, php, full stack, remote, ui, ux, user experience, user interface, git, programmer">
+    <meta name="keywords" content="Eric Barber, erikxcore, f0xxxxx, f0xx, portfolio, designer, web designer, graphic designer, web developer, front-end developer, new jersey, new york, pennslyvania, angular, node, javascript, jquery, html, css, java, php, full stack, remote, ui, ux, user experience, user interface, git, programmer, back end developer">
     <meta name="description" content="I am a front-end engineer with experience with full stack environments. My languages of choice are JavaScript, PHP, and Java.">
     <meta name="author" content="Eric Barber">
     <link rel="shortcut icon" href="favicon.ico">
@@ -50,10 +50,10 @@
     <script src="assets/js/angular-recaptcha.min.js"></script>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.1.8/angular-materialize.js"></script>
-    <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" async defer></script>
+    <script src="http://www.google.com/recaptcha/api.js?render=explicit&onload=vcRecaptchaApiLoaded" defer></script>
 
     <script src="assets/js/angular-simple-logger.min.js"></script>
-    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4"></script>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCE5-7NSqY4p5lecnY5DQWRotAzvhYVXS4" defer></script>
     <script src="assets/js/angular-google-maps.min.js"></script>
 
      <!--[if IE]>
@@ -131,11 +131,13 @@
   <div class="menu-section" ng-class="{'on': toggleMenu}" >
     <nav>
         <ul role="navigation" ng-class="{'hidden': !toggleMenu}">
+            <!--
                     <li><a href="#home" ng-click="toggleMenu = !toggleMenu">Home</a></li>
                     <li><a href="#about" ng-click="toggleMenu = !toggleMenu">About</a></li>
                     <li><a href="#work" ng-click="toggleMenu = !toggleMenu">Work</a></li>
                     <li><a href="#resume" ng-click="toggleMenu = !toggleMenu">Resume</a></li>
                     <li><a href="#blog" ng-click="toggleMenu = !toggleMenu" >Blog</a></li>
+            -->
                     <li><a href="" onclick="return false;" ng-click="openContact()">Contact</a></li>
         </ul>
       </nav>
@@ -143,81 +145,42 @@
 </header>
 
 
-<div class="mouse-scroll-container fade" ng-show="pageClass != 'page-home'">
-      <span class="mouse">
-        <span class="mouse-movement"> 
-        </span>
-      </span>
-</div>
 
-<div class="scroll-trigger" scroll-fire="toggleMouse();" offset="0"></div>
 
 
 
 <div id="main" >
+    <div class="logo animated" ng-class="!isLoading ? 'bounce' : '' ">
+        <h2>Test</h2>
+        <h2>Test</h2>
+    </div>
 
     <div class="background">
-
         <div class="sky"></div>
         <img src="assets/img/new2/clouds.png" />
-        <img  parallax parallax-ratio="0.3" src="assets/img/new2/sun.png" />
+        <img parallax parallax-ratio="0.3" src="assets/img/new2/sun.png" />
         <div class="lake"></div>
         <img src="assets/img/new2/center_mountain.png"/>
-
         <img src="assets/img/new2/cr_mountain.png"/>
-
-        <img  parallax parallax-ratio="0.3" src="assets/img/new2/2l_mountain.png"/>
-        <img  parallax parallax-ratio="0.3" src="assets/img/new2/1l_mountain.png"/>
-
+        <img parallax parallax-ratio="0.3" src="assets/img/new2/2l_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/new2/1l_mountain.png"/>
         <img parallax parallax-ratio="0.3" src="assets/img/new2/reflection.png"/>
-
-        <img  parallax parallax-ratio="0.3" src="assets/img/new2/2r_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/new2/2r_mountain.png"/>
         <img parallax parallax-ratio="0.4" src="assets/img/new2/1r_mountain.png"/>
-
-        <img  parallax parallax-ratio="0.5" src="assets/img/new2/birds.png"/>
-        <img  parallax parallax-ratio="-0.2" src="assets/img/new2/boat.png"/>
-
-        <img  parallax parallax-ratio="0.3" src="assets/img/new2/whale.png"/>
-
+        <img parallax parallax-ratio="0.5" src="assets/img/new2/birds.png"/>
+        <img parallax parallax-ratio="-0.2" src="assets/img/new2/boat.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/new2/whale.png"/>
         <img src="assets/img/new2/woods.png"/>
-
-<img parallax="" parallax-ratio="0.3" src="assets/img/new2/reflection.png" class="ng-isolate-scope parallax" style="transform: translate(0px, 0px);z-index: -12;bottom: 0vh;left: 25vw;width: 15vw;height: 11vh;top: 52vh;">
-
-<img parallax="" parallax-ratio="0.3" src="assets/img/new2/reflection.png" class="ng-isolate-scope parallax" style="transform: translate(0px, 0px);z-index: -12;bottom: 0vh;left: 23vw;width: 12vw;height: 5vh;top: 62vh;">
-
-<img parallax="" parallax-ratio="0.3" src="assets/img/new2/reflection.png" class="ng-isolate-scope parallax" style="transform: translate(0px, 0px);z-index: -12;bottom: 0vh;left: 40vw;width: 33vw;height: 2vh;top: 58vh;">
-    <!--
-          <img src="assets/img/new/sky.png" alt="" />
-          <img src="assets/img/new/clouds_stars.png" alt="" />
--->
-<!--
-sky.png -1
-clouds_stars.png -2
-sun.png - 3
-birds.png - 4
-lake.png - 5
-beach.png - 6
-sun_reflection.png - 7
-
-furthest_mountain_last.png - 8
-furthest_mountain.png - 9
-2nd_closest_mountain.png - 10
-right_closest.png - 11
-third_closest.png - 12
-closest_mountain.png -13
-
-woods.png - 14
-boat.png - 15
-
--->
-        <!--
-          <img src="assets/img/sky.png" alt="" />
-          <img parallax parallax-ratio="0.3" src="assets/img/horizon.png" alt=" " />
-          <img parallax parallax-ratio="0.3" src="assets/img/third_tier.png" alt=" " />
-          <img parallax parallax-ratio="0.5" src="assets/img/second_tier.png" alt=" " />
-          <img parallax parallax-ratio="0.4" src="assets/img/first_tier.png" alt=" " />
-          <img parallax parallax-ratio="0.6" class="boat" src="assets/img/boat.png" alt=" " />
-        -->
+        <img src="assets/img/new2/reflection.png">
+        <img parallax parallax-ratio="0.3" src="assets/img/new2/reflection.png" >
+        <img src="assets/img/new2/reflection.png">
+        <div class="bubbles"></div>
+        <div parallax parallax-ratio="-0.3" class="mouse-scroll-container fade" ng-show="pageClass != 'page-home'">
+              <span class="mouse">
+                <span class="mouse-movement"> 
+                </span>
+              </span>
+        </div>
 
     </div>
 

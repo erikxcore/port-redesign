@@ -1,7 +1,7 @@
 		angular.module('aboutController', []).controller('aboutController', ['$scope', 'uiGmapIsReady' , function($scope, isReady){
 			    $scope.pageClass = 'page-about';
 				$scope.mapIsLoaded = false;
-			    $scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
+			    //$scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
 
 
 				var styleArray = [

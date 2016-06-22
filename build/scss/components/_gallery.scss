@@ -21,9 +21,6 @@
   text-align: center;
 
   .mix{
-        display: none;
-        //border-style:solid;
-        //border-color:#000000;
         padding:10px;
         margin:10px;
 
@@ -36,7 +33,7 @@
       max-width: 480px;
       max-height: 360px;
       width: 48%;
-      background: #3085a3;
+      background: #6F3F0D;
       text-align: center;
       cursor: pointer;
 
@@ -66,7 +63,7 @@
             pointer-events: none;
           }
 
-          * > a{
+          a{
             position: absolute;
             top: 0;
             left: 0;
@@ -162,6 +159,7 @@
   padding: 0px;
   position: static;
   overflow: visible;
+  height:auto;
 
   .gallery-row{
       width: 100%;
@@ -169,6 +167,7 @@
       margin: 0 auto;
       padding: 0;
       clear: both;
+      height:auto;
   }
 
   }

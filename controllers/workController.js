@@ -1,6 +1,6 @@
 		angular.module('workController', []).controller('workController', function($scope){
     		$scope.pageClass = 'page-work';
-			$scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
+			//$scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
 
     		  $scope.categories = ['Development', 'test', 'Design'];
 

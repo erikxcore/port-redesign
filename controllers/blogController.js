@@ -1,6 +1,6 @@
       angular.module('blogController', []).controller("blogController", ['$scope', 'BlogService', '$sce', function($scope, BlogService, $sce){
       $scope.pageClass = 'page-blog';
-      $scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
+      //$scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
 
       $scope.posts = [];
       $scope.busy = true;

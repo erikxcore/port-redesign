@@ -184,18 +184,13 @@ nav {
 }
 
 .mouse-scroll-container {
-    position: absolute;
-    opacity: 1;
-    visibility: visible;
     transition: all 0.3s;
-    z-index: 5;
-    top: 89vh;
-    float: left;
+    z-index: -2;
+    top: 85vh;
     margin: 0 auto;
     width: 100%;
     height: 100px;
 
-      
       .mouse {
         position: absolute;
         margin-left: auto;
