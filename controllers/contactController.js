@@ -1,7 +1,8 @@
      angular.module('contactController', []).controller('contactController',['$scope','vcRecaptchaService', function($scope,vcRecaptchaService){
           $scope.pageClass = 'page-contact';
-          //$scope.$emit("mouseEvent", {pageClass: $scope.pageClass });
-
+          $scope.success = false;
+          $scope.error = false;
+          
                 $scope.response = null;
                 $scope.widgetId = null;
                 $scope.captcha = false;

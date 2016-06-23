@@ -5700,6 +5700,57 @@ section#timeline article:nth-child(5) div.inner h2:after {
   animation-direction: reverse;
 }
 
+.ribbon_contain {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.ribbon {
+  font-size: 1em;
+  width: 100%;
+  position: relative;
+  background: #483647;
+  color: #EA802F;
+  text-align: center;
+  padding: 1em 2em;
+  margin: 2em auto 3em;
+}
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -0.5em;
+  border: 1.5em solid #613D5E;
+  z-index: 0;
+}
+.ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #804f7c transparent transparent transparent;
+  bottom: -0.5em;
+  z-index: 1;
+}
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
 .ng-enter {
   -webkit-animation: scaleUp 0.5s both ease-in;
   -moz-animation: scaleUp 0.5s both ease-in;
@@ -6037,6 +6088,18 @@ section#timeline article:nth-child(5) div.inner h2:after {
 }
 .mixitupcontainer .filter {
   cursor: pointer;
+  float: left;
+  margin: 10px;
+  border: 1px solid #673C6F;
+  padding: 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+.mixitupcontainer .filter:hover {
+  background-color: #673C6F;
+  color: black;
 }
 
 /*
@@ -6057,18 +6120,18 @@ section#timeline article:nth-child(5) div.inner h2:after {
   text-align: center;
 }
 .mix-container .mix {
-  padding: 10px;
-  margin: 10px;
+  display: none;
+  width: 50%;
+  float: left;
 }
 .mix-container .mix figure {
   position: relative;
-  float: left;
   overflow: hidden;
-  margin: 10px 1%;
-  min-width: 320px;
-  max-width: 480px;
+  margin: 10px auto;
+  max-width: 320px;
   max-height: 360px;
-  width: 48%;
+  min-width: 320px;
+  width: 100%;
   background: #6F3F0D;
   text-align: center;
   cursor: pointer;
@@ -6163,6 +6226,18 @@ section#timeline article:nth-child(5) div.inner h2:after {
   transform: scale(1);
 }
 
+@media only screen and (max-width: 850px) {
+  .mix-container .mix {
+    width: 100%;
+    float: left;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .mix-container .mix {
+    width: 33%;
+    float: left;
+  }
+}
 .gallery {
   padding: 0px;
   position: static;
@@ -6171,7 +6246,6 @@ section#timeline article:nth-child(5) div.inner h2:after {
 }
 .gallery .gallery-row {
   width: 100%;
-  max-width: 1170px;
   margin: 0 auto;
   padding: 0;
   clear: both;

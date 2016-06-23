@@ -1,5 +1,18 @@
 .mixitupcontainer .filter{
   cursor:pointer;
+    float: left;
+    margin: 10px;
+    border: 1px solid #673C6F;
+    padding: 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition:all 0.3s;
+
+    &:hover{
+      background-color:#673C6F;
+      color:black;
+    }
 }
 
 /*
@@ -21,18 +34,27 @@
   text-align: center;
 
   .mix{
-        padding:10px;
-        margin:10px;
+        //padding:10px;
+        //margin:10px;
+        display:none;
+        width:50%;
+        float:left;
 
   figure{
       position: relative;
-      float: left;
+      //float: left;
       overflow: hidden;
-      margin: 10px 1%;
-      min-width: 320px;
-      max-width: 480px;
-      max-height: 360px;
-      width: 48%;
+      margin:  10px auto;
+      //min-width: 320px;
+      //max-width: 480px;
+      //max-height: 360px;
+
+      max-width:320px;
+      max-height:360px;
+      //min-height:360px;
+      min-width:320px;
+
+      width: 100%;
       background: #6F3F0D;
       text-align: center;
       cursor: pointer;
@@ -148,12 +170,24 @@
         }
 
       }
-  } // end figure
-} // end mix
+  }
+} 
 
 }
 
+@media only screen and (max-width:850px) { 
+.mix-container .mix{
+        width:100%;
+        float:left;
+  }
+}
 
+@media only screen and (min-width:1400px) { 
+.mix-container .mix{
+        width:33%;
+        float:left;
+  }
+}
 
 .gallery {
   padding: 0px;
@@ -163,7 +197,7 @@
 
   .gallery-row{
       width: 100%;
-      max-width: 1170px;
+      //max-width: 1170px;
       margin: 0 auto;
       padding: 0;
       clear: both;

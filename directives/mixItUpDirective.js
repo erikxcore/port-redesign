@@ -4,11 +4,8 @@ angular.module('materializeApp').directive('mixItUp',function(){
                     angular.element(document).ready(function () {
                         element.mixItUp({
                             animation: {
-                                animateResizeContainer: false
-                            }//,
-                            //layout: {
-                            //    display: 'block'
-                           // }
+                                animateResizeContainer: false //true causes issues with responsiveness
+                            }
                         });
                     });
                   });
