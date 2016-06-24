@@ -39,7 +39,7 @@
 
     <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
     <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
-
+    <script type="text/javascript" src="assets/js/jquery.viewportchecker.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
@@ -62,6 +62,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
     <script src="directives/galleryDirective.js"></script>
+    <script src="directives/viewportDirective.js"></script>
     <script src="directives/closeDialogDirective.js"></script>
     <script src="directives/preloaderFactory.js"></script>
     <script src="controllers/mainController.js"></script>
@@ -84,7 +85,7 @@
     <div class="container">
         <div class="col s12">
             <div class="loader"></div>            
-            <p>{{ percentLoaded }}</p>
+            <p ng-show="percentLoaded != null">{{ percentLoaded }}</p>
         </div>
     </div>
 </div>

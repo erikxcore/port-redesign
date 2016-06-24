@@ -22,6 +22,7 @@ module.exports = function(grunt) {
 					'assets/js/jquery-2.2.3.min.js',
 					'assets/js/jquery.mixitup.min.js',
         	'assets/js/lodash.js'
+          'assets/js/jquery.viewportchecker.min.js'
 				],
 				dest: 'dist/assets/js/production-extra1.min.js',	
 			},
@@ -137,6 +138,9 @@ module.exports = function(grunt) {
           pattern: '<script src="directives/galleryDirective.js"></script>',
           replacement: ''
         },{
+          pattern: '<script src="directives/viewportDirective.js"></script>',
+          replacement: ''
+        },{
           pattern: '<script src="directives/closeDialogDirective.js"></script>',
           replacement: ''
         },{
@@ -232,7 +236,7 @@ module.exports = function(grunt) {
           pattern: '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="assets/js/angular-timeline.js"></script>',
+          pattern: '<script type="text/javascript" src="assets/js/jquery.viewportchecker.min.js"></script>',
           replacement: ''
         },{
           pattern: '<script src="assets/js/lodash.js"></script>',

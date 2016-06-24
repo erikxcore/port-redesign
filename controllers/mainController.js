@@ -2,7 +2,6 @@
       $scope.toggleMenu = false;
       $scope.isLoading = true;
       $scope.isSuccessful = false;
-      $scope.percentLoaded = 'I\'ve seen things you people wouldn\'t believe.';
 
 			$scope.openContact = function () {
               ngDialog.open({ template: 'pages/contact.html',
@@ -44,8 +43,7 @@
                         console.error( "Image Failed to load : ", imageLocation );
                     },
                     function handleNotify( event ) {
-
-                        if(event.percent == 0){
+                        if(event.percent <= 0 && event.percent < 20){
                            $scope.percentLoaded = 'I\'ve seen things you people wouldn\'t believe.';
                         }else if(event.percent >= 20 && event.percent < 40){
                           $scope.percentLoaded = 'Attack ships on fire off the shoulder of Orion.';
