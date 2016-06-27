@@ -1,4 +1,4 @@
-        (function () {
+(function () {
     'use strict';
 
 
@@ -25,5 +25,4 @@ angular.module('materializeApp').directive('viewport',function(){
     }
 });
 
-
-        })();
+})();

@@ -1,7 +1,7 @@
-     (function () {
+(function () {
     'use strict';
 
-    angular.module('materializeApp').controller('contactController',['$scope','vcRecaptchaService', function($scope,vcRecaptchaService){
+    angular.module('materializeApp').controller('ContactController',['$scope','vcRecaptchaService', function($scope,vcRecaptchaService){
           $scope.pageClass = 'page-contact';
           $scope.success = false;
           $scope.error = false;
@@ -59,4 +59,4 @@
 
   }]);
 
-    })();
+})();

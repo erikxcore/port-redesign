@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-		angular.module('materializeApp').controller('workController', function($scope){
+		angular.module('materializeApp').controller('WorkController', function($scope){
     		$scope.pageClass = 'page-work';
 
     		  $scope.categories = ['Development', 'Both', 'Design'];

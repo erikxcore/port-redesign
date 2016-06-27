@@ -1,7 +1,6 @@
 (function () {
     'use strict';
 
-
 angular.module('materializeApp', 
   ['ui.materialize',
   'ui.router',
@@ -30,7 +29,5 @@ angular.module('materializeApp').config(['ngDialogProvider',function(ngDialogPro
     });
   }
 ]);
-
-
 
 })();

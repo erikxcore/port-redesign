@@ -1,6 +1,5 @@
-    (function () {
+(function () {
     'use strict';
-
 
 angular.module('materializeApp').directive('closeDialog', function($timeout, ngDialog) {
  var linker = function(scope,element,attrs) {
@@ -19,5 +18,4 @@ angular.module('materializeApp').directive('closeDialog', function($timeout, ngD
   }
 });
 
-
-    })();
+})();

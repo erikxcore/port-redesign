@@ -1,4 +1,4 @@
-        (function () {
+(function () {
     'use strict';
 
 angular.module('materializeApp').directive('jInvertScroll',function(){
@@ -20,4 +20,4 @@ angular.module('materializeApp').directive('jInvertScroll',function(){
     }
 });
 
-        })();
+})();

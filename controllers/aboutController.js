@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-		angular.module('materializeApp').controller('aboutController', ['$scope', 'uiGmapIsReady' , function($scope, isReady){
+		angular.module('materializeApp').controller('AboutController', ['$scope', 'uiGmapIsReady' , function($scope, isReady){
 			    $scope.pageClass = 'page-about';
 				$scope.mapIsLoaded = false;
 
@@ -69,6 +69,5 @@
 
 
 		}]);
-
 
 })();

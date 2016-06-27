@@ -1,9 +1,9 @@
-		(function () {
+(function () {
     'use strict';
 
-		angular.module('materializeApp').controller('homeController', function($scope){
+		angular.module('materializeApp').controller('HomeController', function($scope){
     		$scope.pageClass = 'page-home';
 
 		});
 
-		})();
+})();

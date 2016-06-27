@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 				src: [
 					'assets/js/jquery-2.2.3.min.js',
 					'assets/js/jquery.mixitup.min.js',
-        	'assets/js/lodash.js'
+        	'assets/js/lodash.js',
           'assets/js/jquery.viewportchecker.min.js'
 				],
 				dest: 'dist/assets/js/production-extra1.min.js',	
@@ -129,7 +129,7 @@ module.exports = function(grunt) {
     options: {
       replacements: [
 		    {
-          pattern: '<script type="text/javascript" src="app.js"></script>',
+          pattern: '<script src="app.js"></script>',
           replacement: ''
         },{
           pattern: '<script src="directives/mixItUpDirective.js"></script>',
@@ -147,31 +147,31 @@ module.exports = function(grunt) {
           pattern: '<script src="directives/preloaderFactory.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/mainController.js"></script>',
+          pattern: '<script src="controllers/MainController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/resumeController.js"></script>',
+          pattern: '<script src="controllers/ResumeController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/workController.js"></script>',
+          pattern: '<script src="controllers/WorkController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/homeController.js"></script>',
+          pattern: '<script src="controllers/HomeController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/blogController.js"></script>',
+          pattern: '<script src="controllers/BlogController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/contactController.js"></script>',
+          pattern: '<script src="controllers/ContactController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="services/contactService.js"></script>',
+          pattern: '<script src="services/ContactService.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="controllers/aboutController.js"></script>',
+          pattern: '<script src="controllers/AboutController.js"></script>',
           replacement: ''
         },{
-          pattern: '<script src="services/blogService.js"></script>',
+          pattern: '<script src="services/BlogService.js"></script>',
           replacement: ''
         },{
           pattern: '<script src="routes.js"></script>',

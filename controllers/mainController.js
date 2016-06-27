@@ -1,7 +1,7 @@
-	(function () {
+(function () {
     'use strict';
 
-  	angular.module('materializeApp').controller("mainController", ['$scope', 'ngDialog', 'preloader','$location', function($scope, ngDialog, preloader,$location){
+  	angular.module('materializeApp').controller("MainController", ['$scope', 'ngDialog', 'preloader','$location', function($scope, ngDialog, preloader,$location){
       $scope.toggleMenu = false;
       $scope.isLoading = true;
       $scope.isSuccessful = false;
@@ -63,7 +63,5 @@
                     }
               );
 		}]);	
-
-
 
 })();

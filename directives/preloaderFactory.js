@@ -1,6 +1,5 @@
-        (function () {
+(function () {
     'use strict';
-
 
 angular.module('materializeApp').factory( "preloader", function( $q, $rootScope ) {
                 // I manage the preloading of image objects. Accepts an array of image URLs.
@@ -151,5 +150,4 @@ angular.module('materializeApp').factory( "preloader", function( $q, $rootScope 
             }
         );
 
-        
-        })();
+})();

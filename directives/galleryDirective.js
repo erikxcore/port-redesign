@@ -1,6 +1,5 @@
-        (function () {
+(function () {
     'use strict';
-
 
 angular.module('materializeApp').directive('gallery', ['$timeout' ,function(timer){
     var linker = function(scope,element,attrs) {
@@ -43,5 +42,4 @@ angular.module('materializeApp').directive('gallery', ['$timeout' ,function(time
     }
 }]);
 
-
-        })();
+})();

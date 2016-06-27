@@ -1,9 +1,9 @@
-		(function () {
+(function () {
     'use strict';
 
-		angular.module('materializeApp').controller('resumeController', ['$scope', function($scope){
+		angular.module('materializeApp').controller('ResumeController', ['$scope', function($scope){
     		$scope.pageClass = 'page-resume';
 
 		}]);
 
-		})();
+})();
