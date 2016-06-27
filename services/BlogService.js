@@ -1,3 +1,6 @@
+(function () {
+    'use strict';
+
 angular.module('blogService', []).service('BlogService', ['$http', function($http) {
     this.getPosts = function() {
       var cors = "http://66.150.214.52:8001/"; 
@@ -16,3 +19,4 @@ angular.module('blogService', []).service('BlogService', ['$http', function($htt
     };
 }]);
 
+})();

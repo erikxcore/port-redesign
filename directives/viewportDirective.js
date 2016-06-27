@@ -1,3 +1,7 @@
+        (function () {
+    'use strict';
+
+
 angular.module('materializeApp').directive('viewport',function(){
     var linker = function(scope,element,attrs) {
 
@@ -20,3 +24,6 @@ angular.module('materializeApp').directive('viewport',function(){
         link: linker
     }
 });
+
+
+        })();

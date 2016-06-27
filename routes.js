@@ -1,3 +1,6 @@
+(function () {
+    'use strict';
+
 angular.module('routes', []).config(function($stateProvider, $urlRouterProvider) {
         
     $stateProvider
@@ -37,3 +40,5 @@ angular.module('routes', []).config(function($stateProvider, $urlRouterProvider)
 });
 
 
+
+})();

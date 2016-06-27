@@ -1,3 +1,6 @@
+     (function () {
+    'use strict';
+
      angular.module('contactController', []).controller('contactController',['$scope','vcRecaptchaService', function($scope,vcRecaptchaService){
           $scope.pageClass = 'page-contact';
           $scope.success = false;
@@ -55,3 +58,5 @@
     }
 
   }]);
+
+    })();

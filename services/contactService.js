@@ -1,3 +1,6 @@
+(function () {
+    'use strict';
+
 angular.module('contactService', []).service('ContactService', ['$http', function($http) {
     this.sendEmail = function(input) {
     	return $http({
@@ -8,3 +11,5 @@ angular.module('contactService', []).service('ContactService', ['$http', functio
       });
     };
 }]);
+
+})();

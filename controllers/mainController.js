@@ -1,4 +1,7 @@
-		angular.module('mainController', []).controller("mainController", ['$scope', 'ngDialog', 'preloader','$location', function($scope, ngDialog, preloader,$location){
+	(function () {
+    'use strict';
+
+  	angular.module('mainController', []).controller("mainController", ['$scope', 'ngDialog', 'preloader','$location', function($scope, ngDialog, preloader,$location){
       $scope.toggleMenu = false;
       $scope.isLoading = true;
       $scope.isSuccessful = false;
@@ -61,3 +64,6 @@
               );
 		}]);	
 
+
+
+})();

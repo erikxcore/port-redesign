@@ -1,3 +1,6 @@
+(function () {
+    'use strict';
+
 angular.module('materializeApp', 
   ['ui.materialize',
   'ui.router',
@@ -26,3 +29,5 @@ angular.module('materializeAppp', ['uiGmapgoogle-maps']).config(function(uiGmapG
         libraries: 'weather,geometry,visualization'
     });
 })
+
+})();
