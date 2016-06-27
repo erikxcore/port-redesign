@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-angular.module('routes', []).config(function($stateProvider, $urlRouterProvider) {
+angular.module('materializeApp').config(function($stateProvider, $urlRouterProvider) {
         
     $stateProvider
 
@@ -36,6 +36,7 @@ angular.module('routes', []).config(function($stateProvider, $urlRouterProvider)
             });
 
     $urlRouterProvider.otherwise('/home');
+    
 
 });
 

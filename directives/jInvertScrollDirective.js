@@ -1,3 +1,6 @@
+        (function () {
+    'use strict';
+
 angular.module('materializeApp').directive('jInvertScroll',function(){
     var linker = function(scope,element,attrs) {
             jQuery.jInvertScroll(['.scroll'],
@@ -16,3 +19,5 @@ angular.module('materializeApp').directive('jInvertScroll',function(){
         },
     }
 });
+
+        })();

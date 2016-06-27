@@ -1,7 +1,7 @@
      (function () {
     'use strict';
 
-     angular.module('contactController', []).controller('contactController',['$scope','vcRecaptchaService', function($scope,vcRecaptchaService){
+    angular.module('materializeApp').controller('contactController',['$scope','vcRecaptchaService', function($scope,vcRecaptchaService){
           $scope.pageClass = 'page-contact';
           $scope.success = false;
           $scope.error = false;
@@ -31,7 +31,7 @@
                  
       }]);
 
-    angular.module('contactForm', []).controller("contactForm", ['$scope','ContactService','vcRecaptchaService', function($scope, ContactService, vcRecaptchaService) {
+    angular.module('materializeApp').controller("contactForm", ['$scope','ContactService','vcRecaptchaService', function($scope, ContactService, vcRecaptchaService) {
     $scope.success = false;
     $scope.error = false;
     $scope.submitted = false;

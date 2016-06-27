@@ -27,7 +27,7 @@
         if (!console.log) {console.log = function() {};}
         //Catch any JS global errors and display error page due to unsupported browser
         window.onerror = function(error, url, line) {
-                document.getElementById("main").style.display = "none";
+                document.getElementById("main").style.display = "none"; //may throw an error, but just in case some freak accident where main gets displayed
                 document.getElementsByClassName('mouse-scroll-container')[0].style.display="none";
                 document.getElementsByClassName('error-page')[0].style.display="block";
                 document.getElementsByClassName('loading-page')[0].style.display="none";
@@ -59,7 +59,8 @@
      <!--[if IE]><link href="assets/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if lte IE 9]><link href="assets/css/ie-8-and-down.css" media="screen, projection" rel="stylesheet" type="text/css" /><![endif]-->
 
-    <script type="text/javascript" src="app.js"></script>
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
     <script src="directives/mixItUpDirective.js"></script>
     <script src="directives/galleryDirective.js"></script>
     <script src="directives/viewportDirective.js"></script>
@@ -74,7 +75,7 @@
     <script src="controllers/contactController.js"></script>
     <script src="services/contactService.js"></script>
     <script src="services/blogService.js"></script>
-    <script src="routes.js"></script>
+
 </head>
 
 <body ng-controller="mainController">

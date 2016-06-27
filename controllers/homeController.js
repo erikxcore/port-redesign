@@ -1,7 +1,7 @@
 		(function () {
     'use strict';
 
-		angular.module('homeController', []).controller('homeController', function($scope){
+		angular.module('materializeApp').controller('homeController', function($scope){
     		$scope.pageClass = 'page-home';
 
 		});

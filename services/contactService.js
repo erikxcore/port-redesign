@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-angular.module('contactService', []).service('ContactService', ['$http', function($http) {
+angular.module('materializeApp').service('ContactService', ['$http', function($http) {
     this.sendEmail = function(input) {
     	return $http({
           method: 'POST',

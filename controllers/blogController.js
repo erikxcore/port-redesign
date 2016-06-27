@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-      angular.module('blogController', []).controller("blogController", ['$scope', 'BlogService', '$sce', function($scope, BlogService, $sce){
+      angular.module('materializeApp').controller("blogController", ['$scope', 'BlogService', '$sce', function($scope, BlogService, $sce){
       $scope.pageClass = 'page-blog';
 
       $scope.posts = [];
