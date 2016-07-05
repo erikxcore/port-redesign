@@ -34,8 +34,8 @@
               "assets/img/new2/whale.png",
               "assets/img/new2/woods.png",
 
-              "assets/img/me_large.JPG",
-              "assets/img/mountains.jpeg",
+              "assets/img/me_large.jpg",
+              "assets/img/mountains.jpg",
             ];
 
             preloader.preloadImages( $scope.imageLocations )
