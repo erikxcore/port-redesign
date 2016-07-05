@@ -25,6 +25,59 @@ a, button{
     display:block;
 }
 
+
+
+
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:2px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+  background: #5d3b86;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
+  }
+}
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-2px;
+  text-shadow:1px 0 blue; 
+  top:0;
+  color:white;
+  background: #5d3b86;
+  overflow:hidden;
+  clip:rect(0,900px,0,0); 
+  animation:noise-anim-2 3s infinite linear alternate-reverse;
+}
+
+   @media screen and (max-width: 490px) {
+
+table{
+display:none;
+}
+
+}
+
 //Content Row Style
 
 .r1{
@@ -32,20 +85,44 @@ a, button{
   height:100vh;
 
   p{
-    margin:0px auto;
-    padding:0px;
+    margin: 0px;
+    padding: 0px;
+    /* z-index: 99; */
+    top: 35vh;
+    right: 0;
+    color: white;
+    font-size: 3em;
+    text-align: right;
+    display: block;
+   // width: 34vw;
+    position: relative;
+    float: right;
+    text-transform: uppercase;
+    font-weight:700;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .smallish{
+    font-size:3rem;
   }
 }
 
 .r2,.r3{
   background-color:#160F25;
   height:auto;
-  overflow-x:visible;
+  
+  p{
+    font-family: 'Lato', sans-serif;
+    font-weight:300;
+    font-style:italic;
+    font-size: 1.5em;
+    line-height:2;
+  }
 }
 
 .r2{
     min-height:70vh;
-    color: #FE665C;
+    color: #FE665C; //this way due to rendering of blog
     /*
     p,h1,h2,h3,h4,h5,h6{
       color: #FE665C;
@@ -53,8 +130,25 @@ a, button{
     */
 }
 
+table.striped>tbody>tr:nth-child(odd) {
+    background-color: #231b33;
+  }
+
+
+td, th{
+    text-transform: uppercase;
+    font-family: "Lato", sans-serif;
+    font-weight: bold;
+    text-align:center;
+}
+
+th{
+    font-size: 1.25em;
+    font-style: italic;
+}
+
 .r3{
-  background-color:white !important;
+  //background-color:white !important;
   margin-bottom:0px;
 
   p{
@@ -97,22 +191,30 @@ a, button{
   height:auto;
 
   h2{
-    font-family:'Podkova';
+    font-family: 'Podkova', serif;
     text-transform:uppercase;
     color:white;
-    transform: skew(0deg, -7deg) ;
-    -webkit-transform: skew(0deg, -7deg) ;
-    -moz-transform: skew(0deg, -7deg) ;
-    -o-transform: skew(0deg, -7deg) ;
-    -ms-transform: skew(0deg, -7deg) ;
+    transform: skew(0deg, -3deg) ;
+    -webkit-transform: skew(0deg, -3deg) ;
+    -moz-transform: skew(0deg, -3deg) ;
+    -o-transform: skew(0deg, -3deg) ;
+    -ms-transform: skew(0deg, -3deg) ;
     padding:0px;
     margin:0px;
+    text-align:center;
   }
 }
 
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
 //Fix issues with blog content breaking out of box
 #blogHolder{
-  overflow-y:scroll;  
+  //overflow-y:scroll;  
+  overflow:hidden;
   @extend %clearfix;
 }
 
@@ -136,16 +238,24 @@ a, button{
     left: 0px;
     width:100vw;
     height:100vh;
-    background-color:#00044b;
-    background-image:url('../img/new2/stars.png');
-    background-repeat: repeat;
+   // background-color:#00044b;
+    //background-image:url('../img/new2/stars.png');
+    //background-repeat: repeat;
+    background-color: #00044b;
+    background: linear-gradient(to bottom, #413a7f 10%, #e458dc 50%);
+    //background: linear-gradient(to bottom,#e458dc 20%, #a483d0 50%); //cool
+  //maybe backwards too
+    
   }
   > :nth-child(2) {
     z-index: -14;
-    top: 19vh;
-    left: 0vw;
-    width: 95vw;
-    height: 33vh;
+    top: 7vh;
+    left: -20vw;
+    width: 75vw;
+    height: 62vh;
+
+    animation:the-wind 20s infinite linear alternate-reverse;
+
   }
   > :nth-child(3) {
     z-index: -13;
@@ -153,8 +263,14 @@ a, button{
     left: 15vw;
     //width: 8vw;
     //height: 14vh;
-    width: 10vw;
-    height: 12vh;
+    width: 7vw;
+    height: 13vh;
+
+      @media screen and (max-width: 400px) {
+          width: 6vw;
+          height: 12vh;
+      }
+
   }
   > :nth-child(4) {
     z-index: -12;
@@ -178,8 +294,8 @@ a, button{
   > :nth-child(6) {
     z-index: -10;
     top: 29vh;
-    left: 39vw;
-    width: 62vw;
+    left: 35vw;
+    width: 87vw;
     height: 42vh;
   }
   > :nth-child(7) {
@@ -191,14 +307,14 @@ a, button{
   }
   > :nth-child(8) {
     z-index: -8;
-    top: 43vh;
-    left: 0vw;
-    width: 30vw;
-    height: 50vh;
+    top: 46vh;
+    left: -15vw;
+    width: 48vw;
+    height: 43vh;;
   }
   > :nth-child(9) {
     z-index: -9;
-    top: 68vh;
+    top: 64vh;
     left: 3vw;
     width: 20vw;
     height: 20vh;
@@ -223,6 +339,9 @@ a, button{
     left: 58vw;
     width: 20vw;
     height: 20vh;
+    //animation:fly-away 5s linear;
+
+display:none;
   }
   > :nth-child(13) {
     z-index: -3;
@@ -279,6 +398,26 @@ a, button{
     background-repeat:repeat;
     opacity: 0.3;
   }
+  > :nth-child(20){
+    top: 0vh;
+    left: 0vw;
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+    background-image: url("../img/new2/noise.png");
+    background-repeat: repeat;
+    opacity: 0.45;
+  }
+  > :nth-child(21){
+    top: 0vh;
+    left: 0vw;
+    height: 50vh;
+    width: 100vw;
+    z-index: -12;
+    background-image: url("../img/new2/star_noise.png");
+    background-repeat: repeat;
+    opacity: 0.3;
+  }
 
   > * {
     position: absolute;
@@ -288,9 +427,11 @@ a, button{
 .color_border{
   width:100%;
   border-radius: 2px;
-  @include gradient-border($green2, $blue2, 3px, 'to right');
+  @include gradient-border-all($green2, $blue2, 3px, 'to right');
   background-color: transparent;
   color: black; 
+  padding: 60px 0px;
+  margin: 50px 0px;
 }
 
 .hidden{

@@ -3,7 +3,7 @@
 
 		angular.module('materializeApp').controller('WorkController', function($scope){
     		$scope.pageClass = 'page-work';
-
+    		$scope.$emit('currentPage', $scope.pageClass);
     		  $scope.categories = ['Development', 'Both', 'Design'];
 
 				    $scope.work = [{

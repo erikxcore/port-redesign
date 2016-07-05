@@ -6,11 +6,15 @@
       $scope.isLoading = true;
       $scope.isSuccessful = false;
 
+      $scope.$on('currentPage', function (event, data) {
+        $scope.pageClass = data;
+      });
+
 			$scope.openContact = function () {
               ngDialog.open({ template: 'pages/contact.html',
                className: 'port-theme',
                	cache: false,
-                  controller: 'contactController' });
+                  controller: 'ContactController' });
       };
 
             $scope.imageLocations = [
