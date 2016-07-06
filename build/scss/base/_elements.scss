@@ -385,6 +385,11 @@ section#timeline {
     text-align: center;
     margin-top: 15%;
 
+
+      @media screen and (max-width: 840px) {
+       margin-top:33%;
+      }
+
       &:before,
       &:after {
         position: absolute;

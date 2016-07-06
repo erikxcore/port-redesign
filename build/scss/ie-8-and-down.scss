@@ -6,3 +6,8 @@
 
         #main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}
         .error-page{display:block;}
+
+           .loading-page .loader {
+  margin: 15% 50% 0% 50%;
+  width: 100px;
+}

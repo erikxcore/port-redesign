@@ -144,6 +144,9 @@ module.exports = function(grunt) {
           pattern: '<script src="directives/closeDialogDirective.js"></script>',
           replacement: ''
         },{
+          pattern: '<script src="directives/scrollSpeedDirective.js"></script>',
+          replacement: ''
+        },{
           pattern: '<script src="directives/preloaderFactory.js"></script>',
           replacement: ''
         },{
@@ -235,7 +238,12 @@ module.exports = function(grunt) {
         },{
           pattern: '<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>',
           replacement: ''
-        },{
+        },
+        {
+          pattern: '<script type="text/javascript" src="assets/js/jQuery.scrollSpeed.js"></script>',
+          replacement: ''
+        },
+        {
           pattern: '<script type="text/javascript" src="assets/js/jquery.viewportchecker.min.js"></script>',
           replacement: ''
         },{

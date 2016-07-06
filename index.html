@@ -25,7 +25,7 @@
 
 </head>
 
-<body ng-controller="MainController">
+<body ng-controller="MainController" scrollspeed>
 
 <!--[if gt IE 7)]><!--> <noscript> <!--<![endif]--><style>#main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}.error-page{display:block;}</style><!--[if gt IE 7)]><!--> </noscript> <!--<![endif]-->
 
@@ -106,23 +106,23 @@
 
     <div class="background">
         <div class="sky"></div>
-        <img src="assets/img/new2/clouds.png" />
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/sun.png" />
+        <img src="assets/img/bg/clouds.png" />
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/sun.png" />
         <div class="lake"></div>
-        <img src="assets/img/new2/center_mountain.png"/>
-        <img src="assets/img/new2/cr_mountain.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/2l_mountain.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/1l_mountain.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/reflection.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/2r_mountain.png"/>
-        <img parallax parallax-ratio="0.4" src="assets/img/new2/1r_mountain.png"/>
-        <img parallax parallax-ratio="0.5" src="assets/img/new2/birds.png"/>
-        <img parallax parallax-ratio="-0.2" src="assets/img/new2/boat.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/whale.png"/>
-        <img src="assets/img/new2/woods.png"/>
-        <img src="assets/img/new2/reflection.png">
-        <img parallax parallax-ratio="0.31" src="assets/img/new2/reflection.png" >
-        <img src="assets/img/new2/reflection.png">
+        <img src="assets/img/bg/center_mountain.png"/>
+        <img src="assets/img/bg/cr_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/2l_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/1l_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/reflection.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/2r_mountain.png"/>
+        <img parallax parallax-ratio="0.4" src="assets/img/bg/1r_mountain.png"/>
+        <img parallax parallax-ratio="0.5" src="assets/img/bg/birds.png"/>
+        <img parallax parallax-ratio="-0.2" src="assets/img/bg/boat.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/whale.png"/>
+        <img src="assets/img/bg/woods.png"/>
+        <img src="assets/img/bg/reflection.png">
+        <img parallax parallax-ratio="0.31" src="assets/img/bg/reflection.png" >
+        <img src="assets/img/bg/reflection.png">
         <div class="bubbles"></div>
         <div class="noise"></div>
         <div class="star_noise"></div>
@@ -161,6 +161,7 @@
     <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
     <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
     <script type="text/javascript" src="assets/js/jquery.viewportchecker.min.js"></script>
+    <script type="text/javascript" src="assets/js/jQuery.scrollSpeed.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
@@ -186,6 +187,7 @@
     <script src="directives/galleryDirective.js"></script>
     <script src="directives/viewportDirective.js"></script>
     <script src="directives/closeDialogDirective.js"></script>
+    <script src="directives/scrollSpeedDirective.js"></script>
     <script src="directives/preloaderFactory.js"></script>
     <script src="controllers/MainController.js"></script>
     <script src="controllers/AboutController.js"></script>
