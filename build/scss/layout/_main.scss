@@ -447,11 +447,3 @@ display:none;
  opacity:1;
  }
 
- @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
-   /* IE10+ specific styles go here */  
-
-   .loading-page .loader {
-  margin: 15% 50% 0% 50%;
-  width: 100px;
-}
-}
