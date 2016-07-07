@@ -9,7 +9,7 @@ angular.module('materializeApp').directive('gallery', ['$timeout' ,function(time
                 var images =  angular.element(element[0].querySelectorAll('.gallery-row .mix figure .image'));
                 var cancel = angular.element(element[0].querySelector('.gallery-close'));
                 var menu = angular.element(document).find('.menu-toggle');
-
+                var body = angular.element(document).find('body');
 
                 for(var i = 0; i < images.length ; i++){
                     images[i].addEventListener('click', function(){
@@ -20,12 +20,14 @@ angular.module('materializeApp').directive('gallery', ['$timeout' ,function(time
                         zoom_row.find('#'+this.id).addClass('item_open');
                         cancel[0].style.display = 'block';
                         menu[0].style.display = 'none';
+                        body.addClass('fixScroll');
                     return false;
                     });
                 };
 
                 cancel.bind('click',function(){
                         gallery_row.removeClass('item_open');
+                        body.removeClass('fixScroll');
                         var ports = angular.element(element[0].querySelectorAll('.port'));
                         ports.removeClass('item_open');
                         cancel[0].style.display = 'none';

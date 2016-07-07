@@ -5611,6 +5611,11 @@ div.shot {
   width: 100%;
   margin: 10vh 0px;
 }
+@media screen and (max-width: 560px) {
+  div.shot {
+    display: none;
+  }
+}
 div.shot span:after {
   background-color: #64346b;
   content: "";
@@ -6051,6 +6056,13 @@ div.shot span:last-child:before {
   text-align: center;
   cursor: pointer;
 }
+@media screen and (max-width: 550px) {
+  .mix-container .mix figure {
+    max-width: 100%;
+    max-height: 30vh;
+    min-width: 100%;
+  }
+}
 .mix-container .mix figure img {
   position: relative;
   display: block;
@@ -6122,6 +6134,11 @@ div.shot span:last-child:before {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+@media screen and (max-width: 550px) {
+  .mix-container .mix figure.effect figcaption:before {
+    border: 0px;
+  }
+}
 .mix-container .mix figure.effect figcaption:before, .mix-container .mix figure.effect figcaption p {
   opacity: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
@@ -6136,6 +6153,11 @@ div.shot span:last-child:before {
   margin: 10% auto;
   -webkit-transform: scale(1.5);
   transform: scale(1.5);
+}
+@media screen and (max-width: 550px) {
+  .mix-container .mix figure.effect p {
+    margin: 2vh auto;
+  }
 }
 .mix-container .mix figure.effect:hover p, .mix-container .mix figure.effect:hover figcaption:before {
   opacity: 1;
@@ -6174,24 +6196,42 @@ div.shot span:last-child:before {
   float: left;
   padding: 0 40px 40px;
 }
+@media screen and (max-width: 700px) {
+  .image {
+    width: 100%;
+  }
+}
+
+.fixScroll {
+  overflow: hidden;
+}
+
+html.ngdialog-open {
+  overflow: visible;
+}
 
 .port {
   position: fixed;
   z-index: 3000;
-  width: 100%;
-  height: 100%;
   top: 0;
+  bottom: 0;
+  right: 0;
   left: 0;
   padding-top: 100px;
   background: #ffffff;
   background-color: #fafafa;
   visibility: hidden;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+  opacity: 0;
+  overflow-y: auto;
   border-bottom: 1px solid #d0d0d0;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+@media screen and (max-width: 700px) {
+  .port {
+    padding-top: 0px;
+  }
 }
 .port img {
   width: 100%;
@@ -6201,9 +6241,23 @@ div.shot span:last-child:before {
 .port .description {
   float: left;
   width: 50%;
-  max-height: 100%;
   padding: 0 40px 40px;
   overflow: visible;
+}
+@media screen and (max-width: 700px) {
+  .port .description {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .port .description h2 {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 700px) {
+  .port .description p {
+    font-size: 1em;
+  }
 }
 .port h1 {
   font-size: 35px;
@@ -6218,16 +6272,15 @@ div.shot span:last-child:before {
 }
 .port.item_open {
   visibility: visible;
-  -webkit-transform: translateY(0%);
-  transform: translateY(0%);
-  -webkit-transition: all 0.4s ease-in-out;
-  -moz-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  opacity: 1;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .port > * {
   opacity: 1;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
 }
 
 .gallery-close {
@@ -6244,13 +6297,28 @@ div.shot span:last-child:before {
   -moz-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+.gallery-close:hover {
+  color: #7763E6;
+}
+@media screen and (max-width: 700px) {
+  .gallery-close {
+    right: 5px;
+  }
+  .gallery-close > .medium {
+    font-size: 2rem;
+  }
+}
 
 .item_open .close {
   opacity: 1;
-  top: 0px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.zoom-row {
+  opacity: 1;
+  transition: opacity 0.1s;
 }
 
 .ngdialog.port-theme {
@@ -6258,7 +6326,7 @@ div.shot span:last-child:before {
   width: 100%;
   background-color: #1f1e27;
   background-color: rgba(31, 30, 39, 0.8);
-  padding-top: 150px;
+  padding-top: 5%;
 }
 .ngdialog.port-theme.ngdialog-closing .ngdialog-content {
   -webkit-animation: ngdialog-flyout .5s;
@@ -6279,6 +6347,12 @@ div.shot span:last-child:before {
   max-width: 100%;
   width: 90%;
   border-bottom: 2px solid #3f51b5;
+}
+@media screen and (max-width: 530px) {
+  .ngdialog.port-theme .ngdialog-content {
+    width: 100%;
+    padding: 0px;
+  }
 }
 .ngdialog.port-theme .ngdialog-close {
   border-radius: 5px;
@@ -6330,6 +6404,11 @@ div.shot span:last-child:before {
   -webkit-animation: ngdialog-pulse 1.1s infinite;
   animation: ngdialog-pulse 1.1s infinite;
   outline: none;
+}
+@media (max-width: 500px) {
+  .ngdialog.port-theme {
+    padding-top: 0%;
+  }
 }
 
 @media (max-width: 568px) {
@@ -6387,6 +6466,27 @@ div.shot span:last-child:before {
   color: #777;
 }
 */
+.ngdialog-overlay {
+  display: none;
+}
+
+.g-recaptcha {
+  float: none;
+  display: block;
+  margin: 0 auto;
+  transform: scale(0.77);
+  -webkit-transform: scale(0.77);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+#rc-imageselect {
+  transform: scale(0.77);
+  -webkit-transform: scale(0.77);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 0px;
   box-shadow: 0 0;
@@ -6622,12 +6722,6 @@ input:-webkit-autofill:focus {
 
 .messages {
   height: 60px;
-}
-
-.g-recaptcha {
-  float: right;
-  display: block;
-  margin: 0 auto;
 }
 
 .button {
@@ -7286,67 +7380,67 @@ a, button {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(54px, 9999px, 10px, 0);
+    clip: rect(80px, 9999px, 99px, 0);
   }
   5% {
-    clip: rect(30px, 9999px, 81px, 0);
+    clip: rect(4px, 9999px, 82px, 0);
   }
   10% {
-    clip: rect(65px, 9999px, 96px, 0);
+    clip: rect(41px, 9999px, 86px, 0);
   }
   15% {
-    clip: rect(62px, 9999px, 93px, 0);
+    clip: rect(13px, 9999px, 69px, 0);
   }
   20% {
-    clip: rect(91px, 9999px, 88px, 0);
+    clip: rect(77px, 9999px, 96px, 0);
   }
   25% {
-    clip: rect(81px, 9999px, 85px, 0);
+    clip: rect(45px, 9999px, 89px, 0);
   }
   30% {
-    clip: rect(88px, 9999px, 82px, 0);
+    clip: rect(81px, 9999px, 95px, 0);
   }
   35% {
-    clip: rect(7px, 9999px, 10px, 0);
+    clip: rect(36px, 9999px, 60px, 0);
   }
   40% {
-    clip: rect(81px, 9999px, 21px, 0);
+    clip: rect(95px, 9999px, 32px, 0);
   }
   45% {
-    clip: rect(93px, 9999px, 67px, 0);
+    clip: rect(29px, 9999px, 2px, 0);
   }
   50% {
-    clip: rect(13px, 9999px, 23px, 0);
+    clip: rect(39px, 9999px, 69px, 0);
   }
   55% {
-    clip: rect(82px, 9999px, 89px, 0);
+    clip: rect(55px, 9999px, 89px, 0);
   }
   60% {
-    clip: rect(91px, 9999px, 99px, 0);
+    clip: rect(97px, 9999px, 89px, 0);
   }
   65% {
-    clip: rect(77px, 9999px, 26px, 0);
+    clip: rect(24px, 9999px, 77px, 0);
   }
   70% {
-    clip: rect(76px, 9999px, 68px, 0);
+    clip: rect(52px, 9999px, 95px, 0);
   }
   75% {
-    clip: rect(39px, 9999px, 49px, 0);
+    clip: rect(6px, 9999px, 23px, 0);
   }
   80% {
-    clip: rect(24px, 9999px, 95px, 0);
+    clip: rect(97px, 9999px, 37px, 0);
   }
   85% {
-    clip: rect(81px, 9999px, 9px, 0);
+    clip: rect(21px, 9999px, 100px, 0);
   }
   90% {
-    clip: rect(42px, 9999px, 60px, 0);
+    clip: rect(43px, 9999px, 5px, 0);
   }
   95% {
-    clip: rect(66px, 9999px, 56px, 0);
+    clip: rect(99px, 9999px, 28px, 0);
   }
   100% {
-    clip: rect(39px, 9999px, 58px, 0);
+    clip: rect(47px, 9999px, 13px, 0);
   }
 }
 .glitch:after {
@@ -7364,67 +7458,67 @@ a, button {
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(21px, 9999px, 39px, 0);
+    clip: rect(32px, 9999px, 34px, 0);
   }
   5% {
-    clip: rect(13px, 9999px, 90px, 0);
+    clip: rect(71px, 9999px, 35px, 0);
   }
   10% {
-    clip: rect(9px, 9999px, 47px, 0);
+    clip: rect(77px, 9999px, 19px, 0);
   }
   15% {
-    clip: rect(65px, 9999px, 55px, 0);
+    clip: rect(18px, 9999px, 5px, 0);
   }
   20% {
-    clip: rect(28px, 9999px, 38px, 0);
+    clip: rect(2px, 9999px, 60px, 0);
   }
   25% {
-    clip: rect(44px, 9999px, 47px, 0);
+    clip: rect(58px, 9999px, 68px, 0);
   }
   30% {
-    clip: rect(87px, 9999px, 18px, 0);
+    clip: rect(78px, 9999px, 57px, 0);
   }
   35% {
-    clip: rect(65px, 9999px, 19px, 0);
+    clip: rect(95px, 9999px, 74px, 0);
   }
   40% {
-    clip: rect(8px, 9999px, 13px, 0);
+    clip: rect(51px, 9999px, 69px, 0);
   }
   45% {
-    clip: rect(40px, 9999px, 12px, 0);
+    clip: rect(25px, 9999px, 42px, 0);
   }
   50% {
-    clip: rect(45px, 9999px, 100px, 0);
+    clip: rect(79px, 9999px, 66px, 0);
   }
   55% {
-    clip: rect(94px, 9999px, 1px, 0);
+    clip: rect(7px, 9999px, 11px, 0);
   }
   60% {
-    clip: rect(60px, 9999px, 94px, 0);
+    clip: rect(75px, 9999px, 24px, 0);
   }
   65% {
-    clip: rect(14px, 9999px, 4px, 0);
+    clip: rect(10px, 9999px, 68px, 0);
   }
   70% {
-    clip: rect(87px, 9999px, 100px, 0);
+    clip: rect(17px, 9999px, 52px, 0);
   }
   75% {
-    clip: rect(97px, 9999px, 74px, 0);
+    clip: rect(81px, 9999px, 3px, 0);
   }
   80% {
-    clip: rect(33px, 9999px, 28px, 0);
+    clip: rect(57px, 9999px, 37px, 0);
   }
   85% {
-    clip: rect(6px, 9999px, 71px, 0);
+    clip: rect(55px, 9999px, 66px, 0);
   }
   90% {
-    clip: rect(13px, 9999px, 66px, 0);
+    clip: rect(49px, 9999px, 35px, 0);
   }
   95% {
-    clip: rect(35px, 9999px, 61px, 0);
+    clip: rect(17px, 9999px, 48px, 0);
   }
   100% {
-    clip: rect(26px, 9999px, 34px, 0);
+    clip: rect(34px, 9999px, 90px, 0);
   }
 }
 .glitch:before {

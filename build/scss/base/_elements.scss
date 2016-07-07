@@ -498,6 +498,10 @@ div.shot {
     text-shadow: 2px 3px 0 #ab6593;
     width: 100%;
     margin: 10vh 0px;
+
+      @media screen and (max-width: 560px) {
+              display:none;
+            }
   
     span:after {
       background-color: #64346b;

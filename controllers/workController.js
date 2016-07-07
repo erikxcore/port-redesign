@@ -13,7 +13,7 @@
 				        value: 'Self Install Walled Garden is the front-end provisioning tool for Mediacom technicians or customers. This application is a Java (JDK6) based that is intertwined with many external services to help complete a modem\'s installion. I handled updating the code to implement Single Sign On as well as introducing a new design to be better unified with the company\'s current image.',
 				        id: '1'
 				    },{
-				        name: 'Mediacom Interal Travel Request Application',
+				        name: 'Mediacom Internal Travel Request Application',
 				        category: 'Both',
 				        img: 'assets/img/work/travel.png',
 				        value: 'The Mediacom Travel Request web app is a conversion of a legacy Java application to new standards. The previous version only supported IE8 - I obtained requirements and came up with a development plan to create an experience across all browsers that was responsive and contained many additons to better support the Travel department. I came up with the design as well as all coding - primarily with jQuery and Java.',

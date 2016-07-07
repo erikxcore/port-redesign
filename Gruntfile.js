@@ -22,7 +22,8 @@ module.exports = function(grunt) {
 					'assets/js/jquery-2.2.3.min.js',
 					'assets/js/jquery.mixitup.min.js',
         	'assets/js/lodash.js',
-          'assets/js/jquery.viewportchecker.min.js'
+          'assets/js/jquery.viewportchecker.min.js',
+          'assets/js/jQuery.scrollSpeed.js'
 				],
 				dest: 'dist/assets/js/production-extra1.min.js',	
 			},
