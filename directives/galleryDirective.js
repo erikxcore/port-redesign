@@ -19,7 +19,7 @@ angular.module('materializeApp').directive('gallery', ['$timeout' ,function(time
                         ngimage.addClass('item_open')
                         zoom_row.find('#'+this.id).addClass('item_open');
                         cancel[0].style.display = 'block';
-                        menu[0].style.display = 'none';
+                        //menu[0].style.display = 'none';
                         body.addClass('fixScroll');
                     return false;
                     });
@@ -31,7 +31,7 @@ angular.module('materializeApp').directive('gallery', ['$timeout' ,function(time
                         var ports = angular.element(element[0].querySelectorAll('.port'));
                         ports.removeClass('item_open');
                         cancel[0].style.display = 'none';
-                        menu[0].style.display = 'block';
+                        //menu[0].style.display = 'block';
                     return false;
                 });
 

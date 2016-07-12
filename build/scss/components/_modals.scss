@@ -36,6 +36,13 @@
         width:100%;
         padding:0px;
        }
+
+       @media screen   and (orientation: landscape) and (-webkit-min-device-pixel-ratio:2) {  
+                width:100%;
+        padding:0px;
+
+        }
+
   }
 
   .ngdialog-close{
@@ -99,7 +106,9 @@
 @media (max-width: 500px) {
   padding-top:0%;
 }
-
+      @media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio:2) {  
+        padding-top:0%;
+}
 }
 
 
@@ -187,4 +196,8 @@
   -webkit-transform:scale(0.77);
   transform-origin:0 0;
   -webkit-transform-origin:0 0;
+}
+  
+.ngdialog{
+  -webkit-overflow-scrolling: initial;
 }

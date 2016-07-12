@@ -6354,6 +6354,12 @@ html.ngdialog-open {
     padding: 0px;
   }
 }
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .ngdialog.port-theme .ngdialog-content {
+    width: 100%;
+    padding: 0px;
+  }
+}
 .ngdialog.port-theme .ngdialog-close {
   border-radius: 5px;
   cursor: pointer;
@@ -6406,6 +6412,11 @@ html.ngdialog-open {
   outline: none;
 }
 @media (max-width: 500px) {
+  .ngdialog.port-theme {
+    padding-top: 0%;
+  }
+}
+@media screen and (orientation: landscape) {
   .ngdialog.port-theme {
     padding-top: 0%;
   }
@@ -6485,6 +6496,10 @@ html.ngdialog-open {
   -webkit-transform: scale(0.77);
   transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
+}
+
+.ngdialog {
+  -webkit-overflow-scrolling: initial;
 }
 
 input:not([type]):focus:not([readonly]), input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
@@ -7043,6 +7058,11 @@ nav ul {
     padding-top: 0px;
   }
 }
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  nav ul {
+    padding-top: 0px;
+  }
+}
 nav ul.hidden {
   display: none;
 }
@@ -7073,6 +7093,11 @@ nav ul a {
   padding: 10px 0;
 }
 @media screen and (max-width: 525px) {
+  nav ul a {
+    font-size: 1em;
+  }
+}
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
   nav ul a {
     font-size: 1em;
   }
@@ -7233,6 +7258,11 @@ nav ul li:hover {
   width: 100%;
   height: 100px;
 }
+@media screen and (max-width: 800px) {
+  .mouse-scroll-container {
+    top: 65vh;
+  }
+}
 .mouse-scroll-container .mouse {
   position: absolute;
   margin-left: auto;
@@ -7380,67 +7410,67 @@ a, button {
 
 @keyframes noise-anim {
   0% {
-    clip: rect(80px, 9999px, 99px, 0);
+    clip: rect(51px, 9999px, 48px, 0);
   }
   5% {
-    clip: rect(4px, 9999px, 82px, 0);
+    clip: rect(90px, 9999px, 42px, 0);
   }
   10% {
-    clip: rect(41px, 9999px, 86px, 0);
+    clip: rect(80px, 9999px, 90px, 0);
   }
   15% {
-    clip: rect(13px, 9999px, 69px, 0);
+    clip: rect(100px, 9999px, 12px, 0);
   }
   20% {
-    clip: rect(77px, 9999px, 96px, 0);
+    clip: rect(86px, 9999px, 42px, 0);
   }
   25% {
-    clip: rect(45px, 9999px, 89px, 0);
+    clip: rect(13px, 9999px, 45px, 0);
   }
   30% {
-    clip: rect(81px, 9999px, 95px, 0);
+    clip: rect(35px, 9999px, 10px, 0);
   }
   35% {
-    clip: rect(36px, 9999px, 60px, 0);
+    clip: rect(40px, 9999px, 47px, 0);
   }
   40% {
-    clip: rect(95px, 9999px, 32px, 0);
+    clip: rect(50px, 9999px, 98px, 0);
   }
   45% {
-    clip: rect(29px, 9999px, 2px, 0);
+    clip: rect(42px, 9999px, 57px, 0);
   }
   50% {
-    clip: rect(39px, 9999px, 69px, 0);
+    clip: rect(55px, 9999px, 94px, 0);
   }
   55% {
-    clip: rect(55px, 9999px, 89px, 0);
+    clip: rect(72px, 9999px, 55px, 0);
   }
   60% {
-    clip: rect(97px, 9999px, 89px, 0);
+    clip: rect(6px, 9999px, 10px, 0);
   }
   65% {
-    clip: rect(24px, 9999px, 77px, 0);
+    clip: rect(79px, 9999px, 67px, 0);
   }
   70% {
-    clip: rect(52px, 9999px, 95px, 0);
+    clip: rect(60px, 9999px, 55px, 0);
   }
   75% {
-    clip: rect(6px, 9999px, 23px, 0);
+    clip: rect(42px, 9999px, 58px, 0);
   }
   80% {
-    clip: rect(97px, 9999px, 37px, 0);
+    clip: rect(60px, 9999px, 98px, 0);
   }
   85% {
-    clip: rect(21px, 9999px, 100px, 0);
+    clip: rect(95px, 9999px, 73px, 0);
   }
   90% {
-    clip: rect(43px, 9999px, 5px, 0);
+    clip: rect(30px, 9999px, 32px, 0);
   }
   95% {
-    clip: rect(99px, 9999px, 28px, 0);
+    clip: rect(60px, 9999px, 29px, 0);
   }
   100% {
-    clip: rect(47px, 9999px, 13px, 0);
+    clip: rect(26px, 9999px, 12px, 0);
   }
 }
 .glitch:after {
@@ -7458,67 +7488,67 @@ a, button {
 
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(32px, 9999px, 34px, 0);
+    clip: rect(20px, 9999px, 84px, 0);
   }
   5% {
-    clip: rect(71px, 9999px, 35px, 0);
+    clip: rect(71px, 9999px, 7px, 0);
   }
   10% {
-    clip: rect(77px, 9999px, 19px, 0);
+    clip: rect(97px, 9999px, 15px, 0);
   }
   15% {
-    clip: rect(18px, 9999px, 5px, 0);
+    clip: rect(36px, 9999px, 71px, 0);
   }
   20% {
-    clip: rect(2px, 9999px, 60px, 0);
+    clip: rect(91px, 9999px, 2px, 0);
   }
   25% {
-    clip: rect(58px, 9999px, 68px, 0);
+    clip: rect(24px, 9999px, 61px, 0);
   }
   30% {
-    clip: rect(78px, 9999px, 57px, 0);
+    clip: rect(33px, 9999px, 69px, 0);
   }
   35% {
-    clip: rect(95px, 9999px, 74px, 0);
+    clip: rect(63px, 9999px, 63px, 0);
   }
   40% {
-    clip: rect(51px, 9999px, 69px, 0);
+    clip: rect(87px, 9999px, 43px, 0);
   }
   45% {
-    clip: rect(25px, 9999px, 42px, 0);
+    clip: rect(43px, 9999px, 6px, 0);
   }
   50% {
-    clip: rect(79px, 9999px, 66px, 0);
+    clip: rect(1px, 9999px, 12px, 0);
   }
   55% {
-    clip: rect(7px, 9999px, 11px, 0);
+    clip: rect(72px, 9999px, 20px, 0);
   }
   60% {
-    clip: rect(75px, 9999px, 24px, 0);
+    clip: rect(59px, 9999px, 19px, 0);
   }
   65% {
-    clip: rect(10px, 9999px, 68px, 0);
+    clip: rect(23px, 9999px, 47px, 0);
   }
   70% {
-    clip: rect(17px, 9999px, 52px, 0);
+    clip: rect(44px, 9999px, 69px, 0);
   }
   75% {
-    clip: rect(81px, 9999px, 3px, 0);
+    clip: rect(37px, 9999px, 34px, 0);
   }
   80% {
-    clip: rect(57px, 9999px, 37px, 0);
+    clip: rect(98px, 9999px, 26px, 0);
   }
   85% {
-    clip: rect(55px, 9999px, 66px, 0);
+    clip: rect(28px, 9999px, 49px, 0);
   }
   90% {
-    clip: rect(49px, 9999px, 35px, 0);
+    clip: rect(38px, 9999px, 17px, 0);
   }
   95% {
-    clip: rect(17px, 9999px, 48px, 0);
+    clip: rect(59px, 9999px, 11px, 0);
   }
   100% {
-    clip: rect(34px, 9999px, 90px, 0);
+    clip: rect(1px, 9999px, 64px, 0);
   }
 }
 .glitch:before {
@@ -7566,6 +7596,11 @@ a, button {
 }
 .r1 .smallish {
   font-size: 3rem;
+}
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .r1 .smallish {
+    font-size: 2rem;
+  }
 }
 
 .r2, .r3 {
@@ -7814,6 +7849,11 @@ th {
   width: 15vw;
   height: 17vh;
 }
+@media screen and (max-width: 675px) {
+  .background > :nth-child(14) {
+    width: 26vw;
+  }
+}
 .background > :nth-child(15) {
   z-index: -1;
   bottom: 0vh;
@@ -7920,6 +7960,23 @@ th {
   opacity: 1;
 }
 
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+
+  html.ngdialog-open .loadHide {
+    display: none;
+    overflow: hidden;
+  }
+}
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .r1 p {
+    font-size: 2em;
+  }
+}
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   /* IE10+ specific styles go here */
   .loading-page .loader {

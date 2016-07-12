@@ -108,7 +108,13 @@ display:none;
 
   .smallish{
     font-size:3rem;
+
+
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio:2) {
+        font-size:2rem;
   }
+}
+
 }
 
 .r2,.r3{
@@ -384,7 +390,13 @@ display:none;
     top: 69vh;
     left: 29vw;
     width: 15vw;
-    height: 17vh
+    height: 17vh;
+
+    @media screen and (max-width:675px) {
+      width:26vw;
+    }
+
+
   }
   > :nth-child(15) {
     z-index:-1;
@@ -484,3 +496,25 @@ display:none;
  opacity:1;
  }
 
+
+@media screen and (-webkit-min-device-pixel-ratio:2) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+
+  html.ngdialog-open .loadHide{
+    display:none;
+    overflow:hidden;
+  }
+}
+
+@media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio:2) {
+
+
+.r1 p{
+  font-size:2em;
+}
+
+}

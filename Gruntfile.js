@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 					'services/*.js',
 					'directives/*.js',
 				],
-				dest: 'dist/assets/js/production.min.js',
+				dest: 'dist/assets/js/production.js',
 			},
 			extras_js1: {			
 				src: [
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           'assets/js/jquery.viewportchecker.min.js',
           'assets/js/jQuery.scrollSpeed.js'
 				],
-				dest: 'dist/assets/js/production-extra1.min.js',	
+				dest: 'dist/assets/js/production-extra1.js',	
 			},
 			extras_js2: {
 				src: [
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 					'assets/js/angular-recaptcha.min.js',
           'assets/js/ngDialog.min.js',
 				],
-				dest: 'dist/assets/js/production-extra2.min.js',	
+				dest: 'dist/assets/js/production-extra2.js',	
 			},
 			extras_css: {
 				src: [
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
 					'assets/css/animate.min.css',
 					'assets/css/ngdialog.min.css',
 				],
-				dest: 'dist/assets/css/production-extra.min.css',	
+				dest: 'dist/assets/css/production-extra.css',	
 			}			
 		},
 
@@ -301,7 +301,7 @@ module.exports = function(grunt) {
   cssmin: {
    dist: {
       files: {
-         'dist/assets/css/production-extra.min.css': ['dist/assets/css/production-extra.min.css']
+         'dist/assets/css/production-extra.min.css': ['dist/assets/css/production-extra.css']
       }
   }
 },
