@@ -179,7 +179,7 @@ module.exports = function(grunt) {
           replacement: ''
         },{
           pattern: '<script src="routes.js"></script>',
-          replacement: '<script src="assets/js/production.min.js"></script>'
+          replacement: '<script src="assets/js/production.js"></script>'
         }
       ]
     }

@@ -13,7 +13,7 @@ angular.module('materializeApp').directive('gallery', ['$timeout' ,function(time
 
                 for(var i = 0; i < images.length ; i++){
                     images[i].addEventListener('click', function(){
-                        var itemID = this.id
+                        var itemID = this.id;
                         gallery_row.addClass('item_open');
                         var ngimage = angular.element(this);
                         ngimage.addClass('item_open')
