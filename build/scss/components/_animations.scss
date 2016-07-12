@@ -1,12 +1,16 @@
 //These are for ngAnimate from Angular
 
 .ng-enter{ 
-  @include animation('scaleUp 0.5s both ease-in');
-  z-index: 8888; 
+  @include animation(scaleUp normal ease-in 0.5s);
+
+  z-index: 8888;
+ transition:opacity 2s; 
 }
 
 .ng-leave{ 
-  @include animation('slideOutLeft 0.5s both ease-in');
+ // @include animation(rotateFall 1s both ease-in);
+opacity:0;
+//  opacity:0;
   z-index: 9999; 
 }
     
@@ -95,6 +99,10 @@
 /* scale up */
 @keyframes scaleUp {
     from    { opacity: 0.3; -webkit-transform: scale(0.8); }
+}
+
+@keyframes  fadeOut {
+    from    { opacity: 0.0; }
 }
 
 /* slide in from the right */
@@ -202,3 +210,30 @@
     transform: translateY(-40px);
   }
 }
+
+    @keyframes the-wind{
+
+      0%   { left: 20vw; }
+  
+      50%  { left: 0vw; }
+
+      100% { left: -20vw; }
+
+    }
+
+
+
+    @keyframes fly-away{
+
+      0%   {
+      //  top: 43vh;
+        left: 58vw; 
+      }
+  
+      50%  {   //  top: 20vh;
+    left: 25vw; }
+
+      100% {     //top: -21vh;
+    left: -20vw;  }
+
+    }

@@ -4,7 +4,7 @@
   width:100%;
   background-color:#1f1e27;
   background-color:rgba(#1f1e27,0.8);
-  padding-top: 150px;
+  padding-top: 5%;
 
   &.ngdialog-closing{
 
@@ -29,6 +29,20 @@
       max-width: 100%;
       width: 90%;
       border-bottom: 2px solid #3f51b5;
+
+
+
+       @media screen and (max-width: 530px) {
+        width:100%;
+        padding:0px;
+       }
+
+       @media screen   and (orientation: landscape) and (-webkit-min-device-pixel-ratio:2) {  
+                width:100%;
+        padding:0px;
+
+        }
+
   }
 
   .ngdialog-close{
@@ -89,7 +103,12 @@
       }
   }
 
-
+@media (max-width: 500px) {
+  padding-top:0%;
+}
+      @media screen and (orientation: landscape) and (-webkit-min-device-pixel-ratio:2) {  
+        padding-top:0%;
+}
 }
 
 
@@ -156,10 +175,29 @@
 }
 */
 
+.ngdialog-overlay{
+  display:none;
+}
 
 
+.g-recaptcha{
+      float: none;
+    display: block;
+    margin: 0 auto;
+  transform:scale(0.77);
+  -webkit-transform:scale(0.77);
+  transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+}
 
 
-
-
-
+#rc-imageselect{
+  transform:scale(0.77);
+  -webkit-transform:scale(0.77);
+  transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+}
+  
+.ngdialog{
+  -webkit-overflow-scrolling: initial;
+}

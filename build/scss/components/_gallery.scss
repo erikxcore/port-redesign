@@ -59,6 +59,14 @@
       text-align: center;
       cursor: pointer;
 
+            @media screen and (max-width: 550px) {
+              max-width:100%;
+
+              max-height:30vh;
+              min-width:100%;
+            }
+  
+
       img{
         position: relative;
         display: block;
@@ -71,7 +79,7 @@
           padding: 2em;
           color: #fff;
           text-transform: uppercase;
-          font-size: 1.25em;
+          font-size: 0.75em;
           -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
 
@@ -127,8 +135,8 @@
         }
 
         figcaption{
-          padding:3em;
-
+          padding:2em;
+          margin:1em 0;
           &:before{
               position: absolute;
               top: 30px;
@@ -139,6 +147,10 @@
               content: '';
               -webkit-transform: scale(1.1);
               transform: scale(1.1);
+
+                          @media screen and (max-width: 550px) {
+                              border:0px;
+                          }
           }
 
           &:before, p{
@@ -157,8 +169,14 @@
         p{
             margin: 0 auto;
             max-width: 200px;
+            margin:10% auto;
             -webkit-transform: scale(1.5);
             transform: scale(1.5);
+
+            @media screen and (max-width: 550px) {
+              margin:2vh auto;
+            }
+
         }
 
         &:hover{
@@ -206,34 +224,88 @@
 
   }
 
+  .image{
+    width: 50%;
+    float: left;
+    padding: 0 40px 40px;
+
+          @media screen and (max-width: 700px) {
+              width:100%;
+      }
+
+  }
+
+  .fixScroll{
+    overflow: hidden;
+   // position: fixed;
+   // width: 100%;
+  }
+
+  html.ngdialog-open {
+  overflow: visible;
+}
+
+
+
 .port {
   position: fixed;
-  z-index:15;
-  width: 100%;
-  height: 100%;
+  z-index:3000;
+  //width: 100%;
+  //height: 100%;
   top: 0;
+  bottom:0;
+  right:0;
   left: 0;
   padding-top: 100px;
   background: #ffffff;
   background-color: #fafafa;
   visibility: hidden;
-  -webkit-transform: translateY(-100%);
-  transform: translateY(-100%);
+  //-webkit-transform: translateY(-100%);
+  //transform: translateY(-100%);
+  opacity:0;
+  overflow-y:auto;
+
   border-bottom: 1px solid #d0d0d0;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 
+        @media screen and (max-width: 700px) {
+          padding-top:0px;
+      }
+
   img {
-    width: 50%;
+    width: 100%;
+        border: 5px solid #fe665c;
+    border-radius: 10px;
   }
 
   .description {
     float: left;
     width: 50%;
-    max-height: 100%;
     padding: 0 40px 40px;
-    overflow: auto;
+    overflow: visible;
+
+      @media screen and (max-width: 700px) {
+              width:100%;
+      }
+
+      h2{
+
+              @media screen and (max-width: 700px) {
+              font-size:2em;
+              //word-break:break-all;
+              }
+
+      }
+
+      p{
+          @media screen and (max-width: 700px) {
+              font-size:1em;
+              //word-break:break-all;
+              }
+
+      }
   }
 
   h1 {
@@ -251,39 +323,60 @@
 
   &.item_open {
     visibility: visible;
-    -webkit-transform: translateY(0%);
-    transform: translateY(0%);
-    -webkit-transition: all 0.4s ease-in-out;
-    -moz-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
+   // -webkit-transform: translateY(0%);
+   // transform: translateY(0%);
+   opacity:1;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
 
   > * {
     opacity: 1;
-    -webkit-transition-delay: 0.5s;
-    transition-delay: 0.5s;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
   }
 }
 
 .gallery-close {
   display:none;
-  width: 21px;
-  height: 21px;
-  background: url(data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0A%3C%21--%20Generator%3A%20Adobe%20Illustrator%2017.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200%29%20%20--%3E%0A%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%3E%0A%3Csvg%20version%3D%221.1%22%0A%09%20id%3D%22svg2%22%20xmlns%3Adc%3D%22http%3A//purl.org/dc/elements/1.1/%22%20xmlns%3Acc%3D%22http%3A//creativecommons.org/ns%23%22%20xmlns%3Ardf%3D%22http%3A//www.w3.org/1999/02/22-rdf-syntax-ns%23%22%20xmlns%3Asvg%3D%22http%3A//www.w3.org/2000/svg%22%0A%09%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2021%2021%22%0A%09%20enable-background%3D%22new%200%200%2021%2021%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%20id%3D%22layer1%22%20transform%3D%22translate%280%2C-1031.3622%29%22%3E%0A%09%3Cpath%20id%3D%22path2987%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M0%2C1031.4l21%2C21%22/%3E%0A%09%3Cpath%20id%3D%22path2989%22%20fill%3D%22none%22%20stroke%3D%22%23000000%22%20d%3D%22M21%2C1031.4l-21%2C21%22/%3E%0A%3C/g%3E%0A%3C/svg%3E%0A%0A) no-repeat;
+    width: 75px;
+    height: 65px;
   position: fixed;
-  right: 10px;
+  right: 5vw;
+  color:black;
   top: 20px;
   opacity: 1;
-  z-index: 1004;
+  z-index: 99999999;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  &:hover{
+    color:#7763E6;
+  }
+
+            @media screen and (max-width: 700px) {
+
+              > .medium{
+                font-size:2rem;
+              }
+             top:80px;
+             right:1vw;
+
+            }
+
+}
+
+.item_open .close {
+  opacity: 1;
+  //top: 0px;
   -webkit-transition: all 0.1s ease-in-out;
   -moz-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
-.item_open .close {
-  opacity: 1;
-  top: 0px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+.zoom-row{
+  opacity:1;
+  transition:opacity 0.1s;
 }
+

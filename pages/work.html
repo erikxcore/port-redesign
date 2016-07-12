@@ -1,9 +1,9 @@
-<div ng-controller="workController">
+<div ng-controller="WorkController">
 
 <div class="row r1">
 	<div class="container">
 		<div class="col s12">
-			<p>First Row.</p>
+			<p>See what I've done. <i class="smallish material-icons">play_for_work</i></p>
 		</div>
 	</div>
 </div>
@@ -27,8 +27,8 @@
 				                data-myorder="{{item.value}}" 
 				                ng-repeat="item in work">
 				                <figure class="effect">
-				                <img src="assets/img/mountains.jpeg"/>
-				                <!--<img src="{{item.img}}" style="height:320px;width:320px;" />-->
+				                
+				                <img ng-src="{{item.img}}"/>
 					                <figcaption>
 					                	<p>{{item.name}}</p>
 						                <a class="image" href="#" onclick="return false;" id="image_{{item.id}}">
@@ -40,7 +40,7 @@
 			    </div>
 
 			    <div class="zoom-row">
-			    	<a href="#" onclick="return false;" class="gallery-close"></a>
+			    	<a href="#" onclick="return false;" class="gallery-close"><i class="medium material-icons">shuffle</i></a>
 			    	<div ng-repeat="item in work" id="image_{{item.id}}" class="port">
 			    		<div class="gallery-row">
 							<div class="description">
@@ -49,7 +49,7 @@
 								<p>{{item.value}}</p>
 							</div>
 							<div class="image">
-								<!--<img src="{{item.img}}"/>-->
+								<img height="50%" width="50%" ng-src="{{item.img}}"/>
 							</div>
 						</div>
 			    	</div>

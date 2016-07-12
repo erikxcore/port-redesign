@@ -1,8 +1,9 @@
 @import "ceaser-easing";
+@import "compass/css3";
 //CSS Loader on Blog Page while content is retrieved.
 
 .loaderHolder{
-    width: 150px;
+    width: 100%;
     height: 75px;
     margin: 10% auto;
     position:relative;
@@ -30,23 +31,30 @@
 }
 
 .loader_label{
-  position:absolute;
-  bottom:0;
-  left: 14%;
+  //position:absolute;
+  //bottom:0;
+  //left: 14%;
   text-align:center;
   font-size: em(14);
-  letter-spacing: 0.1em;
+  letter-spacing: 0.5em;
   line-height: 1.5em;
   color: $loader-color;
   white-space: nowrap;
+  //top:50%;
+  //left:50%;
   @include animation(loader_label ceaser($easeOutCubic) $loader-animation-duration infinite);
 }
 
 
+.blogError{
+      text-align: center;
+    color: white;
+}
+
 //Angular Map on about page
 
 .angular-google-map-container { 
-  height: 250px; 
+  height: 50vh; 
   width:100%;
   background:#FFFFFF;
 }
@@ -110,15 +118,15 @@
   }
   a{
     position: relative; // IE8
-    height: 50pxpx; // IE8
-    height: 50pxrem;
-    width: 50pxpx; // IE8
-    width: 50pxrem;
+    height: 35pxpx; // IE8
+    height: 35pxrem;
+    width: 35pxpx; // IE8
+    width: 35pxrem;
   }
   svg{
-    height: 50px;
-    width: 50px;
-    margin:10px;
+    height: 35px;
+    width: 35px;
+    margin: 0px;
   }
   // IE8:
   em{
@@ -138,14 +146,14 @@
 //About page social icons
 
 %social-icon-hover{
-  border-radius: 100%;
-  color: $background_icon; // IE8
-  fill: $background_icon;
-  transform: scale(1.25);
-  transition: background-color .5s, transform .5s ease-out;
+    border-radius: 100%;
+    color: #ffffff;
+    fill: #ffffff;
+    transform: scale(2.00);
+    transition: background-color .5s, transform .5s ease-out;
 }
 
-@for $i from 1 through 30{
+@for $i from 1 through 8{
   .icon-#{$i}{
     color: hsl($i * 12, 70, 50); // IE8
     fill: hsl($i * 12, 70, 50);
@@ -164,6 +172,7 @@ section#timeline {
   width: 80%;
   margin: 0px auto;
   padding:20px 0px;
+  overflow:hidden;
   position: relative;
 
   &:before{
@@ -171,7 +180,7 @@ section#timeline {
     display: block;
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 30px;
     margin: 0 0 0 -1px;
     width: 2px;
     height: 100%;
@@ -195,11 +204,16 @@ section#timeline {
       margin: 5px 0 0 0;
       border-radius: 6px; 
 
+        @media screen and (max-width: 1450px) {
+            width:100%;
+            margin:0px;
+        } 
+
         span.date{
           display: block;
           width: 60px;
           height: 50px;
-          padding: 5px 0;
+          padding: 15px 0;
           position: absolute;
           top: 0;
           left: 50%;
@@ -212,6 +226,13 @@ section#timeline {
           color: rgba(255,255,255,0.5);
           border: 2px solid rgba(255,255,255,0.2);
           box-shadow: 0 0 0 2px #25303B; 
+
+
+          @media screen and (max-width:1450px){
+                z-index: 5000;
+    top: -10px; 
+    left:89%;
+          }
 
           span{
             display: block;
@@ -253,8 +274,8 @@ section#timeline {
           padding: 15px;
           margin: 0;
           font-size: 14px;
-          background: #fff;
-          color: #656565;
+          background: #604b9e;
+          color: white;
           border-radius: 0 0 6px 6px;
         }
 
@@ -364,6 +385,11 @@ section#timeline {
     text-align: center;
     margin-top: 15%;
 
+
+      @media screen and (max-width: 840px) {
+       margin-top:33%;
+      }
+
       &:before,
       &:after {
         position: absolute;
@@ -433,6 +459,8 @@ section#timeline {
   }
 
   .ribbon-content{
+    font-family: 'Podkova', serif;
+    text-transform:uppercase;
     
     &:before,&:after{
        content: "";
@@ -458,5 +486,121 @@ section#timeline {
 }
 
 
+div.shot {
+    color: white;
+    clear: both;
+    float: left;
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-shadow: 2px 3px 0 #ab6593;
+    width: 100%;
+    margin: 10vh 0px;
 
+      @media screen and (max-width: 560px) {
+              display:none;
+            }
+  
+    span:after {
+      background-color: #64346b;
+      content: "";
+      display: block;
+      height: 74px;
+      position: relative;
+      width: 156px;
+      top: -74px;
+      z-index: -10;
+    }
+    span:before {
+      background-color: #44204a;
+      content: "";
+      display: block;
+      height: 156px;
+      width: 74px;
+      position: absolute;
+      right: 41px;
+      top: 2px;
+      -webkit-transform: rotate(90deg) skew(29deg);
+      -moz-transform: rotate(90deg) skew(29deg);
+      -o-transform: rotate(90deg) skew(29deg);
+      -ms-transform: rotate(90deg) skew(29deg);
+      transform: rotate(90deg) skew(29deg);
+      z-index: -20;
+    }
+  
+  span:nth-child(1){
+       margin: 6% 0% 4% 0%;
+       text-indent:22px;
+    &:after{
+      width:221px;
+      left:-26px;
+    }
+    &:before{
+    right: 26px;
+    top: 1px;
+    height: 165px;
+    width: 43px;
+    transform: rotate(86deg) skew(15deg);
+    }
+  }
+  
+  span:nth-child(2){
+    text-indent: 23px;
+    margin: 3% 6%;
 
+    &:after{
+      width:315px;
+    } 
+    
+    &:before{
+    right: -96px;
+    top: 5px;
+    height: 165px;
+    width: 38px;
+    transform: rotate(86deg) skew(15deg);
+    }
+  }
+  
+  span:nth-child(3){
+    margin:0% 0% 0% 0%;
+    left: 163px;
+    width: 188px;
+    top: -18px;
+    &:after{
+      width:196px;
+    }
+  }
+  
+  span {
+
+    
+    background-color: transparent;
+    display: block;
+    height: 76px;
+    line-height: 74px;
+    margin: 0 auto 14px;
+    text-align: center;
+    width: 156px;
+    -webkit-transform: rotate(-10deg) skew(-10deg);
+    -moz-transform: rotate(-10deg) skew(-10deg);
+    -o-transform: rotate(-10deg) skew(-10deg);
+    -ms-transform: rotate(-10deg) skew(-10deg);
+    transform: rotate(-10deg) skew(-10deg);
+    position: relative;
+    z-index: 10;
+    
+
+    &:last-child:before {
+      display: none;
+    }
+  }
+}
+
+.shot_hold{
+    width: 358px;
+    overflow: hidden;
+    margin: 20px auto;
+    height: 310px;
+}

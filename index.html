@@ -17,14 +17,15 @@
     <link href="assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
    <!-- <link href="assets/css/print.css" media="print" rel="stylesheet" type="text/css" /> -->
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Podkova|Raleway:400,200italic|Ubuntu:400,400italic,500,700|Droid+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300i,700|Podkova" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Above simply for testing, final will most likely consist of only Podkova and possibly Ubuntu/Arial/Helvetica/Futura. Probably imports in the scss files. -->
 
 </head>
 
-<body ng-controller="MainController">
+<body ng-controller="MainController" scrollspeed  ng-class="{'fixScroll': toggleMenu}">
 
 <!--[if gt IE 7)]><!--> <noscript> <!--<![endif]--><style>#main,header,.mouse-scroll-container,.scroll-trigger,.loading-page {display:none;}.error-page{display:block;}</style><!--[if gt IE 7)]><!--> </noscript> <!--<![endif]-->
 
@@ -32,7 +33,7 @@
     <div class="container">
         <div class="col s12">
             <div class="loader"></div>            
-            <p ng-cloak>{{ percentLoaded }}</p>
+            <p class="ng-cloak" ng-cloak>{{ percentLoaded }}</p>
         </div>
     </div>
 </div>
@@ -44,14 +45,14 @@
                 <h2>Uh oh!</h2>
                 <h6>This site requires JavaScript and modern browsers for a full experience.</h6>
                 <p>Find me elsewhere on the web:<br/>
-                        <a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
-                        <a href=""><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                        <a href="https://github.com/erikxcore" target="new"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        <a href="https://soundcloud.com/eric-barber-2" target="new"><i class="fa fa-soundcloud" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/ericbarber" target="new"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                        <a href="http://stackoverflow.com/users/1454773/eric" target="new"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/ericbarber" target="new"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/ericbeiber/" target="new" ><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/eric-barber-72413637" target="new"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        <a href="http://ericbarber.tumblr.com/" target="new"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
                 </p>
                 <p class="smaller">Or contact me <a href="mailto:ericbarbernj@gmail.com">directly.</a></p>
             </div>
@@ -79,6 +80,16 @@
                     <li><a href="" onclick="return false;" ng-click="openContact()">Contact</a></li>
         </ul>
       </nav>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="600" height="200"> 
+                    <defs>
+                        <pattern id="filler" patternUnits="userSpaceOnUse" width="600" height="200">
+                        <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/floral_print.jpg" height="400" width="600" preserveAspectRatio="none"></image>
+                        </pattern>
+                    </defs>
+                <text x="0" y="70%" text-anchor="right" font-size="200" fill="url(#filler)">MENU</text>
+              </svg>
+
   </div>
 </header>
 
@@ -89,30 +100,32 @@
 
 <div id="main" >
     <div class="logo animated" ng-class="!isLoading ? 'bounce' : '' ">
-        <h2>Test</h2>
-        <h2>Test</h2>
+        <h2>Eric</h2>
+        <h2>Barber</h2>
     </div>
 
     <div class="background">
         <div class="sky"></div>
-        <img src="assets/img/new2/clouds.png" />
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/sun.png" />
+        <img src="assets/img/bg/clouds.png" />
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/sun.png" />
         <div class="lake"></div>
-        <img src="assets/img/new2/center_mountain.png"/>
-        <img src="assets/img/new2/cr_mountain.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/2l_mountain.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/1l_mountain.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/reflection.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/2r_mountain.png"/>
-        <img parallax parallax-ratio="0.4" src="assets/img/new2/1r_mountain.png"/>
-        <img parallax parallax-ratio="0.5" src="assets/img/new2/birds.png"/>
-        <img parallax parallax-ratio="-0.2" src="assets/img/new2/boat.png"/>
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/whale.png"/>
-        <img src="assets/img/new2/woods.png"/>
-        <img src="assets/img/new2/reflection.png">
-        <img parallax parallax-ratio="0.3" src="assets/img/new2/reflection.png" >
-        <img src="assets/img/new2/reflection.png">
+        <img src="assets/img/bg/center_mountain.png"/>
+        <img src="assets/img/bg/cr_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/2l_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/1l_mountain.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/reflection.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/2r_mountain.png"/>
+        <img parallax parallax-ratio="0.4" src="assets/img/bg/1r_mountain.png"/>
+        <img parallax parallax-ratio="0.5" src="assets/img/bg/birds.png"/>
+        <img parallax parallax-ratio="-0.2" src="assets/img/bg/boat.png"/>
+        <img parallax parallax-ratio="0.3" src="assets/img/bg/whale.png"/>
+        <img src="assets/img/bg/woods.png"/>
+        <img src="assets/img/bg/reflection.png">
+        <img parallax parallax-ratio="0.31" src="assets/img/bg/reflection.png" >
+        <img src="assets/img/bg/reflection.png">
         <div class="bubbles"></div>
+        <div class="noise"></div>
+        <div class="star_noise"></div>
         <div parallax parallax-ratio="-0.3" class="mouse-scroll-container fade" ng-show="pageClass != 'page-home'">
               <span class="mouse">
                 <span class="mouse-movement"> 
@@ -148,6 +161,7 @@
     <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
     <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
     <script type="text/javascript" src="assets/js/jquery.viewportchecker.min.js"></script>
+    <script type="text/javascript" src="assets/js/jQuery.scrollSpeed.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.min.js"></script>
@@ -173,6 +187,7 @@
     <script src="directives/galleryDirective.js"></script>
     <script src="directives/viewportDirective.js"></script>
     <script src="directives/closeDialogDirective.js"></script>
+    <script src="directives/scrollSpeedDirective.js"></script>
     <script src="directives/preloaderFactory.js"></script>
     <script src="controllers/MainController.js"></script>
     <script src="controllers/AboutController.js"></script>

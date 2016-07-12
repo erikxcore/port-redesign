@@ -5,6 +5,7 @@
 			    $scope.pageClass = 'page-about';
 				$scope.mapIsLoaded = false;
 
+				$scope.$emit('currentPage', $scope.pageClass);
 
 				var styleArray = [
 			          {
