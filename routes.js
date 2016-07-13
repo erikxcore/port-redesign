@@ -36,7 +36,8 @@ angular.module('materializeApp').config(function($stateProvider, $urlRouterProvi
             });
 
     $urlRouterProvider.otherwise('/home');
-    $locationProvider.html5Mode(true); // Requires $locationProvider dependecy. This would work great if you use a .htaccess file to redirect all traffic to index if it doesn't exist (because the real location of site/blog isn't actually available).
+    //$locationProvider.html5Mode(true); // Requires $locationProvider dependecy. This would work great if you use a .htaccess file to redirect all traffic to index if it doesn't exist (because the real location of site/blog isn't actually available).
+    $locationProvider.html5Mode({enabled: true, requireBase: false});
 
 
 });
