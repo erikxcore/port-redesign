@@ -381,10 +381,10 @@ section#timeline {
     display: block;
     margin: 0 auto;
     height: 100px;
-    width: 100%;
+    width: 100px;
     text-align: center;
     margin-top: 15%;
-
+    position:relative;
 
       @media screen and (max-width: 840px) {
        margin-top:33%;
@@ -393,6 +393,7 @@ section#timeline {
       &:before,
       &:after {
         position: absolute;
+        left:0;
         transition: all 0.3s;
 
         border-radius: 50%;
@@ -404,7 +405,7 @@ section#timeline {
         
         content: '';
 
-        transform: translate(-50%, -50%);
+        transform: translate(0%, 0%);
         animation: rotate 1.5s  infinite ease-in-out;
       }
       
