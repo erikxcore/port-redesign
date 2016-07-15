@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-  	angular.module('materializeApp').controller("MainController", ['$scope', 'ngDialog', 'preloader','$location', function($scope, ngDialog, preloader,$location){
+  	angular.module('materializeApp').controller("MainController", ['$scope', 'ngDialog', 'preloader','$location','$rootScope','$anchorScroll', function($scope, ngDialog, preloader,$location,$rootScope,$anchorScroll){
       $scope.toggleMenu = false;
       $scope.isLoading = true;
       $scope.isSuccessful = false;
@@ -16,6 +16,13 @@
                	cache: false,
                   controller: 'ContactController' });
       };
+
+      $rootScope.$on('$stateChangeStart', function() {
+        if($scope.pageClass != "page-home"){
+          $anchorScroll('top');
+        }
+      });
+
 
             $scope.imageLocations = [
               "assets/img/bg/1l_mountain.png",
