@@ -159,7 +159,7 @@
     <script src="assets/js/lodash.js"></script>
 
     <script type="text/javascript" src="http://66.150.214.52:2368/shared/ghost-url.js"></script>
-    <script type="text/javascript">ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});</script>
+    <script type="text/javascript">try{ghost.init({clientId: "ghost-frontend",clientSecret: "95b1e5440cab"});}catch(err){console.log("There was an issue loading Ghost! VPS probably DDOSed or rebooting.");console.log(err.message);</script>
     <script type="text/javascript" src="assets/js/jquery.viewportchecker.min.js"></script>
     <script type="text/javascript" src="assets/js/jQuery.scrollSpeed.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
